@@ -18,9 +18,14 @@ return new class extends Migration
             $table->string('designation');
             $table->string('addresse');
             $table->longText('description');
-            $table->float('valeur_total')->nullable();
-            $table->integer('nbr_ethix')->nullable();
-            $table->string('investment_percentage');
+            $table->float('valuation')->nullable();
+            $table->string('profitability');
+            $table->string('obj_revenu')->nullable();
+            $table->float('obj_financement');
+            $table->string('type');
+            $table->string('footage')->nullable();
+            $table->integer('nbr_bedroom')->nullable();
+            $table->integer('nbr_bathroom')->nullable();
             $table->string('flag')->nullable();
             $table->string('slug')->nullable();
             $table->softDeletes();

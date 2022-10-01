@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->string('id_link')->nullable();
+            $table->float('solde')->nullable();
             $table->string('flag')->nullable();
             $table->string('slug')->nullable();
             $table->string('other-info')->nullable();
