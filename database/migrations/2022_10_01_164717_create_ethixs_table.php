@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('ethixs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('investor_id')->nullable();
-            $table->float('value');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->float('value')->nullable();
             $table->integer('nbr_ethix');
-            $table->foreign('investor_id')->references('id')->on('investors')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('flug')->nullable();
             $table->string('slug')->nullable();
             $table->softDeletes();

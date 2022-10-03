@@ -13,17 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('investorproperties', function (Blueprint $table) {
+        Schema::create('userproperties', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('investor_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('property_id')->nullable();
             $table->integer('nbr_ethix');
             $table->float('value_ethix');
             $table->string('date')->nullable();
             $table->string('hour')->nullable();
             $table->foreign('property_id')->references('id')->on('properties')->onDelete('cascade');
-            $table->foreign('investor_id')->references('id')->on('investors')->onDelete('cascade');
-            $table->softDeletes();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -35,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('investorproperties');
+        Schema::dropIfExists('userproperties');
     }
 };

@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('property_id')->nullable();
+            $table->string('description')->nullable();
+            $table->integer('documenttable_id')->nullable();
+            $table->string('documenttable_type');
             $table->string('link');
-            $table->foreign('property_id')->references('id')->on('properties')->onDelete('cascade');
             $table->timestamps();
         });
     }

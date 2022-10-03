@@ -12,4 +12,9 @@ class Property extends Model
     {
         return $this->hasMany(Image::class);
     }
+
+    public function documents()
+    {
+        return $this->morphMany(Document::class, 'documenttable');
+    }
 }

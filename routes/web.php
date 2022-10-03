@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InvestorController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PropertyController;
 use Illuminate\Support\Facades\Auth;
@@ -21,7 +22,12 @@ Route::get('/dashboard-admin', function () {
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/app', function () {
+    return view('investor.dashboard-investor');
+});
 Route::resource('/dashboard-admin/properties',PropertyController::class);
+Route::resource('/dashboard-admin/users',InvestorController::class);
+Route::get('/app/properties', [App\Http\Controllers\InvestorController::class, 'properties']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
