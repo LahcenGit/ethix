@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('ethixs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->float('value')->nullable();
+            $table->string('value')->nullable();
             $table->integer('nbr_ethix');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('flug')->nullable();

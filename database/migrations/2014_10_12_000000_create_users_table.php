@@ -24,8 +24,13 @@ return new class extends Migration
             $table->string('sexe')->nullable();
             $table->string('phone')->nullable();
             $table->string('id_link')->nullable();
+<<<<<<< Updated upstream
             $table->string('type')->nullable();
             $table->float('solde')->nullable();
+=======
+            $table->string('solde')->nullable();
+            $table->string('type')->default('investor');
+>>>>>>> Stashed changes
             $table->integer('status')->default(0);
             $table->string('remarque')->nullable();
             $table->string('flag')->nullable();

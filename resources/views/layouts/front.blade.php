@@ -65,14 +65,27 @@
                     <div class="single-right-content">
                         <div class="navbar-right-flex">
                             <div class="navbar-right-btn">
-                                <a href="login.html"> Connexion </a>
-                            </div>
-                            <div class="btn-wrapper">
-                                <a href="signup.html" class="cmn-btn btn-bg-1 radius-10"> Pré-inscription </a>
+                                @if (Route::has('login'))
+                                @auth
+                                <div class="btn-wrapper">
+                                <a href="{{route('logout')}}"  class="cmn-btn btn-bg-1 radius-10" onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                            <span class="ml-2">Déconnecter </span>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                            </form>
+                                </a>
+                                </div>
+                                @else
+                                <a href="{{ route('login') }}"> Connexion </a>
+                                <div class="btn-wrapper">
+                                <a href="{{ route('register') }}" class="cmn-btn btn-bg-1 radius-10"> Pré-inscription </a>
+                                </div>
+                                @endauth
+                                @endif
                             </div>
                         </div>
-                    </div>
-                </div>
+                  </div>
             </div>
         </nav>
         <!-- Menu area end -->

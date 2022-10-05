@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('property_id')->nullable();
             $table->integer('nbr_ethix');
-            $table->float('value_ethix');
+            $table->string('value_ethix');
             $table->string('date')->nullable();
             $table->string('hour')->nullable();
             $table->foreign('property_id')->references('id')->on('properties')->onDelete('cascade');
