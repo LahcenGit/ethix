@@ -22,12 +22,15 @@ Route::get('/dashboard-admin', function () {
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/app', function () {
-    return view('investor.dashboard-investor');
-});
+
+
+
 Route::resource('/dashboard-admin/properties',PropertyController::class);
 Route::resource('/dashboard-admin/users',InvestorController::class);
+
 Route::get('/app/properties', [App\Http\Controllers\InvestorController::class, 'properties']);
+Route::get('/app', [App\Http\Controllers\InvestorController::class, 'dashboard']);
+
 Route::get('/app/detail-property/{id}', [App\Http\Controllers\InvestorController::class, 'detailProperty']);
 Auth::routes();
 

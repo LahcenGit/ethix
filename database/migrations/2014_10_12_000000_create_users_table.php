@@ -11,6 +11,8 @@ return new class extends Migration
      *
      * @return void
      */
+
+
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
@@ -22,6 +24,7 @@ return new class extends Migration
             $table->string('sexe')->nullable();
             $table->string('phone')->nullable();
             $table->string('id_link')->nullable();
+            $table->string('type')->nullable();
             $table->float('solde')->nullable();
             $table->integer('status')->default(0);
             $table->string('remarque')->nullable();
