@@ -29,4 +29,8 @@ class InvestorController extends Controller
         $properties = Property::all();
         return view('investor.properties',compact('properties'));
     }
+    public function detailProperty($id){
+        $property = Property::find($id);
+        return view('investor.detail-property',compact('property'));
+    }
 }

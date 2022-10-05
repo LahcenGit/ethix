@@ -34,7 +34,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger light" data-dismiss="modal">Close</button>
-                <button type="button" id="updateF" data-id = "{{$user->id}}" class="btn btn-primary">Enregistrer</button>
+                <button type="button" id="updateF" data-id = "{{$user->id}}" class="btn btn-primary"style="background-color:  #0b9e9a; border-color:#0b9e9a">Enregistrer</button>
             </div>
         </div>
     </div>
