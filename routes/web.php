@@ -28,6 +28,7 @@ Route::get('/app', function () {
 Route::resource('/dashboard-admin/properties',PropertyController::class);
 Route::resource('/dashboard-admin/users',InvestorController::class);
 Route::get('/app/properties', [App\Http\Controllers\InvestorController::class, 'properties']);
+Route::get('/app/detail-property/{id}', [App\Http\Controllers\InvestorController::class, 'detailProperty']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

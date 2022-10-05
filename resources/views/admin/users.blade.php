@@ -6,7 +6,7 @@
         <div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4>Bonjour, Bienvenue!</h4>
+                    <h4 style="color:#0b9e9a ;">Bonjour, Bienvenue!</h4>
                     <span>Investisseurs</span>
                 </div>
             </div>
@@ -69,7 +69,7 @@
                                             {{csrf_field()}}
                                             {{method_field('DELETE')}}
                                         <div class="d-flex">
-                                        <button id="updateF" data-id="{{$user->id}}" type="button" class="btn btn-primary shadow btn-xs sharp mr-1 edit-investor"><i class="fa fa-pencil"></i></a>
+                                        <button id="updateF" data-id="{{$user->id}}" type="button" class="btn btn-primary shadow btn-xs sharp mr-1 edit-investor"style="background-color:  #0b9e9a; border-color:#0b9e9a"><i class="fa fa-pencil"></i></a>
                                             <button class="  btn btn-danger shadow btn-xs sharp" onclick="return confirm('Vous voulez vraiment supprimer?')"><i class="fa fa-trash"></i></button>
                                         </div>
                                         </form>												
