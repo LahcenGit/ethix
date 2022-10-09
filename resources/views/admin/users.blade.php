@@ -69,8 +69,9 @@
                                             {{csrf_field()}}
                                             {{method_field('DELETE')}}
                                         <div class="d-flex">
-                                        <button id="updateF" data-id="{{$user->id}}" type="button" class="btn btn-primary shadow btn-xs sharp mr-1 edit-investor"style="background-color:  #0b9e9a; border-color:#0b9e9a"><i class="fa fa-pencil"></i></a>
-                                            <button class="  btn btn-danger shadow btn-xs sharp" onclick="return confirm('Vous voulez vraiment supprimer?')"><i class="fa fa-trash"></i></button>
+                                        <button id="updateF" data-id="{{$user->id}}" type="button" class="btn btn-warning shadow btn-xs sharp mr-1 edit-investor"><i class="fa fa-pencil"></i></a>
+                                        <button data-id="{{$user->id}}" type ="button" class="btn btn-success shadow btn-xs sharp mr-1 show-file"><i class="fa fa-file"></i></button>
+                                        <button class="btn btn-danger shadow btn-xs sharp" onclick="return confirm('Vous voulez vraiment supprimer?')"><i class="fa fa-trash"></i></button>
                                         </div>
                                         </form>												
                                     </td>	
@@ -88,6 +89,9 @@
 </div>
 </div>
 <div id="modal-edit-investor">
+
+</div>
+<div id="modal-show-file">
 
 </div>
 @endsection
@@ -152,3 +156,29 @@ $(".edit-investor").on('click',function() {
    });
 </script>   
  @endpush
+
+ @push('modal-show-file-scripts')
+<script>
+  $.ajaxSetup({
+  headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
+});
+
+$(".show-file").on('click',function() {
+ 
+  var id = $(this).attr("data-id");
+ 
+  $.ajax({
+    url: '/show-file/'+id,
+    type: "GET",
+    success: function (res) {
+       
+      $('#modal-show-file').html(res);
+      $("#modalShow").modal('show');
+    },
+  });
+  
+});
+</script>
+@endpush

@@ -10,10 +10,9 @@ use Illuminate\Support\Facades\Auth;
 class UserDocumentController extends Controller
 {
     //
-    public function store(Request $request , User $user){
-        
-        $user_id = $request->user()->id;
-
+    public function store(Request $request){
+        $user_auth = Auth::user(); 
+        $user = User::find($user_auth->id);
         $file = $request->file_one;
         $destination = 'public/documents';
         $path = $file->store($destination);
@@ -31,10 +30,7 @@ class UserDocumentController extends Controller
         $document = new Document();
         $document->link = $storageName;
         $user->documents()->save($document);
-
-       
-
-    }
+   }
    
 
 }

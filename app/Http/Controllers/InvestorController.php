@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Document;
 use App\Models\Property;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -10,7 +11,7 @@ class InvestorController extends Controller
 {
     //
     public function index(){
-        $users = User::all();
+        $users = User::where('type','investor')->get();
         return view('admin.users',compact('users'));
     }
     public function edit($id){
@@ -39,4 +40,21 @@ class InvestorController extends Controller
         $property = Property::find($id);
         return view('investor.detail-property',compact('property'));
     }
+
+    public function showFile($id){
+        $user = User::find($id);
+        return view('admin.modal-show-file',compact('user')); 
+    }
+
+    public function downloadFile($link){
+        $document = Document::where('link',$link)->first();
+        $file = 'storage/documents/'.$document->link;
+      
+            $headers = [
+                'Content-Type' => 'application/pdf'
+            ];
+
+            return response()->file($file, $headers);
+        }
 }
+

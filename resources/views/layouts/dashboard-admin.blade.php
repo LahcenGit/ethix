@@ -315,5 +315,6 @@
     </script>
 @stack('modal-edit-investor-scripts')
 @stack('form-update-scripts')
+@stack('modal-show-file-scripts')
 </body>
 </html>

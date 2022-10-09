@@ -46,7 +46,7 @@ class LoginController extends Controller
                 return redirect('dashboard-admin');
             }
 
-            else if(auth::user()->type == null){
+            else if(auth::user()->type == 'investor'){
                 return redirect('app');
             }
 

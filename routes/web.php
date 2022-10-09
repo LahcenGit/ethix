@@ -31,6 +31,8 @@ Route::get('/add-file', function () {
 
 Route::resource('/dashboard-admin/properties',PropertyController::class);
 Route::resource('/dashboard-admin/users',InvestorController::class);
+Route::get('/show-file/{id}',[App\Http\Controllers\InvestorController::class,'showFile']);
+Route::get('/downolad-file/{link}',[App\Http\Controllers\InvestorController::class,'downloadFile']);
 Route::resource('/app/add-file',UserDocumentController::class);
 
 Route::get('/app/properties', [App\Http\Controllers\InvestorController::class, 'properties']);

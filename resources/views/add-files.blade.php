@@ -1,12 +1,10 @@
 @extends('layouts.front')
 @section('content')
-<section class="login-area padding-top-100 padding-bottom-100">
-        <div class="container">
+
+        <div class="container d-flex justify-content-center " style="margin-top: 100px;margin-bottom: 100px;">
             <div class="login-wrapper login-shadow bg-white">
                 <div class="login-wrapper-flex">
-                    <div class="login-wrapper-thumb">
-                        <img src="{{asset('Front/assets/img/single-page/login.jpg')}}" alt="img">
-                    </div>
+                    
                     <div class="login-wrapper-contents login-padding">
                         <h2 class="single-title"> Bienvenue! </h2>
                         <p class="sigle-para mt-2"> Ajouter les fichiers pour finaliser l'inscription</p>
@@ -30,7 +28,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    
 
 
 
