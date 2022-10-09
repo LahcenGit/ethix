@@ -3,6 +3,9 @@
   <!--**********************************
             Content body start
         ***********************************-->
+
+		<div class="temp-body">
+
         <div class="content-body">
             <!-- row -->
 			<div class="container-fluid">
@@ -413,6 +416,7 @@
 					</div>
 			   </div>
             </div>
+        </div>
         </div>
         <!--**********************************
             Content body end

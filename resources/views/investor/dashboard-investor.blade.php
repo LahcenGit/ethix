@@ -14,6 +14,15 @@
                 <div class="col-1 text-center">
                     <a href="http://"> <i class="fa-solid fa-user fa-2x" style="color:#4DAA7F; " > </i> <br> Profil </a>
                 </div>
+
+                <div class="col-1 text-center">
+                    <a href="{{route('logout')}}"> <i class="fa-solid fa-right-from-bracket fa-2x" style="color:#818181; " onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();" > </i> <br> Déconnexion 
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </a>
+                </div>
                 
             </div>
     </div>
@@ -52,12 +61,12 @@
                             @foreach($properties as $property)
                             <div class="col-md-4">
                                 <div class="hotel-view bg-white radius-20">
-                                    <a href="hotel_details.html" class="hotel-view-thumb hotel-view-grid-thumb bg-image" ><img src="{{asset('storage/images/properties/'.$property->images[0]->link)}}" alt="properties">
+                                    <a href="{{asset('/app/detail-property/'.$property->id)}}" class="hotel-view-thumb hotel-view-grid-thumb bg-image" ><img src="{{asset('storage/images/properties/'.$property->images[0]->link)}}" alt="properties">
                                     </a>
                                     <div class="hotel-view-contents">
                                         <div class="hotel-view-contents-header">
-                                            <span class="hotel-view-contents-review"> {{$property->valuation}} <span class="hotel-view-contents-review-count">€</span> </span>
-                                            <h3 class="hotel-view-contents-title"> <a href="hotel_details.html"> {{$property->designation}} </a> </h3>
+                                            <span class="hotel-view-contents-review"> {{number_format($property->valuation)}} <span class="hotel-view-contents-review-count">€</span> </span>
+                                            <h3 class="hotel-view-contents-title"> <a href="{{asset('/app/detail-property/'.$property->id)}}"> {{$property->designation}} </a> </h3>
                                             <div class="hotel-view-contents-location mt-2">
                                                 <span class="hotel-view-contents-location-icon"> <i class="las la-map-marker-alt"></i> </span>
                                                 <span class="hotel-view-contents-location-para"> {{$property->addresse}}  </span>
@@ -75,7 +84,7 @@
                                                     </div >
                                                     <div class="col-4">
                                                         <div class="btn-wrapper">
-                                                            <a href="javascript:void(0)" class="cmn-btn btn-bg-1  mt-2" style="background-color: #0b9e9a;"> Acheter  </a>
+                                                            <a href="{{asset('/app/detail-property/'.$property->id)}}" class="cmn-btn btn-bg-1  mt-2" style="background-color: #0b9e9a;"> Acheter  </a>
                                                        </div>
                                                     </div >
                                                     
