@@ -9,7 +9,7 @@
     <title> Ethix invest – L'investissement immobilier Ethique</title>
 
     <!-- favicon -->
-    <link rel=icon href="favicon.png" sizes="16x16" type="icon/png">
+    <link rel=icon href="{{asset('Front/assets/img/logo-favicon.png')}}" sizes="16x16" type="icon/png">
     <!-- bootstrap -->
     <link rel="stylesheet" href="{{asset('Front/assets/css/bootstrap.min.css')}}">
     <!-- FontAwesome -->
@@ -28,23 +28,27 @@
     <link rel="stylesheet" href="{{asset('Front/assets/css/nice-select.css')}}">
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="{{asset('Front/assets/css/style.css')}}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
 
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-
     <header class="header-style-01">
         <!-- Menu area Starts -->
         <nav class="navbar navbar-area navbar-border navbar-padding navbar-expand-lg">
             <div class="container custom-container-one nav-container">
                 <div class="logo-wrapper">
-                    <a href="index.html" class="logo">
+                    <a href="{{asset('/')}}" class="logo">
                         <img src="{{asset('Front/assets/img/logo.png')}}" alt="">
                     </a>
                 </div>
                 <div class="responsive-mobile-menu d-lg-none">
-                    <a href="javascript:void(0)" class="click-nav-right-icon">
+                    <a href="{{asset('/')}}" class="click-nav-right-icon">
                         <i class="las la-ellipsis-v"></i>
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hotel_booking_menu">
@@ -54,36 +58,41 @@
                 <div class="collapse navbar-collapse" id="hotel_booking_menu">
                     <ul class="navbar-nav">
                         <li class=" current-menu-item">
-                            <a href="javascript:void(0)">Accueil</a>
+                            <a href="{{asset('/')}}">Accueil</a>
                         </li>
-                        <li><a href="about.html"> Comment ça marche </a></li>
-                        <li><a href="checkout.html"> FAQ </a></li>
-                        <li><a href="contact.html"> Contact </a></li>
+                        <li><a href="#"> Comment ça marche </a></li>
+                        <li><a href="#"> FAQ </a></li>
+                        <li><a href="#"> Contact </a></li>
                     </ul>
                 </div>
                 <div class="navbar-right-content show-nav-content">
                     <div class="single-right-content">
+
                         <div class="navbar-right-flex">
+                            @auth
                             <div class="navbar-right-btn">
-                                @if (Route::has('login'))
-                                @auth
-                                <div class="btn-wrapper">
-                                <a href="{{route('logout')}}"  class="cmn-btn btn-bg-1 radius-10" onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                                            <span class="ml-2">Déconnecter </span>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                            </form>
+                                 <span style="color: #4DAA7F"> <i class="fa-solid fa-wallet"></i> {{Auth::user()->solde}}.00 €  </span>
+                            </div>
+                            <div class="btn-wrapper">
+                                @if (Auth::user()->type == 'admin')
+                                <a href="{{asset('/dashboard-admin') }}"  class="cmn-btn btn-bg-1 radius-10">
+                                    <span class="ml-2"> Dashboard <i class="fa-solid fa-caret-right"></i></span>
                                 </a>
-                                </div>
                                 @else
-                                <a href="{{ route('login') }}"> Connexion </a>
-                                <div class="btn-wrapper">
-                                <a href="{{ route('register') }}" class="cmn-btn btn-bg-1 radius-10"> Pré-inscription </a>
-                                </div>
-                                @endauth
+                                <a href="{{asset('/app') }}"  class="cmn-btn btn-bg-1 radius-10">
+                                    <span class="ml-2"> Dashboard <i class="fa-solid fa-caret-right"></i></span>
+                                </a>
                                 @endif
                             </div>
+                            @else
+                            <div class="navbar-right-btn">
+                                <a href="{{ route('login') }}"> Connexion </a>
+                                
+                            </div>
+                            <div class="btn-wrapper">
+                                <a href="{{ route('register') }}" class="cmn-btn btn-bg-1 radius-10"> Pré-inscription </a>
+                            </div>
+                            @endauth
                         </div>
                   </div>
             </div>
@@ -195,7 +204,28 @@
     <script src="{{asset('Front/assets/js/intlTelInput.js')}}"></script>
     <!-- main js -->
     <script src="{{asset('Front/assets/js/main.js')}}"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $('.owl-carousel').owlCarousel({
+    items:5,
+    loop:true,
+    margin:10,
+    merge:true,
+    responsive:{
+        678:{
+            mergeFit:true
+        },
+        1000:{
+            mergeFit:false
+        }
+    }
+});
+    </script>
 
 
 </body>

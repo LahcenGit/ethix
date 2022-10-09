@@ -5,13 +5,11 @@
     <div>{{$error}}</div>
 @endforeach
 @endif
-<section class="login-area padding-top-100 padding-bottom-100">
-        <div class="container">
+
+        <div class="container d-flex justify-content-center " style="margin-top: 100px;margin-bottom: 100px;">
             <div class="login-wrapper login-shadow bg-white">
                 <div class="login-wrapper-flex">
-                    <div class="login-wrapper-thumb">
-                        <img src="{{asset('Front/assets/img/single-page/login.jpg')}}" alt="img">
-                    </div>
+                   
                     <div class="login-wrapper-contents login-padding">
                         <h2 class="single-title"> Bienvenue! </h2>
                         <p class="sigle-para mt-2"> Connectez-vous pour continuer</p>
@@ -36,13 +34,12 @@
                                 </div>
                             </div>
                             <button class="submit-btn w-100 mt-4" type="submit"> Connectez</button>
-                            <span class="account color-light mt-3">Vous n'avez pas de compte ? <a class="color-one" href="signup.html"> S'inscrire maintenant </a> </span>
+                            <span class="account color-light mt-3">Vous n'avez pas de compte ? <a class="color-one" href="{{asset('/register')}}"> S'inscrire maintenant </a> </span>
                         </form>
                         
                      </div>
                 </div>
             </div>
         </div>
-    </section>
 
 @endsection
