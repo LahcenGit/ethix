@@ -60,9 +60,6 @@ class InvestorController extends Controller
 
             return response()->file($file, $headers);
         }
-    public function profil(){
-        $user = Auth::user();
-        return view('investor.profil',compact('user'));
-    }
+   
     }
 

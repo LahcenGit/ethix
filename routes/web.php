@@ -3,6 +3,7 @@
 use App\Http\Controllers\InvestorController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\UserDocumentController;
 use Illuminate\Support\Facades\Auth;
 
@@ -37,7 +38,7 @@ Route::resource('/app/add-file',UserDocumentController::class);
 
 Route::get('/app/properties', [App\Http\Controllers\InvestorController::class, 'properties']);
 Route::get('/app', [App\Http\Controllers\InvestorController::class, 'dashboard']);
-Route::get('/app/profil', [App\Http\Controllers\InvestorController::class, 'profil']);
+Route::resource('/app/profil', ProfilController::class);
 
 Route::get('/app/detail-property/{id}', [App\Http\Controllers\InvestorController::class, 'detailProperty']);
 Auth::routes();
