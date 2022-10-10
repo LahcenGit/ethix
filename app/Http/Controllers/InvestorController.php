@@ -6,6 +6,7 @@ use App\Models\Document;
 use App\Models\Property;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class InvestorController extends Controller
 {
@@ -34,7 +35,9 @@ class InvestorController extends Controller
 
     public function dashboard(){
         $properties = Property::all();
-        return view('investor.dashboard-investor',compact('properties'));
+        $user = Auth::user();
+        $test_document = Document::where('documenttable_id',$user->id)->count();
+        return view('investor.dashboard-investor',compact('properties','user','test_document'));
     }
     public function detailProperty($id){
         $property = Property::find($id);
@@ -43,7 +46,8 @@ class InvestorController extends Controller
 
     public function showFile($id){
         $user = User::find($id);
-        return view('admin.modal-show-file',compact('user')); 
+        $test = Document::where('documenttable_id',$user->id)->first();
+        return view('admin.modal-show-file',compact('user','test')); 
     }
 
     public function downloadFile($link){
@@ -56,5 +60,9 @@ class InvestorController extends Controller
 
             return response()->file($file, $headers);
         }
-}
+    public function profil(){
+        $user = Auth::user();
+        return view('investor.profil',compact('user'));
+    }
+    }
 

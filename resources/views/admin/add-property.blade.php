@@ -12,7 +12,7 @@
         <div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4 style="color:#0b9e9a ;">Bonjour, bienvenue !</h4>
+                    <h4 >Bonjour, bienvenue !</h4>
                     <span>Ajouter Propriété</span>
                 </div>
             </div>
@@ -177,8 +177,8 @@
                 <div class="col-xl-12 col-lg-12">
                     <div class="card">
                         <div class="card-body text-center">
-                            <button type="submit"  class="btn btn-primary mt-3" style="background-color:  #0b9e9a; border-color:#0b9e9a">Ajouter </button>
-                    </div>
+                            <button type="submit"  class="btn btn-primary mt-3" >Ajouter </button>
+                        </div>
                     </div>
                 </div>
                 </form>

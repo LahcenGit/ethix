@@ -10,7 +10,7 @@
                             <div class="details-contents-header">
                                 <div class="owl-carousel owl-theme">
                                     @foreach ($property->images as $img)
-                                        <div class="item" data-merge="{{$loop->iteration}}"><img src="{{asset("storage/images/properties/".$img->link)}}"  width="50%" height="50%"  alt=""></div>
+                                        <div class="item" data-merge="{{$loop->iteration}}"><img src="{{asset('storage/images/properties/'.$img->link)}}"  width="50%" height="50%"  alt=""></div>
                                     @endforeach
                                 </div>
                             </div>
@@ -98,7 +98,7 @@
                                 <div class="single-reservation-item">
                                     <div class="single-reservation-details">
                                         <div class="single-reservation-details-item">
-                                            <span class="single-reservation-details-subtitle" style="color:#" > Valeur d'une Ethix</span>
+                                            <span class="single-reservation-details-subtitle" > Valeur d'une Ethix</span>
                                             <h3 class="single-reservation-details-title" style="font-size: 25px;"> 10 €</h3>
                                         </div>
                                         <div class="single-reservation-details-item">

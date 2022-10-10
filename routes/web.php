@@ -37,6 +37,7 @@ Route::resource('/app/add-file',UserDocumentController::class);
 
 Route::get('/app/properties', [App\Http\Controllers\InvestorController::class, 'properties']);
 Route::get('/app', [App\Http\Controllers\InvestorController::class, 'dashboard']);
+Route::get('/app/profil', [App\Http\Controllers\InvestorController::class, 'profil']);
 
 Route::get('/app/detail-property/{id}', [App\Http\Controllers\InvestorController::class, 'detailProperty']);
 Auth::routes();

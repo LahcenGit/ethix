@@ -6,7 +6,7 @@
         <div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4 style="color:#0b9e9a ;">Bonjour, Bienvenue!</h4>
+                    <h4 >Bonjour, Bienvenue!</h4>
                     <span>Propriétés</span>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">La tables des propriétés</h4>
-                        <a href="{{url('/dashboard-admin/properties/create')}}" type="button"  class="btn btn-primary mt-3" style="background-color:  #0b9e9a; border-color:#0b9e9a">Ajouter</a>
+                        <a href="{{url('/dashboard-admin/properties/create')}}" type="button"  class="btn btn-primary mt-3" >Ajouter</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -63,7 +63,7 @@
                                             {{csrf_field()}}
                                             {{method_field('DELETE')}}
                                         <div class="d-flex">
-                                            <a href="" class="btn btn-primary shadow btn-xs sharp mr-1" style="background-color:  #0b9e9a; border-color:#0b9e9a"><i class="fa fa-pencil"></i></a>
+                                            <a href="" class="btn btn-primary shadow btn-xs sharp mr-1" ><i class="fa fa-pencil"></i></a>
                                             <button class="  btn btn-danger shadow btn-xs sharp" onclick="return confirm('Vous voulez vraiment supprimer?')"><i class="fa fa-trash"></i></button>
                                         </div>
                                         </form>												

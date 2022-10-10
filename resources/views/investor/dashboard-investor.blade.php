@@ -12,7 +12,7 @@
                     <a href="http://"> <i class="fa-solid fa-money-bill-trend-up fa-2x" style="color:#4DAA7F; " > </i> <br> Investissements </a>
                 </div>
                 <div class="col-1 text-center">
-                    <a href="http://"> <i class="fa-solid fa-user fa-2x" style="color:#4DAA7F; " > </i> <br> Profil </a>
+                    <a href="{{url('app/profil')}}"> <i class="fa-solid fa-user fa-2x" style="color:#4DAA7F; " > </i> <br> Profil </a>
                 </div>
 
                 <div class="col-1 text-center">
@@ -24,7 +24,19 @@
                     </a>
                 </div>
                 
+                
             </div>
+            @if($user->status == 0)
+            <div class="container mt-4 ">
+            <div class="alert alert-warning" role="alert">
+             <span style="font-size: 17px;">@if($test_document == 0) Veuillez compléter les étapes restantes pour activer votre compte ,<a href="{{url('/add-file')}}" class="alert-link">Vas-y ! </a>
+             @else
+             La validation de votre compte est en cours de traitement...
+             @endif
+            </span>
+            </div>
+            </div>
+            @endif
     </div>
     <!-- Breadcrumb area end -->
 
@@ -39,7 +51,7 @@
                         <i class="las la-bars"></i>
                     </div>
                 </div>
-                
+               
                 <div class="shop-grid-contents">
                     <div class="grid-list-contents">
                         <div class="grid-list-contents-flex">
@@ -56,6 +68,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div id="tab-grid" class="tab-content-item active mt-4">
                         <div class="row gy-4">
                             @foreach($properties as $property)
