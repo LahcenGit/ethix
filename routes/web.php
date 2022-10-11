@@ -18,9 +18,8 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/dashboard-admin', function () {
-    return view('admin.dashboard-admin');
-});
+
+
 
 Route::get('/', function () {
     return view('welcome');
