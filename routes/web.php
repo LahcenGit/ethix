@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\UserDocumentController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -44,3 +45,4 @@ Route::get('/app/detail-property/{id}', [App\Http\Controllers\InvestorController
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('/dashboard-admin',AdminController::class);

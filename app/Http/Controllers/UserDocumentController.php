@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Auth;
 class UserDocumentController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function store(Request $request){
         $user_auth = Auth::user(); 
         $user = User::find($user_auth->id);
@@ -30,6 +34,7 @@ class UserDocumentController extends Controller
         $document = new Document();
         $document->link = $storageName;
         $user->documents()->save($document);
+        return redirect('app');
    }
    
 

@@ -1,5 +1,42 @@
 @extends('layouts.front')
 @section('content')
+    <!-- Breadcrumb area Starts -->
+    <div class="breadcrumb-area breadcrumb-padding ">
+            <div class="container d-flex justify-content-center " >
+                <div class="col-1 text-center">
+                    <a href="http://"> <i class="fa-solid fa-house-fire fa-2x" style="color:#4DAA7F; " > </i> <br> propriétés </a>
+                </div>
+                <div class="col-1 text-center">
+                    <a href="http://"> <i class="fa-solid fa-money-bill-trend-up fa-2x" style="color:#4DAA7F; " > </i> <br> Investissements </a>
+                </div>
+                <div class="col-1 text-center">
+                    <a href="{{url('app/profil')}}"> <i class="fa-solid fa-user fa-2x" style="color:#4DAA7F; " > </i> <br> Profil </a>
+                </div>
+
+                <div class="col-1 text-center">
+                    <a href="{{route('logout')}}"> <i class="fa-solid fa-right-from-bracket fa-2x" style="color:#818181; " onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();" > </i> <br> Déconnexion 
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </a>
+                </div>
+                
+                
+            </div>
+            @if($user->status == 0)
+            <div class="container mt-4 ">
+            <div class="alert alert-warning" role="alert">
+             <span style="font-size: 17px;">@if($test_document == 0) Veuillez compléter les étapes restantes pour activer votre compte ,<a href="{{url('/add-file')}}" class="alert-link">Vas-y ! </a>
+             @else
+             La validation de votre compte est en cours de traitement...
+             @endif
+            </span>
+            </div>
+            </div>
+            @endif
+    </div>
+    <!-- Breadcrumb area end -->
 <!-- Hotel Details area Starts -->
     <section class="hotel-details-area section-bg-2 pat-100 pab-100">
         <div class="container">

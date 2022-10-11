@@ -90,14 +90,14 @@
                                             <div class="hotel-view-contents-bottom-flex">
                                                 <div class="hotel-view-contents-bottom-contents row">
                                                     <div class="col-4">
-                                                        <h4 style="color:#0b9e9a ;" >{{$property->profitability}}%</h4> rentabilité 
+                                                        <h4  >{{$property->profitability}}%</h4> rentabilité 
                                                     </div>
                                                     <div class="col-4">
-                                                        <h4 style="color:#0b9e9a ;">{{$property->obj_revenu}}%</h4> Reverséss 
+                                                        <h4 >{{$property->obj_revenu}}%</h4> Reverséss 
                                                     </div >
                                                     <div class="col-4">
                                                         <div class="btn-wrapper">
-                                                            <a href="{{asset('/app/detail-property/'.$property->id)}}" class="cmn-btn btn-bg-1  mt-2" style="background-color: #0b9e9a;"> Acheter  </a>
+                                                            <a href="{{asset('/app/detail-property/'.$property->id)}}" class="cmn-btn btn-bg-1  mt-2" > Acheter  </a>
                                                        </div>
                                                     </div >
                                                     
@@ -106,7 +106,7 @@
                                             
                                             <h6 class="mt-2 mb-1">21.84% financé</h6>
                                             <div class="progress mb-2">
-                                                <div class="progress-bar"  role="progressbar" style="width: 25%; background-color:#0b9e9a" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                <div class="progress-bar"  role="progressbar" style="width: 25%; background-color:#4daa7f" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
 
                                         </div>

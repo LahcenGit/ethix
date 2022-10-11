@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Storage;
 class PropertyController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         $properties = Property::all();
         return view('admin.properties',compact('properties'));
