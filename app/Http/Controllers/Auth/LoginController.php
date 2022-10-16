@@ -23,7 +23,7 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-
+    
     
 
 

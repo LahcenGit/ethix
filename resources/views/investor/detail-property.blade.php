@@ -167,7 +167,7 @@
                                 </div>
                               
                                 <div class="btn-wrapper mt-4">
-                                    <a href="#" class="cmn-btn btn-bg-1 "> Achat d'un Ethix</a>
+                                    <a href="#" class="cmn-btn btn-bg-1 achter-ethix "> Achat d'un Ethix</a>
                                 </div>
                             </div>
                         </div>
@@ -208,5 +208,30 @@
         </div>
     </section>
     <!-- Hotel Details area end -->
+    <div id="modal-achat-ethix"></div>
 
 @endsection
+
+@push('achat-ethix-scripts')
+<script>
+  $.ajaxSetup({
+  headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
+});
+
+$(".achter-ethix").on('click',function() {
+  $.ajax({
+    url: '/achat-ethix',
+    type: "GET",
+    success: function (res) {
+       
+      $('#modal-achat-ethix').html(res);
+      $("#modalEthix").modal('show');
+    },
+  });
+  
+});
+</script>
+
+@endpush

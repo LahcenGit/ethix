@@ -227,7 +227,7 @@
 });
     </script>
 
-
+@stack('achat-ethix-scripts')
 </body>
 
 </html>
