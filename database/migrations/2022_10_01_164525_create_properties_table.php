@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('footage')->nullable();
             $table->integer('nbr_bedroom')->nullable();
             $table->integer('nbr_bathroom')->nullable();
+            $table->integer('max_ethix');
             $table->string('flag')->nullable();
             $table->string('slug')->nullable();
             $table->softDeletes();

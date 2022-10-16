@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Userproperty extends Model
 {
     use HasFactory;
+    public function property()
+    {
+        return $this->belongsTo(Property::class,'property_id');
+    }
 }

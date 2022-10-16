@@ -35,6 +35,7 @@ class PropertyController extends Controller
         $property->footage = $request->footage;
         $property->nbr_bedroom =$request->nbr_bedroom;
         $property->nbr_bathroom = $request->nbr_bathroom;
+        $property->max_ethix = $request->max_ethix;
         $property->save();
         $hasFile = $request->hasFile('photos');
       

@@ -7,7 +7,7 @@
                     <a href="http://"> <i class="fa-solid fa-house-fire fa-2x" style="color:#4DAA7F; " > </i> <br> propriétés </a>
                 </div>
                 <div class="col-1 text-center">
-                    <a href="http://"> <i class="fa-solid fa-money-bill-trend-up fa-2x" style="color:#4DAA7F; " > </i> <br> Investissements </a>
+                    <a href="{{url('app/investissements')}}"> <i class="fa-solid fa-money-bill-trend-up fa-2x" style="color:#4DAA7F; " > </i> <br> Investissements </a>
                 </div>
                 <div class="col-1 text-center">
                     <a href="{{url('app/profil')}}"> <i class="fa-solid fa-user fa-2x" style="color:#4DAA7F; " > </i> <br> Profil </a>
@@ -167,7 +167,7 @@
                                 </div>
                               
                                 <div class="btn-wrapper mt-4">
-                                    <a href="#" class="cmn-btn btn-bg-1 achter-ethix "> Achat d'un Ethix</a>
+                                    <a href="{{url('app/achat-ethix/'.$property->id)}}" class="cmn-btn btn-bg-1"> Achat d'un Ethix</a>
                                 </div>
                             </div>
                         </div>
@@ -208,46 +208,9 @@
         </div>
     </section>
     <!-- Hotel Details area end -->
-    <div id="modal-achat-ethix"></div>
+   
 
 @endsection
 
-@push('achat-ethix-scripts')
-<script>
-  $.ajaxSetup({
-  headers: {
-    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-  }
-});
 
-$(".achter-ethix").on('click',function() {
-  $.ajax({
-    url: '/achat-ethix',
-    type: "GET",
-    success: function (res) {
-       
-      $('#modal-achat-ethix').html(res);
-      $("#modalEthix").modal('show');
-    },
-  });
-  
-});
-</script>
 
-@endpush
-
-@push('validate-scripts')
-<script>
-  $.ajaxSetup({
-  headers: {
-    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-  }
-});
-
-$(".nbr_ethix").on('change',function() {
- var v = $(this).value;
-   alert(v);
-});
-</script>
-
-@endpush
