@@ -38,7 +38,7 @@
                 <div class="login-wrapper-flex">
                    <div class="login-wrapper-contents login-padding">
                         <h2 class="single-title"> {{$property->designation}}</h2>
-                        <p class="sigle-para mt-2"> Modifier votre informations</p>
+                        <p class="sigle-para mt-2">Vous êtes entrain d'acheter des éthixs</p>
                          <form class="login-wrapper-contents-form custom-form" method="POST" action="{{url('app/store-ethix')}}">
                           @csrf
                             <div class="single-input mt-4">

@@ -33,11 +33,11 @@ class UserpropertyController extends Controller
         $max_ethix_property = $property->max_ethix;
         $nbr_ethix = $request->nbr_ethix;
         if($request->nbr_ethix > $max_ethix){
-         $message = 'le nombre d ethix doit etre inférieur ou égale a 5';
+         $message = 'le nombre d éthixs doit être inférieur ou égale à '.$max_ethix;
             return view('investor.achat-ethix',compact('user','max_ethix','property','message','nbr_ethix'));
         }
         else if($request->nbr_ethix > $max_ethix_property){
-            $message = 'le nombre d ethix doit etre inférieur a 20';
+            $message = 'le nombre d éthixs doit être inférieur à '.$max_ethix_property;
             return view('investor.achat-ethix',compact('user','max_ethix','property','message','nbr_ethix'));
         }
         else{
