@@ -12,7 +12,7 @@
                     <div class="basic-form">
                       <div class="form-row">
                              <div class="form-group col-md-12">
-                                    <p>Votre balance est de 500€ , Max nombre ethix 5</p>
+                                <p>Votre balance est de 500€ , Max nombre ethix 5</p>
                              </div>
                              <div class="form-group col-md-12 mt-3">
                                 <label label-title mb-3> Nbr ethix:</label>
@@ -24,7 +24,6 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger light" data-dismiss="modal">Close</button>
-                
             </div>
         </div>
     </div>

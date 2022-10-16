@@ -235,3 +235,19 @@ $(".achter-ethix").on('click',function() {
 </script>
 
 @endpush
+
+@push('validate-scripts')
+<script>
+  $.ajaxSetup({
+  headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
+});
+
+$(".nbr_ethix").on('change',function() {
+ var v = $(this).value;
+   alert(v);
+});
+</script>
+
+@endpush
