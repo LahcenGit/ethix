@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <div class="basic-form">
                         <div class="alert alert-success" role="alert" id="successMsg" style="display: none" >
-                            Thank you for getting in touch! 
+                           Le statut a été bien modifier! 
                         </div>
                      <div class="form-row">
                             <div class="form-group col-md-12">
@@ -22,14 +22,7 @@
                                 </select>
                             </div>
                      </div>
-    
-                     <div class="form-row">
-                             <div class="form-group col-md-12">
-                                <label> Solde:</label>
-                                <input type="number"  class="form-control  " id="solde" value="{{$user->solde}}" >
-                             </div>
-                     </div>
-                 </div>
+                    </div>
                </div>
             </div>
             <div class="modal-footer">

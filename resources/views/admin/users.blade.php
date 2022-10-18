@@ -65,13 +65,13 @@
                                     <td><span class="badge badge-success">Validé</span></td>
                                     @endif
                                     <td>
-                                        <form action="" method="post">
+                                        <form action="{{url('dashboard-admin/users/'.$user->id)}}" method="post">
                                             {{csrf_field()}}
                                             {{method_field('DELETE')}}
                                         <div class="d-flex">
                                         <button id="updateF" data-id="{{$user->id}}" type="button" class="btn btn-warning shadow btn-xs sharp mr-1 edit-investor"><i class="fa fa-pencil"></i></a>
                                         <button data-id="{{$user->id}}" type ="button" class="btn btn-success shadow btn-xs sharp mr-1 show-file"><i class="fa fa-file"></i></button>
-                                        <button class="btn btn-danger shadow btn-xs sharp" onclick="return confirm('Vous voulez vraiment supprimer?')"><i class="fa fa-trash"></i></button>
+                                        <button class="btn btn-danger shadow btn-xs sharp "onclick="return confirm('Vous voulez vraiment supprimer?')"><i class="fa fa-trash"></i></button>
                                         </div>
                                         </form>												
                                     </td>	
@@ -134,14 +134,13 @@ $(".edit-investor").on('click',function() {
        var id = $(this).attr("data-id");
         e.preventDefault();
         let status = $('#status').val();
-        let solde = $('#solde').val();
         $.ajax({
           type:"PUT",  
           url: '/dashboard-admin/users/'+id,
           data:{
             "_token": "{{ csrf_token() }}",
             status:status,
-            solde:solde,
+           
           },
           success:function(response){
             

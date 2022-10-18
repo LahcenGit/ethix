@@ -27,9 +27,14 @@ class InvestorController extends Controller
     public function update(Request $request ,$id){
         $user = User::find($id);
         $user->status = $request->status;
-        $user->solde = $request->solde;
         $user->save();
         return $user;
+    }
+
+    public function destroy($id){
+        $user = User::find($id);
+        $user->delete();
+        return redirect('dashboard-admin/users');
     }
 
     public function properties(){

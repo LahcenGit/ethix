@@ -29,10 +29,21 @@
                 
                 
             </div>
+            @if($user->status == 0)
+            <div class="container mt-4 ">
+            <div class="alert alert-warning" role="alert">
+             <span style="font-size: 17px;">@if($test_document == 0) Veuillez compléter les étapes restantes pour activer votre compte ,<a href="{{url('/add-file')}}" class="alert-link">Vas-y ! </a>
+             @else
+             La validation de votre compte est en cours de traitement...
+             @endif
+            </span>
+            </div>
+            </div>
+            
           
     </div>
     <!-- Breadcrumb area end -->
-
+       @else
         <div class="container d-flex justify-content-center " style="margin-top: 100px;margin-bottom: 100px;">
             <div class="login-wrapper login-shadow bg-white">
                 <div class="login-wrapper-flex">
@@ -52,7 +63,7 @@
                             </div>
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3"> Nbr Ethix :</label>
-                                <input class="form--control" type="number" @if($message)style="border-color:red ;"@endif value="" name="nbr_ethix" placeholder="{{$nbr_ethix}}">
+                                <input class="form--control" type="number" @if($message)style="border-color:red ;"@endif value="" name="nbr_ethix" placeholder="{{$nbr_ethix}}" required>
                                 @if($message)
                                     <span style="font-size: 14px; color:red">
                                         <strong>{{ $message }}</strong>
@@ -66,5 +77,5 @@
                 </div>
             </div>
         </div>
-
+        @endif
 @endsection

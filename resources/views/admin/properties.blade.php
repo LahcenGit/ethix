@@ -59,11 +59,11 @@
                                     <td>{{$property->profitability}}</td>
                                     <td>{{$property->valuation}}</td>
                                     <td>
-                                        <form action="" method="post">
+                                        <form action="{{url('dashboard-admin/properties/'.$property->id)}}" method="post">
                                             {{csrf_field()}}
                                             {{method_field('DELETE')}}
                                         <div class="d-flex">
-                                            <a href="" class="btn btn-primary shadow btn-xs sharp mr-1" ><i class="fa fa-pencil"></i></a>
+                                            <a href="{{url('dashboard-admin/properties/'.$property->id.'/edit')}}" class="btn btn-primary shadow btn-xs sharp mr-1" ><i class="fa fa-pencil"></i></a>
                                             <button class="  btn btn-danger shadow btn-xs sharp" onclick="return confirm('Vous voulez vraiment supprimer?')"><i class="fa fa-trash"></i></button>
                                         </div>
                                         </form>												

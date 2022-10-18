@@ -24,18 +24,8 @@ return new class extends Migration
             $table->string('sexe')->nullable();
             $table->string('phone')->nullable();
             $table->string('id_link')->nullable();
-
-
-            $table->string('type')->nullable();
-            $table->float('solde')->nullable();
-
             $table->string('solde')->nullable();
             $table->string('type')->default('investor');
-
-
-            $table->string('solde')->nullable();
-            $table->string('type')->default('invest or');
-
             $table->integer('status')->default(0);
             $table->string('remarque')->nullable();
             $table->string('flag')->nullable();
