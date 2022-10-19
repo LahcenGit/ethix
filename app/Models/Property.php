@@ -20,21 +20,18 @@ class Property extends Model
 
     public function financing_percentage()
     {
-        $property = Property::find($this->id);
 
+        $property = Property::find($this->id);
         $items = Userproperty::where('property_id',$this->id)->get();
         $total = 0;
         $line_calcul = 0;
-
         foreach( $items as $item){
             $line_calcul = $item->nbr_ethix * $item->value_ethix;
             $total = $total +$line_calcul ;
         }
-
         $percentage = ($total * 100) / (int)$property->valuation;
-
         $percentage = (int)$percentage;
-
         return $percentage;
+        
     }
 }

@@ -29,22 +29,19 @@
             <div class="login-wrapper login-shadow bg-white">
                 <div class="login-wrapper-flex">
                    <div class="login-wrapper-contents login-padding">
-                        <h2 class="single-title"> {{$property->designation}}</h2>
-                        <p class="sigle-para mt-2">Vous êtes entrain d'acheter des éthixs</p>
+                        <h2 class="single-title"> Achat éthixs -  <b>{{$property->designation}}</b></h2>
                          <form class="login-wrapper-contents-form custom-form" method="POST" action="{{url('app/store-ethix')}}">
                           @csrf
                             <div class="single-input mt-4">
-                                <label class="label-title mb-3"> Solde :</label>
-                                <input class="form--control" type="text" value="{{$user->solde}}" name="solde" disabled >
+                                <label class="label-title "> Votre Solde est de : <b style="color: #4DAA7F;"> {{$user->solde}} €</b> </label>
                               
                             </div>
-                            <div class="single-input mt-4">
-                                <label class="label-title mb-3"> Max Ethix :</label>
-                                <input class="form--control" type="text" value="{{$max_ethix}}" name="max_ethix" disabled>
+                            <div class="single-input mt-1">
+                                <label class="label-title "> Vous pouvez acheter jusqu'a <b style="color: #4DAA7F;">{{$max_ethix}}</b> éthix(s)</label>
                             </div>
-                            <div class="single-input mt-4">
-                                <label class="label-title mb-3"> Nbr Ethix :</label>
-                                <input class="form--control" type="number" @if($message)style="border-color:red ;"@endif value="" name="nbr_ethix" placeholder="{{$nbr_ethix}}" required>
+                            <div class="single-input mt-1">
+                                <label class="label-title "> Mentionnez le nombre d'éthix :</label>
+                                <input class="form--control " type="number" @if($message)style="border-color:red ;"@endif value="{{$max_ethix}}" name="nbr_ethix"  required>
                                 @if($message)
                                     <span style="font-size: 14px; color:red">
                                         <strong>{{ $message }}</strong>
