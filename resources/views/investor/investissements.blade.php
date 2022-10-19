@@ -41,9 +41,9 @@
                                                   </div>
                                             </div>
                                             
-                                            <h6 class="mt-2 mb-1">21.84% financé</h6>
+                                            <h6 class="mt-2 mb-1">{{$investissement->property->financing_percentage()}} % financé</h6>
                                             <div class="progress mb-2">
-                                                <div class="progress-bar"  role="progressbar" style="width: 25%; background-color:#4daa7f" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                <div class="progress-bar"  role="progressbar" style="width: {{$investissement->property->financing_percentage()}}%; background-color:#4daa7f" aria-valuenow="{{$investissement->property->financing_percentage()}}" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
 
                                         </div>
