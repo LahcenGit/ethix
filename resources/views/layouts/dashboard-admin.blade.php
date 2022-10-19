@@ -106,9 +106,13 @@
                                     </form>
                                 </div>
                             </div>
+                           
                         </div>
 
                         <ul class="navbar-nav header-right">
+                            <li class="nav-item dropdown notification_dropdown">
+                            <button type="button"  class="btn btn-primary update-ethix-value" >Valeur ethix</button>
+                            </li>
 							<li class="nav-item dropdown notification_dropdown">
                                 <a class="nav-link bell dz-fullscreen" href="#">
                                     <svg id="icon-full" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
@@ -204,6 +208,7 @@
 
 
         </div>
+        <div id="modal-update-ethix"></div>
         <!--**********************************
             Sidebar end
         ***********************************-->
@@ -322,6 +327,56 @@
 });
 	
     </script>
+<script>
+  $.ajaxSetup({
+  headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
+});
+
+$(".update-ethix-value").on('click',function() {
+
+ $.ajax({
+    url: '/modal-update-ethix',
+    type: "GET",
+    success: function (res) {
+      $('#modal-update-ethix').html(res);
+      $("#ethixModal").modal('show');
+    }
+  });
+  
+});
+</script>
+<script>
+  $.ajaxSetup({
+  headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
+  });
+
+  $("#modal-update-ethix").on('click','#update-value',function(e){
+     e.preventDefault();
+        let value = $('#value').val();
+        $.ajax({
+          type:"Post",  
+          url: '/update-ethix',
+          data:{
+            "_token": "{{ csrf_token() }}",
+            value:value,
+           
+          },
+          success:function(response){
+           
+            $('#modal-update-ethix').find('#successMsg').show();
+            $('#ethixModal').modal('hide'); 
+            console.log(response);
+            location.reload(); 
+          },
+        
+          });
+       
+   });
+</script>  
 @stack('modal-edit-investor-scripts')
 @stack('form-update-scripts')
 @stack('modal-show-file-scripts')

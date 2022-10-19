@@ -7,6 +7,7 @@ use App\Http\Controllers\UserpropertyController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\UserDocumentController;
 use App\Http\Controllers\VersmentController;
+use App\Http\Controllers\EthixController;
 use App\Http\Controllers\AdminController;
 
 use Illuminate\Support\Facades\Auth;
@@ -36,6 +37,8 @@ Route::get('/add-file', function () {
 Route::resource('/dashboard-admin/properties',PropertyController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/users',InvestorController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/versments',VersmentController::class)->middleware('can:admin');
+Route::get('/modal-update-ethix',[App\Http\Controllers\EthixController::class,'getModal']);
+Route::post('/update-ethix',[App\Http\Controllers\EthixController::class,'updateValue']);
 Route::get('/show-file/{id}',[App\Http\Controllers\InvestorController::class,'showFile']);
 Route::get('app/achat-ethix/{id}',[App\Http\Controllers\UserpropertyController::class,'achatEthix']);
 Route::get('dashboard-admin/add-versment',[App\Http\Controllers\VersmentController::class,'addVersment']);
