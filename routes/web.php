@@ -37,6 +37,7 @@ Route::get('/add-file', function () {
 Route::resource('/dashboard-admin/properties',PropertyController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/users',InvestorController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/versments',VersmentController::class)->middleware('can:admin');
+Route::resource('/dashboard-admin/investissements',UserpropertyController::class)->middleware('can:admin');
 Route::get('/modal-update-ethix',[App\Http\Controllers\EthixController::class,'getModal']);
 Route::post('/update-ethix',[App\Http\Controllers\EthixController::class,'updateValue']);
 Route::get('/show-file/{id}',[App\Http\Controllers\InvestorController::class,'showFile']);

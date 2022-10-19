@@ -18,6 +18,11 @@ class UserpropertyController extends Controller
         $this->middleware('auth');
     }
 
+    public function index(){
+        $investissements = Userproperty::with('property','user')->get();
+        return view('admin.investissements',compact('investissements'));
+    }
+
     public function achatEthix($id){
         $user = Auth::user();
         $max_ethix = $user->solde/100;
