@@ -32,6 +32,9 @@ class Property extends Model
         }
 
         $percentage = ($total * 100) / (int)$property->valuation;
+
+        $percentage = (int)$percentage;
+
         return $percentage;
     }
 }
