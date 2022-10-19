@@ -67,6 +67,8 @@ class UserpropertyController extends Controller
 
     public function investissements(){
         $investissements = Userproperty::with('property')->where('user_id',Auth::user()->id)->get();
-         return view('investor.investissements',compact('investissements'));
+        $user = Auth::user();
+        $test_document = Document::where('documenttable_id',$user->id)->count();
+         return view('investor.investissements',compact('investissements','user','test_document'));
     }
 }

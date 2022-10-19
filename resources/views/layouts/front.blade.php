@@ -38,6 +38,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" referrerpolicy="no-referrer" />
 </head>
 
+<style>
+    .header-investor{
+        background-color: #E9F1F4;
+        padding: 20px;
+
+    }
+</style>
+
 <body>
     <header class="header-style-01">
         <!-- Menu area Starts -->
@@ -49,7 +57,7 @@
                     </a>
                 </div>
                 <div class="responsive-mobile-menu d-lg-none">
-                    <a href="{{asset('/')}}" class="click-nav-right-icon">
+                    <a href="#" class="click-nav-right-icon">
                         <i class="las la-ellipsis-v"></i>
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hotel_booking_menu">

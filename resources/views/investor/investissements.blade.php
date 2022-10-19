@@ -1,30 +1,9 @@
 @extends('layouts.front')
 @section('content')
-<div class="breadcrumb-area breadcrumb-padding ">
-            <div class="container d-flex justify-content-center " >
-                <div class="col-1 text-center">
-                    <a href="http://"> <i class="fa-solid fa-house-fire fa-2x" style="color:#4DAA7F; " > </i> <br> propriétés </a>
-                </div>
-                <div class="col-1 text-center">
-                    <a href="{{url('app/investissements')}}"> <i class="fa-solid fa-money-bill-trend-up fa-2x" style="color:#4DAA7F; " > </i> <br> Investissements </a>
-                </div>
-                <div class="col-1 text-center">
-                    <a href="{{url('app/profil')}}"> <i class="fa-solid fa-user fa-2x" style="color:#4DAA7F; " > </i> <br> Profil </a>
-                </div>
 
-                <div class="col-1 text-center">
-                    <a href="{{route('logout')}}"> <i class="fa-solid fa-right-from-bracket fa-2x" style="color:#818181; " onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();" > </i> <br> Déconnexion 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </a>
-                </div>
-                
-                
-            </div>
-          
-</div>
+
+
+@include('investor.header-investor')
 
 <div class="body-overlay"></div>
     <div class="dashboard-area section-bg-2 dashboard-padding">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Document;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,8 @@ class ProfilController extends Controller
     public function index(){
         $user = Auth::user();
         $message = null;
-        return view('investor.profil',compact('user','message'));
+        $test_document = Document::where('documenttable_id',$user->id)->count();
+        return view('investor.profil',compact('user','message','test_document'));
     }
     public function update(Request $request , $id){
         $user = User::find($id);

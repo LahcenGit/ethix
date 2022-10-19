@@ -7,12 +7,12 @@
             <div class="row align-items-center flex-column-reverse flex-lg-row">
                 <div class="col-lg-6" style="padding-left:none!important;">
                     <div class="banner-single banner-single-one ">
-                        <div class="banner-single-content">
+                        <div class="banner-single-content p-4">
                             <h2 class="banner-single-content-title fw-700" style="color: #024670"> L'investissement Éthique. </h2>
                             <h2 class="banner-single-content-title fw-500 mt-2 " style="font-size:25px;"> L'immobilier sans crédit à partir de 100€ ! </h2>
                            {{--<p class="banner-single-content-para "> Achetez des parts de nos projets immobiliers
                                 Et faites fructifier votre épargne !  </p>--}}
-                                <button class="submit-btn w-30 radius-10 " type="submit" style="font-size:23px;"> Je veux investir ! </button>
+                                <a  href="{{ route('register') }}" class="submit-btn w-30 radius-10 mt-2 " type="submit" style="font-size:23px;"> Je veux investir ! </a>
                         </div>
                     </div>
                     

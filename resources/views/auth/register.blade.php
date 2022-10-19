@@ -36,7 +36,7 @@
                             </div>
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3"> N° de téléphone </label>
-                                <input class="form--control" type="text" id="phone" name="phone" required>
+                                <input class="form--control" type="text" id="phone" name="phone" placeholder="Téléphone" required>
                             </div>
                             <div class="input-flex-item">
                                 <div class="single-input mt-4">
