@@ -5,8 +5,23 @@
     <div>{{$error}}</div>
 @endforeach
 @endif
-     
+
+
+
 @include('investor.header-investor')
+
+    @if($user->status == 0)
+    
+    <div class="container d-flex justify-content-center " style="margin-top: 100px;margin-bottom: 100px;">
+        <div class="login-wrapper login-shadow bg-white">
+            <div class="login-wrapper-flex">
+               <div class="login-wrapper-contents login-padding text-center">
+                    <i style="color: #024670;" class="fas fa-frown-open fa-2xl" ></i>
+                    <p style="color: #024670;" class="sigle-para mt-2">Désolé ! Votre compte n'est pas encore validé</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Breadcrumb area end -->
        
