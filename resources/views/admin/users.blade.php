@@ -103,7 +103,7 @@
   }
 });
 
-$(".edit-investor").on('click',function() {
+$("body").on('click','.edit-investor',function() {
  
   var id = $(this).attr("data-id");
  
@@ -164,7 +164,7 @@ $(".edit-investor").on('click',function() {
   }
 });
 
-$(".show-file").on('click',function() {
+$("body").on('click','.show-file',function() {
  
   var id = $(this).attr("data-id");
  
