@@ -24,7 +24,7 @@
     </div>
 
     <!-- Breadcrumb area end -->
-       
+       @else
         <div class="container d-flex justify-content-center " style="margin-top: 100px;margin-bottom: 100px;">
             <div class="login-wrapper login-shadow bg-white">
                 <div class="login-wrapper-flex">
@@ -55,5 +55,5 @@
                 </div>
             </div>
         </div>
-        
+        @endif
 @endsection
