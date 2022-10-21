@@ -34,6 +34,15 @@ class UserDocumentController extends Controller
         $document = new Document();
         $document->link = $storageName;
         $user->documents()->save($document);
+
+        $file = $request->file_tree;
+        $destination = 'public/documents';
+        $path = $file->store($destination);
+        $storageName = basename($path);
+       
+        $document = new Document();
+        $document->link = $storageName;
+        $user->documents()->save($document);
         return redirect('app');
    }
    
