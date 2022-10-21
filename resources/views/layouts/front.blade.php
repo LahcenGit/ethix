@@ -235,6 +235,7 @@
     }
 });
     </script>
+    
 
 @stack('achat-ethix-scripts')
 @stack('validate-scripts')

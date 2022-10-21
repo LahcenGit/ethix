@@ -38,7 +38,7 @@
                           @csrf
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3"> Carte d'identité recto :</label>
-                                <input class="form--control" type="file"  name="file_one" required>
+                                <input class="form--control" type="file"  name="file_one" accept="image/*" required>
                             </div>
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3">Carte d'identité verso : </label>

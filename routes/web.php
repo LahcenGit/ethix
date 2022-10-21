@@ -9,6 +9,7 @@ use App\Http\Controllers\UserDocumentController;
 use App\Http\Controllers\VersmentController;
 use App\Http\Controllers\EthixController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserinformationController;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -34,10 +35,12 @@ Route::get('/add-file', function () {
 
 
 
+
 Route::resource('/dashboard-admin/properties',PropertyController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/users',InvestorController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/versments',VersmentController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/investissements',UserpropertyController::class)->middleware('can:admin');
+Route::get('/dashboard-admin/view-investor/{id}',[App\Http\Controllers\InvestorController::class,'getInvestor']);
 Route::get('/modal-update-ethix',[App\Http\Controllers\EthixController::class,'getModal']);
 Route::post('/update-ethix',[App\Http\Controllers\EthixController::class,'updateValue']);
 Route::get('/show-file/{id}',[App\Http\Controllers\InvestorController::class,'showFile']);
@@ -47,6 +50,7 @@ Route::get('app/investissements',[App\Http\Controllers\UserpropertyController::c
 Route::post('app/store-ethix',[App\Http\Controllers\UserpropertyController::class,'storeEthix']);
 Route::get('/downolad-file/{link}',[App\Http\Controllers\InvestorController::class,'downloadFile']);
 Route::resource('/app/add-file',UserDocumentController::class);
+Route::resource('/app/add-info',UserinformationController::class);
 Route::get('/app/properties', [App\Http\Controllers\InvestorController::class, 'properties']);
 Route::get('/app', [App\Http\Controllers\InvestorController::class, 'dashboard']);
 Route::resource('/app/profil', ProfilController::class);

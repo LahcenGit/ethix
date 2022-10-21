@@ -43,6 +43,9 @@ class UserDocumentController extends Controller
         $document = new Document();
         $document->link = $storageName;
         $user->documents()->save($document);
+
+        $user->status = 2;
+        $user->save();
         return redirect('app');
    }
    
