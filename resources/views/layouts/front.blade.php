@@ -53,7 +53,7 @@
             <div class="container custom-container-one nav-container">
                 <div class="logo-wrapper">
                     <a href="{{asset('/')}}" class="logo">
-                        <img src="{{asset('Front/assets/img/logo.png')}}" alt="">
+                        <img src="{{asset('Front/assets/img/ethix-logo.png')}}" alt="">
                     </a>
                 </div>
                 <div class="responsive-mobile-menu d-lg-none">
@@ -80,7 +80,7 @@
                         <div class="navbar-right-flex">
                             @auth
                             <div class="navbar-right-btn">
-                                 <span style="color: #4DAA7F"> <i class="fa-solid fa-wallet"></i> {{Auth::user()->solde}}.00 €  </span>
+                                 <span style="color: #4DAA7F"> <i class="fa-solid fa-wallet"></i> {{Auth::user()->solde}}€  </span>
                             </div>
                             <div class="btn-wrapper">
                                 @if (Auth::user()->type == 'admin')
