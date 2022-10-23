@@ -1,30 +1,30 @@
 @extends('layouts.front')
 @section('content')
+<div class="header-investor">
          <!-- Breadcrumb area Starts -->
-         <div class="breadcrumb-area breadcrumb-padding ">
-            <div class="container d-flex justify-content-center " >
-                <div class="col-1 text-center">
-                    <a href="http://"> <i class="fa-solid fa-house-fire fa-2x" style="color:#4DAA7F; " > </i> <br> propriétés </a>
-                </div>
-                <div class="col-1 text-center">
-                    <a href="http://"> <i class="fa-solid fa-money-bill-trend-up fa-2x" style="color:#4DAA7F; " > </i> <br> Investissements </a>
-                </div>
-                <div class="col-1 text-center">
-                    <a href="{{url('app/profil')}}"> <i class="fa-solid fa-user fa-2x" style="color:#4DAA7F; " > </i> <br> Profil </a>
-                </div>
+         <div class="row d-flex justify-content-center " >
+        <div class=" col-6  col-md-1 text-center mb-2 mt-2">
+            <a href="{{url('app/')}}"> <i class="fa-solid fa-house-fire fa-2x" style="color:#4DAA7F; " > </i> <br> propriétés </a>
+        </div>
 
-                <div class="col-1 text-center">
-                    <a href="{{route('logout')}}"> <i class="fa-solid fa-right-from-bracket fa-2x" style="color:#818181; " onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();" > </i> <br> Déconnexion 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </a>
-                </div>
-                
-                
-            </div>
+        <div class=" col-6 col-md-1 text-center mb-2 mt-2">
+            <a href="{{url('app/investissements')}}"> <i class="fa-solid fa-money-bill-trend-up fa-2x" style="color:#4DAA7F; " > </i> <br> Investissements </a>
+        </div>
+       
+        <div class="col-6 col-md-1 text-center mb-2 mt-2">
+            <a href="{{url('app/profil')}}"> <i class="fa-solid fa-user fa-2x" style="color:#4DAA7F; " > </i> <br> Profil </a>
+        </div>
+
+        <div class="col-6 col-md-1 text-center mb-2 mt-2">
+            <a href="{{route('logout')}}"> <i class="fa-solid fa-right-from-bracket fa-2x" style="color:#818181; " onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();" > </i> <br> Déconnexion 
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </a>
+        </div>
     </div>
+</div>
     <!-- Breadcrumb area end -->
 
     <div class="container d-flex justify-content-center mt-4 mb-4">

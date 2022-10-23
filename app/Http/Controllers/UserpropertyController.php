@@ -6,6 +6,7 @@ use App\Models\Document;
 use App\Models\Ethix;
 use App\Models\Property;
 use App\Models\User;
+use App\Models\Userinformation;
 use App\Models\Userproperty;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +20,9 @@ class UserpropertyController extends Controller
     }
 
     public function index(){
+       
         $investissements = Userproperty::with('property','user')->get();
+       
         return view('admin.investissements',compact('investissements'));
     }
 
@@ -30,7 +33,8 @@ class UserpropertyController extends Controller
         $nbr_ethix = 0;
         $message = null;
         $test_document = Document::where('documenttable_id',$user->id)->count();
-        return view('investor.achat-ethix',compact('user','max_ethix','property','message','nbr_ethix','test_document'));
+        $test_info = Userinformation::where('user_id',$user->id)->count();
+        return view('investor.achat-ethix',compact('user','max_ethix','property','message','nbr_ethix','test_document','test_info'));
     }
 
     public function storeEthix(Request $request){
@@ -69,6 +73,7 @@ class UserpropertyController extends Controller
         $investissements = Userproperty::with('property')->where('user_id',Auth::user()->id)->get();
         $user = Auth::user();
         $test_document = Document::where('documenttable_id',$user->id)->count();
-        return view('investor.investissements',compact('investissements','user','test_document'));
+        $test_info = Userinformation::where('user_id',$user->id)->count();
+        return view('investor.investissements',compact('investissements','user','test_document','test_info'));
     }
 }

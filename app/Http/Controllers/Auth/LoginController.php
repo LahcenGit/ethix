@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -35,8 +36,26 @@ class LoginController extends Controller
         $this->validate($request, [
             'username' => 'required',
             'password' => ['required', 'string', 'min:8'],
-        ]);
-  
+        ],
+        [
+            'username.required' => 'Ce champ est obligatoire',
+            'password.required' => 'Ce champ est obligatoire',
+        ]
+    );
+            $user = User::where('username',$input['username'])->first();
+            $user_email = User::where('email',$input['username'])->first();
+            if($user){
+            if($user->status == 5){
+                $error = 'Votre compte à été désactivé.';
+                return view('auth.login',compact('error'));
+            }
+            }
+            if($user_email){
+            if($user_email->status == 5){
+                $error = 'Votre compte à été désactivé.';
+                return view('auth.login',compact('error'));
+            }
+            }
         $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
         $remember_me  = ( !empty( $request->remember_me ) )? TRUE : FALSE;
         
@@ -45,24 +64,16 @@ class LoginController extends Controller
             if(auth::user()->type == 'admin'){
                 return redirect('dashboard-admin');
             }
-
-            else if(auth::user()->type == 'investor'){
-                if(auth::user()->status == 5){
-                    $error = 'Votre compte à été désactivé.';
-                    return view('auth.login',compact('error'));
+            else {
+                    return redirect('app');
                 }
-                return redirect('app');
-            }
-
-            else{
-                return redirect()->route('login')
-                    ->with('error','Email-Address And Password Are Wrong.');
-            }
+                
+          
         }
         else{
-            return redirect()->route('login')
-                ->with('error','Email-Address And Password Are Wrong.');
-        }
+            $error = 'Coordonnées incorrectes. Veuillez réessayer.';
+            return view('auth.login',compact('error'));
+            }
           
     }
 
@@ -75,4 +86,10 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function showLoginForm()
+        {
+            $error = null;
+            return view('auth.login',compact('error'));
+        }
 }

@@ -1,10 +1,6 @@
 @extends('layouts.front')
 @section('content')
-@if ($errors->any())
-@foreach ($errors->all() as $error)
-    <div>{{$error}}</div>
-@endforeach
-@endif
+
  <!-- login Area Starts -->
 
 
@@ -19,33 +15,64 @@
                             <div class="input-flex-item">
                                 <div class="single-input mt-4">
                                     <label class="label-title mb-3"> Nom </label>
-                                    <input class="form--control" type="text" name="first_name" placeholder="Nom" required>
+                                    <input class="form--control  @error('first_name') is-invalid @enderror" type="text" name="first_name" value="{{old('first_name')}}" placeholder="Nom" required>
+                                        @error('first_name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
                                 </div>
                                 <div class="single-input mt-4">
                                     <label class="label-title mb-3"> Prénom </label>
-                                    <input class="form--control" type="text" name="last_name" placeholder="Prénom" required>
+                                    <input class="form--control @error('last_name') is-invalid @enderror" type="text" name="last_name" placeholder="Prénom" value="{{old('last_name')}}" required>
+                                       @error('last_name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                 </div>
                             </div>
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3"> Username </label>
-                                <input class="form--control" type="text" name="username" placeholder="Username" required>
+                                <input class="form--control @error('username') is-invalid @enderror" type="text" name="username" placeholder="Username" value="{{old('username')}}" required>
+                                        @error('username')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                             </div>
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3"> Email  </label>
-                                <input class="form--control" type="text" name="email" placeholder="Email" required>
+                                <input class="form--control @error('email') is-invalid @enderror" type="text" name="email" placeholder="Email" value="{{old('email')}}" required>
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                             </div>
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3"> N° de téléphone </label>
-                                <input class="form--control" type="text" id="phone" name="phone" placeholder="Téléphone" required>
+                                <input class="form--control @error('phone') is-invalid @enderror" type="text" id="phone" name="phone" placeholder="Téléphone" value="{{old('phone')}}" required>
+                                        @error('phone')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                             </div>
                             <div class="input-flex-item">
                                 <div class="single-input mt-4">
                                     <label class="label-title mb-3"> Mot de passe </label>
-                                    <input class="form--control" type="password" name="password" placeholder="******"required>
+                                    <input class="form--control @error('password') is-invalid @enderror" type="password" name="password" placeholder="******"required>
+                                       
                                     <div class="icon toggle-password">
                                         <div class="show-icon"> <i class="las la-eye-slash"></i> </div>
                                         <span class="hide-icon"> <i class="las la-eye"></i> </span>
                                     </div>
+                                       @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                 </div>
                                 <div class="single-input mt-4">
                                     <label class="label-title mb-3"> Confirmer le mot de passe </label>

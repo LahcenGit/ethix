@@ -136,7 +136,9 @@
             <div class="center-text mt-4">
                 <p class="single-why-contents-para"> Démarrez dès maintenant votre projet de vie et rejoignez le groupe d'investisseurs 
                      </p>
-                <button class="submit-btn w-30 radius-10 mt-4" type="submit" style="font-size:23px;"> Pré-inscription! </button>
+                
+                <button  class="submit-btn w-30 radius-10 mt-4" style="font-size:21px;"> Pré-inscription! </button>
+               
             </div>
            
         </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Document;
 use App\Models\User;
+use App\Models\Userinformation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -19,7 +20,8 @@ class ProfilController extends Controller
         $user = Auth::user();
         $message = null;
         $test_document = Document::where('documenttable_id',$user->id)->count();
-        return view('investor.profil',compact('user','message','test_document'));
+        $test_info = Userinformation::where('user_id',$user->id)->count();
+        return view('investor.profil',compact('user','message','test_document','test_info'));
     }
     public function update(Request $request , $id){
         $user = User::find($id);
