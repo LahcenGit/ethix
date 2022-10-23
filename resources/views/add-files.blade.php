@@ -37,12 +37,17 @@
                         <form action="{{url('app/add-file')}}" method="POST" enctype="multipart/form-data">
                           @csrf
                             <div class="single-input mt-4">
-                                <label class="label-title mb-3"> Document justificatif 1 :</label>
-                                <input class="form--control" type="file"  name="file_one">
+                                <label class="label-title mb-3"> Carte d'identité recto :</label>
+                                <input class="form--control" type="file"  name="file_one" accept="image/*" required>
                             </div>
                             <div class="single-input mt-4">
-                                <label class="label-title mb-3"> Document justificatif 2 : </label>
-                                <input class="form--control" type="file"  name="file_two">
+                                <label class="label-title mb-3">Carte d'identité verso : </label>
+                                <input class="form--control" type="file"  name="file_two" required>
+                                
+                            </div>
+                            <div class="single-input mt-4">
+                                <label class="label-title mb-3">Passeport : </label>
+                                <input class="form--control" type="file"  name="file_tree" required>
                                 
                             </div>
                             

@@ -60,17 +60,25 @@
                                     <td>{{$user->solde}}</td>
                                     @endif
                                     @if($user->status == 0)
-                                    <td><span class="badge badge-warning">En Attente</span></td>
-                                    @else
+                                    <td><span class="badge badge-primary">Nouveau</span></td>
+                                    @elseif($user->status == 1)
+                                    <td><span class="badge badge-info">Email Validé</span></td>
+                                    @elseif($user->status == 2)
+                                    <td><span class="badge badge-secondary">Documents envoyés</span></td>
+                                    @elseif($user->status == 3)
+                                    <td><span class="badge badge-warning">En attente de validation</span></td>
+                                    @elseif($user->status == 4)
                                     <td><span class="badge badge-success">Validé</span></td>
+                                    @else
+                                    <td><span class="badge badge-danger">Bloqué</span></td>
                                     @endif
                                     <td>
                                         <form action="{{url('dashboard-admin/users/'.$user->id)}}" method="post">
                                             {{csrf_field()}}
                                             {{method_field('DELETE')}}
                                         <div class="d-flex">
-                                        <button id="updateF" data-id="{{$user->id}}" type="button" class="btn btn-warning shadow btn-xs sharp mr-1 edit-investor"><i class="fa fa-pencil"></i></a>
-                                        <button data-id="{{$user->id}}" type ="button" class="btn btn-success shadow btn-xs sharp mr-1 show-file"><i class="fa fa-file"></i></button>
+                                        <a href="{{url('dashboard-admin/view-investor/'.$user->id)}}" type="button" class="btn btn-success shadow btn-xs sharp mr-1 edit-investor"><i class="fa fa-eye"></i></a>
+                                        
                                         <button class="btn btn-danger shadow btn-xs sharp "onclick="return confirm('Vous voulez vraiment supprimer?')"><i class="fa fa-trash"></i></button>
                                         </div>
                                         </form>												

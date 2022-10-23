@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Document;
 use App\Models\Property;
 use App\Models\User;
+use App\Models\Userinformation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -28,7 +29,7 @@ class InvestorController extends Controller
         $user = User::find($id);
         $user->status = $request->status;
         $user->save();
-        return $user;
+        return redirect('dashboard-admin/users');
     }
 
     public function destroy($id){
@@ -47,7 +48,8 @@ class InvestorController extends Controller
         $properties = Property::all();
         $user = Auth::user();
         $test_document = Document::where('documenttable_id',$user->id)->count();
-        return view('investor.dashboard-investor',compact('properties','user','test_document'));
+        $test_info = Userinformation::where('user_id',$user->id)->count();
+        return view('investor.dashboard-investor',compact('properties','user','test_document','test_info'));
     }
     public function detailProperty($id){
         $property = Property::find($id);
@@ -92,6 +94,11 @@ class InvestorController extends Controller
              return response()->download($file , $link , $headers);
                 
                 }
+        public function getInvestor($id){
+            $user = Userinformation::with('user')->where('user_id',$id)->first();
+            $documents = Document::where('documenttable_id',$id)->get();
+            return view('admin.view-investor',compact('user','documents'));
+        }
    
     }
 
