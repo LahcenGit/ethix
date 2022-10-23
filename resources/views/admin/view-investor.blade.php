@@ -16,6 +16,7 @@
                 </ol>
             </div>
         </div>
+        @if($user)
         <form action="{{url('/dashboard-admin/users/'.$user->user->id)}}" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_method" value="PUT">
          @csrf
@@ -73,6 +74,8 @@
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary mt-3">Enregistrer</button>
+                     </form>
+                     @endif
                     </div>
                 </div>
             </div>
