@@ -23,7 +23,7 @@
                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger light" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger light" data-dismiss="modal">Fermer</button>
                 <button type="button" id="update-value" class="btn btn-primary">Enregistrer</button>
             </div>
         </div>
