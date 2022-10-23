@@ -49,6 +49,7 @@ class LoginController extends Controller
             else if(auth::user()->type == 'investor'){
                 if(auth::user()->status == 5){
                     $error = 'Votre compte à été désactivé.';
+                    return view('auth.login',compact('error'));
                 }
                 return redirect('app');
             }
