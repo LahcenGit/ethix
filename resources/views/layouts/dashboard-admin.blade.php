@@ -23,24 +23,7 @@
 
 
 
-<style>
 
-.temp-body {
-    filter: blur(3px);
-	}
-	.temp-body:before {
-	content: "";
-  	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: rgba(22, 180, 183, 0.2);
-	z-index: 999;
-	pointer-events: none;/* This will do all the magic !*/
-	}
-
-</style>
 
 
 <body>
