@@ -86,10 +86,13 @@
                             
                             <div class="checkbox-inline mt-4">
                                 <input class="check-input" type="checkbox" id="check15">
-                                <label class="checkbox-label" for="check15"> En créant un compte, vous acceptez les <a class="color-one" href="javascript:void(0)">conditions d'utilisation   </a> et <a class="color-one" href="javascript:void(0)"> les conditions, </a>, 
-                                    ainsi que <a class="color-one" href="javascript:void(0)"> la politique de confidentialité </a> </label>
+                                <label class="checkbox-label" for="check15"> Veuillez confirmer que vous acceptez notre
+                                     <a class="color-one" href="{{url('politique-confidentialite')}}">  politique de confidentialité </a> </label>
                             </div>
-                            <button class="submit-btn w-100 mt-4" type="submit"> S'inscrir</button>
+                            <div class="alert alert-danger mt-3 alert-condition" role="alert" style="display: none;">
+                                <span style="font-size: 15px;">Veuillez confirmer votre acceptation de notre politique de confidentialité </span>
+                            </div>
+                            <button class="submit-btn w-100 mt-4 btn-submit" > S'inscrir</button>
                             <span class="account color-light mt-3"> Vous avez déja un compte? <a class="color-one" href="{{asset('/login')}}"> Connecter </a> </span>
                         </form>
                     </div>
@@ -101,3 +104,16 @@
 
 
 @endsection
+@push('check-condition')
+<script>
+$( ".btn-submit" ).click(function(e) {
+    if(check15.checked) {
+     $(this).parents("form:first").submit();
+    }
+    else{
+        e.preventDefault();
+        $(".alert-condition").css("display", "block");
+    }
+});
+</script>
+@endpush

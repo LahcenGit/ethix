@@ -71,6 +71,7 @@ class RegisterController extends Controller
             'email.unique' => 'Ce email existe déja',
             'username.unique' => 'Ce username existe déja',
             'phone.unique' => 'Ce numéro existe déja',
+            'password.required'=>'le mot de passe est obligatoire',
             'first_name.required' => 'Ce champ est obligatoire',
             'last_name.required' => 'Ce champ est obligatoire',
             'email.required' => 'Ce champ est obligatoire',

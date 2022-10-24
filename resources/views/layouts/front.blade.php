@@ -239,6 +239,7 @@
 
 @stack('achat-ethix-scripts')
 @stack('validate-scripts')
+@stack('check-condition')
 </body>
 
 </html>

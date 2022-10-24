@@ -32,6 +32,9 @@ Route::get('/', function () {
 Route::get('/add-file', function () {
     return view('add-files');
 });
+Route::get('/politique-confidentialite', function () {
+    return view('politique-confidentialite');
+});
 
 
 
