@@ -55,7 +55,8 @@ class InvestorController extends Controller
         $property = Property::find($id);
         $user = Auth::user();
         $test_document = Document::where('documenttable_id',$user->id)->count();
-        return view('investor.detail-property',compact('property','user','test_document'));
+        $test_info = Userinformation::where('user_id',$user->id)->count();
+        return view('investor.detail-property',compact('property','user','test_document','test_info'));
     }
 
     public function showFile($id){

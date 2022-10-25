@@ -18,7 +18,7 @@
 										<div class="row">
 											<div class="col">
 												<h5 class="mb-1">{{$nbr_properties}}</h5>
-												<span class="text-success">Propriétés</span>
+												<span class="text-success">Propriété(s)</span>
 											</div>
 										</div>
 									</div>
@@ -31,7 +31,7 @@
 										<div class="row">
 											<div class="col">
 												<h5 class="mb-1">{{$nbr_investor}}</h5>
-												<span class="text-success">Investisseurs</span>
+												<span class="text-success">Investisseur(s)</span>
 											</div>
 										</div>
 									</div>
@@ -44,7 +44,7 @@
 										<div class="row">
 											<div class="col">
 												<h5 class="mb-1">{{$nbr_ethix}}</h5>
-												<span class="text-success">Ethix </span>
+												<span class="text-success">Ethix investi(s) </span>
 											</div>
 										</div>
 									</div>
@@ -56,8 +56,8 @@
 									<div class="card-body pb-0 px-3 pt-2">
 										<div class="row">
 											<div class="col">
-												<h5 class="mb-1">2000</h5>
-												<span class="text-success">Total</span>
+												<h5 class="mb-1">{{$total->sum}} €</h5>
+												<span class="text-success">Total montant investi</span>
 											</div>
 										</div>
 									</div>
@@ -156,51 +156,108 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-xl-4 col-xxl-4 col-lg-12 col-md-12">
+							<div class="col-xl-3 col-xxl-4 col-lg-12 col-md-12">
 								<div class="card">
 									<div class="card-header border-0 pb-0">
-										<h4 class="card-title">Timeline</h4>
+										<h4 class="card-title">infos investisseurs</h4>
 									</div>
 									<div class="card-body">
 										<div id="DZ_W_TimeLine1" class="widget-timeline dz-scroll style-1" style="height:250px;">
 											<ul class="timeline">
+												@if($new_investor!=0)
 												<li>
 													<div class="timeline-badge primary"></div>
 													<a class="timeline-panel text-muted" href="#">
-														<span>10 minutes ago</span>
-														<h6 class="mb-0">Youtube, a video-sharing website <strong class="text-primary">$500</strong>.</h6>
+														
+														<h6 class="mb-0"><strong class="text-primary">{{$new_investor}} </strong> nouveau(x)</h6>
 													</a>
 												</li>
+												@endif
 												<li>
 													<div class="timeline-badge info">
 													</div>
 													<a class="timeline-panel text-muted" href="#">
-														<span>20 minutes ago</span>
-														<h6 class="mb-0">New order placed <strong class="text-info">#XF-2356.</strong></h6>
-														<p class="mb-0">Quisque a consequat ante Sit...</p>
+														
+														<h6 class="mb-0"> <strong class="text-info">{{$investor_email_valid}}</strong> email validé(s)</h6>
+														
 													</a>
 												</li>
+												@if($investor_document_sent != 0)
 												<li>
-													<div class="timeline-badge danger">
+													<div class="timeline-badge secondary">
 													</div>
 													<a class="timeline-panel text-muted" href="#">
-														<span>30 minutes ago</span>
-														<h6 class="mb-0">john just buy your product <strong class="text-warning">Sell $250</strong></h6>
+														
+														<h6 class="mb-0"><strong class="text-secondary">{{$investor_document_sent}}</strong> documents envoyé(s)</h6>
 													</a>
 												</li>
+												@endif
+												@if($investor_waiting != 0)
+												<li>
+													<div class="timeline-badge warning">
+													</div>
+													<a class="timeline-panel text-muted" href="#">
+														
+														<h6 class="mb-0"><strong class="text-warning">{{$investor_waiting}}</strong>  en attente(s)</h6>
+													</a>
+												</li>
+												@endif
+												@if($investor_valid != 0)
 												<li>
 													<div class="timeline-badge success">
 													</div>
 													<a class="timeline-panel text-muted" href="#">
-														<span>15 minutes ago</span>
-														<h6 class="mb-0">StumbleUpon is acquired by eBay. </h6>
+														
+														<h6 class="mb-0"> <strong class="text-success">{{$investor_valid}}</strong>  validé(s)</h6>
 													</a>
 												</li>
+												@endif
+                                                @if($investor_blocked != 0)
+												<li>
+													<div class="timeline-badge danger">
+													</div>
+													<a class="timeline-panel text-muted" href="#">
+														
+														<h6 class="mb-0"> <strong class="text-danger">{{$investor_blocked}}</strong>  bloqué(s)</h6>
+													</a>
+												</li>
+												@endif
 											</ul>
 										</div>
 									</div>
 								</div>
 							</div>
+
+							<div class="col-xl-3 col-xxl-4 col-lg-12 col-md-12">
+						<div class="card bg-primary text-white">
+                            <div class="card-header pb-0 border-0">
+                                <h4 class="card-title text-white">TOP INVESTISSEURS</h4>
+                            </div>
+                            <div class="card-body"> 
+                                <div class="widget-media">
+                                    <ul class="timeline">
+										@foreach($top_investors as $top_investor)
+                                        <li>
+                                            <div class="timeline-panel">
+												<div class="media mr-2">
+													<img alt="image" width="50" src="{{asset('Dashboard/images/avatar/1.jpg')}}">
+												</div>
+                                                <div class="media-body">
+													<h5 class="mb-1 text-white">{{$top_investor->user->first_name}} {{$top_investor->user->last_name}}</h5>
+													<small class="d-block">{{$top_investor->sum}} Ethix investi(s) </small>
+												</div>
+												
+											</div>
+                                        </li>
+										@endforeach
+                                     </ul>
+                                </div>
+                            </div>
+							 							
+                        </div>
+						
+					
+					</div>
 						</div>
 					</div>
 					
