@@ -69,8 +69,10 @@ class RegisterController extends Controller
         [
             'password.min' => 'Le mot de passe doit comporter au moins 8 caractères.',
             'email.unique' => 'Ce email existe déja',
+            'email.email' => 'e-mail doit être une adresse e-mail valide.',
             'username.unique' => 'Ce username existe déja',
             'phone.unique' => 'Ce numéro existe déja',
+            'phone.required' =>'Ce champ est obligatoire',
             'password.required'=>'le mot de passe est obligatoire',
             'first_name.required' => 'Ce champ est obligatoire',
             'last_name.required' => 'Ce champ est obligatoire',

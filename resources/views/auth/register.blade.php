@@ -52,7 +52,7 @@
                             </div>
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3"> N° de téléphone </label>
-                                <input class="form--control @error('phone') is-invalid @enderror" type="text" id="phone" name="phone" placeholder="Téléphone" value="{{old('phone')}}" required>
+                                <input class="form--control @error('phone') is-invalid @enderror" type="text" id="phone" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"name="phone" placeholder="Téléphone" value="{{old('phone')}}" required>
                                         @error('phone')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -76,7 +76,7 @@
                                 </div>
                                 <div class="single-input mt-4">
                                     <label class="label-title mb-3"> Confirmer le mot de passe </label>
-                                    <input class="form--control" type="password" name="password_confirmation" placeholder="******"required>
+                                    <input class="form--control" type="password" name="password_confirmation" placeholder="******"  required>
                                     <div class="icon toggle-password">
                                         <div class="show-icon"> <i class="las la-eye-slash"></i> </div>
                                         <span class="hide-icon"> <i class="las la-eye"></i> </span>
