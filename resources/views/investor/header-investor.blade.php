@@ -1,19 +1,21 @@
 <div class="header-investor">
-    @if($user->status == 0)
+    @if($user->status == 0 || $user->status == 1 )
+
     <div class="container mt-4 ">
+        <p class="mb-3" style="color: #024670">Veuillez compléter les étapes ci-dessus pour activer votre compte :</p> 
         @if($test_document == 0)
         <div class="alert alert-warning" role="alert">
-         <span style="font-size: 17px;"> Veuillez envoyer les documents justificatifs pour activer votre compte ,<a href="{{url('/add-file')}}" class="alert-link">Cliquez-ici ! </a></span>
+         <span style="font-size: 15px;"> Envoyez vos documents justificatifs, <a href="{{url('/add-file')}}" class="alert-link">cliquez-ici ! </a></span>
         </div>
         @endif
         @if($test_info == 0)
         <div class="alert alert-secondary" role="alert">
-        <span style="font-size: 17px;"> Veuillez compléter les étapes restantes pour activer votre compte ,<a href="{{url('/app/add-info')}}" class="alert-link">Cliquez-ici ! </a></span>
+        <span style="font-size: 15px;"> Complétez vos informations, <a href="{{url('/app/add-info')}}" class="alert-link">cliquez-ici ! </a></span>
         </div>
         @endif
         @if($test_info !=0 && $test_document != 0)
         <div class="alert alert-warning" role="alert">
-        <span style="font-size: 17px;">La validation de votre compte est en cours de traitement...</span>
+        <span style="font-size: 15px;">La validation de votre compte est en cours de traitement...</span>
         </div>
         @endif
         

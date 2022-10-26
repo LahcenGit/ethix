@@ -32,8 +32,8 @@
                 <div class="login-wrapper-flex">
                     
                     <div class="login-wrapper-contents login-padding">
-                        <h2 class="single-title"> Finalisation d'un compte! ! </h2>
-                        <p class="sigle-para mt-2"> Veuillez ajouter toutes les informations pour finaliser l'inscription</p>
+                        <h2 class="single-title"> Complétez vos informations ! </h2>
+                        <p class="sigle-para mt-2"> Veuillez renseigner toutes informations </p>
                         <form class="login-wrapper-form custom-form padding-top-20" method="POST" action="{{ url('app/add-info') }}">
                             @csrf
                            
