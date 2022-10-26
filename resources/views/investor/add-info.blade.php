@@ -65,7 +65,7 @@
                            </div>
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3"> Ville de naissance* :  </label>
-                                <input class="form--control" type="text" name="cite_of_birth"  required>
+                                <input class="form--control" type="text" name="cite_of_birth" placeholder="Paris"  required>
                             </div>
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3"> Date de naissance* : </label>
@@ -73,17 +73,17 @@
                             </div>
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3">Adresse* : </label>
-                                <input class="form--control" type="text"  name="address" required>
+                                <input class="form--control" type="text"  name="address" placeholder="129 AVENUE DE GENEVE" required>
                                 
                             </div>
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3">Numéro de département* : </label>
-                                <input class="form--control" type="text"  name="num_department" required>
+                                <input class="form--control" type="text"  name="num_department" placeholder="75" required>
                                 
                             </div>
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3">Code Postal* : </label>
-                                <input class="form--control" type="text"  name="code_postal" required>
+                                <input class="form--control" type="text"  name="code_postal" placeholder="75000" required>
                                 
                             </div>
                             <button class="submit-btn w-100 mt-4" type="submit"> Envoyer</button>
