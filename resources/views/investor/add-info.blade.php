@@ -46,27 +46,23 @@
                                 <input class="form-check-input" type="radio" name="genre" id="inlineRadio2" value="1">
                                 <label class="form-check-label" for="inlineRadio2">Masculin</label>
                             </div>
-                            <div class="popup-contents-select">
-                             <label class="popup-contents-select-label"> Pays de résidence* : </label>
-                                <div class="js-select">
-                                <select name="country_of_birth" required>
-                                        @foreach($countries as $country)
-                                        <option value="{{$country->langFR}}">{{$country->langFR}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                             </div>
+                            <div class="form-group col-md-6 mt-3">
+                                <label>Pays de résidence* :</label>
+                                <select  class="form-control mt-3" id="sel1"  class="selectpicker" data-live-search="true" name="country_of_residence" >
+                                    @foreach($countries as $country)
+                                    <option value="{{$country->langFR}}" @if($country->langFR == 'France') selected @endif>{{$country->langFR}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                              
-                             <div class="popup-contents-select">
-                             <label class="popup-contents-select-label"> Pays de naissance* : </label>
-                                <div class="js-select">
-                                    <select name="country_of_birth">
-                                        @foreach($countries as $country)
-                                        <option value="{{$country->langFR}}">{{$country->langFR}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                             </div>
+                            <div class="form-group col-md-6 mt-3">
+                                <label>Pays de naissance* :</label>
+                                <select  class="form-control mt-3" id="sel1"  class="selectpicker" data-live-search="true" name="birth" >
+                                    @foreach($countries as $country)
+                                    <option value="{{$country->langFR}}" @if($country->langFR == 'France') selected @endif>{{$country->langFR}}</option>
+                                    @endforeach
+                                </select>
+                           </div>
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3"> Ville de naissance* :  </label>
                                 <input class="form--control" type="text" name="cite_of_birth"  required>

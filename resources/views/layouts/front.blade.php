@@ -12,6 +12,7 @@
     <link rel=icon href="{{asset('Front/assets/img/logo-favicon.png')}}" sizes="16x16" type="icon/png">
     <!-- bootstrap -->
     <link rel="stylesheet" href="{{asset('Front/assets/css/bootstrap.min.css')}}">
+    <link href="{{asset('Dashboard/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="{{asset('Front/assets/css/line-awesome.min.css')}}">
     <!-- Animate Css -->
@@ -25,7 +26,7 @@
     <!-- TellInput Css -->
     <link rel="stylesheet" href="{{asset('Front/assets/css/intlTelInput.css')}}">
     <!-- Nice Select Css -->
-    <link rel="stylesheet" href="{{asset('Front/assets/css/nice-select.css')}}">
+   
      
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="{{asset('Front/assets/css/style.css')}}">
@@ -353,6 +354,7 @@
     <!-- jquery -->
     <script src="{{asset('Front/assets/js/jquery-3.6.0.min.js')}}"></script>
     <!-- jquery Migrate -->
+    <script src="{{asset('Dashboard/vendor/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
     <script src="{{asset('Front/assets/js/imagesloaded.pkgd.min.js')}}"></script>
     <script src="{{asset('Front/assets/js/jquery-migrate.min.js')}}"></script>
      <!-- bootstrap -->
@@ -365,9 +367,9 @@
     <!-- Magnific Popup Js -->
     <script src="{{asset('Front/assets/js/jquery.magnific-popup.js')}}"></script>
     <!-- Nice Select Js -->
-    <script src="{{asset('Front/assets/js/jquery.nice-select.js')}}"></script>
+ 
     <!-- Flat Picker Js -->
-    <script src="{{asset('Front/assets/js/flatpicker.js')}}"></script>
+   
     <!-- Range Slider Js -->
     <script src="{{asset('Front/assets/js/nouislider-8.5.1.min.js')}}"></script>
     <!-- TellInput Js -->
