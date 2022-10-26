@@ -35,6 +35,9 @@ Route::get('/add-file', function () {
 Route::get('/politique-confidentialite', function () {
     return view('politique-confidentialite');
 });
+Route::get('/ccm', function () {
+    return view('ccm');
+});
 
 
 
