@@ -230,8 +230,8 @@
                         <li class=" current-menu-item">
                             <a href="{{asset('/')}}">Accueil</a>
                         </li>
-                        <li><a href="#"> Comment ça marche </a></li>
-                        <li><a href="#"> FAQ </a></li>
+                        <li><a href="{{asset('/cmm')}}"> Comment ça marche </a></li>
+                        <li><a href="{{asset('/faq')}}"> FAQ </a></li>
                         <li><a href="#"> Contact </a></li>
                     </ul>
                 </div>
@@ -286,7 +286,7 @@
                                 <div class="footer-widget-social mt-4">
                                     <ul class="footer-widget-social-list list-style-none justify-content-center">
                                         <li class="footer-widget-social-list-item">
-                                            <a class="footer-widget-social-list-link" href="javascript:void(0)"> <i class="lab la-facebook-f"></i> </a>
+                                            <a class="footer-widget-social-list-link" href="https://www.facebook.com/groups/247713964064377"> <i class="lab la-facebook-f"></i> </a>
                                         </li>
                                         <li class="footer-widget-social-list-item">
                                             <a class="footer-widget-social-list-link" href="javascript:void(0)"> <i class="lab la-twitter"></i> </a>
@@ -316,7 +316,7 @@
                                     </div>
                                     <div class="copyright-contents-single-details">
                                         <span class="copyright-contents-single-details-title"> Télephone </span>
-                                        <a href="tel:3104372766" class="copyright-contents-single-details-link"> 00-21-21-21 </a>
+                                        <a href="tel:3104372766" class="copyright-contents-single-details-link"> 0626773538</a>
                                     </div>
                                 </div>
                             </div>
@@ -327,7 +327,7 @@
                                     </div>
                                     <div class="copyright-contents-single-details">
                                         <span class="copyright-contents-single-details-title"> Email</span>
-                                        <a href="mailto:unreal@example.com" class="copyright-contents-single-details-link"> contact@ethix.com </a>
+                                        <a href="mailto:unreal@example.com" class="copyright-contents-single-details-link"> contact@ethix-invest.com </a>
                                     </div>
                                 </div>
                             </div>

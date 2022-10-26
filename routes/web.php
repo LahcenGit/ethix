@@ -38,6 +38,9 @@ Route::get('/politique-confidentialite', function () {
 Route::get('/ccm', function () {
     return view('ccm');
 });
+Route::get('/faq', function () {
+    return view('faq');
+});
 
 
 
