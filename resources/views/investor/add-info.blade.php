@@ -49,7 +49,7 @@
                             <div class="popup-contents-select">
                              <label class="popup-contents-select-label"> Pays de résidence* : </label>
                                 <div class="js-select">
-                                <select class="form-control  @error('category') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="category" required>
+                                <select name="country_of_birth" required>
                                         @foreach($countries as $country)
                                         <option value="{{$country->langFR}}">{{$country->langFR}}</option>
                                         @endforeach
