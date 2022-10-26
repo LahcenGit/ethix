@@ -12,9 +12,9 @@
                 <div class="row">
 					<div class="col-xl-12 col-xxl-12">
 						<div class="row">
-							<div class="col-xl-3 col-xxl-3 col-lg-6 col-sm-6">
-								<div class="card overflow-hidden">
-									<div class="card-body pb-0 px-3 pt-2">
+							<div class="col-xl-3 col-xxl-3 col-lg-6 col-sm-6 ">
+								<div class="card overflow-hidden ">
+									<div class="card-body  pt-4">
 										<div class="row">
 											<div class="col">
 												<h5 class="mb-1">{{$nbr_properties}}</h5>
@@ -27,7 +27,7 @@
 							</div>
 							<div class="col-xl-3 col-xxl-3 col-lg-6 col-sm-6">
 								<div class="card overflow-hidden">
-									<div class="card-body pb-0 px-3 pt-2">
+									<div class="card-body pt-4">
 										<div class="row">
 											<div class="col">
 												<h5 class="mb-1">{{$nbr_investor}}</h5>
@@ -40,7 +40,7 @@
 							</div>
 							<div class="col-xl-3 col-xxl-3 col-lg-6 col-sm-6">
 								<div class="card overflow-hidden">
-									<div class="card-body pb-0 px-3 pt-2">
+									<div class="card-body pt-4">
 										<div class="row">
 											<div class="col">
 												<h5 class="mb-1">{{$nbr_ethix}}</h5>
@@ -53,7 +53,7 @@
 							</div>
 							<div class="col-xl-3 col-xxl-3 col-lg-6 col-sm-6">
 								<div class="card overflow-hidden">
-									<div class="card-body pb-0 px-3 pt-2">
+									<div class="card-body pt-4">
 										<div class="row">
 											<div class="col">
 												<h5 class="mb-1">{{$total->sum}} €</h5>
@@ -69,7 +69,7 @@
 							<div class="col-xl-6 col-xxl-6 col-lg-12 col-md-12">
 								<div class="card">
 									<div class="card-header border-0 pb-0">
-										<h4 class="card-title">Les cinq derniers inscrits</h4>
+										<h4 class="card-title">Nouveaux inscrits</h4>
 									</div>
 									<div class="card-body">
 										<div class="table-responsive">
@@ -121,7 +121,7 @@
 							<div class="col-xl-6 col-xxl-6 col-lg-12 col-md-12">
 								<div class="card">
 									<div class="card-header border-0 pb-0">
-										<h4 class="card-title">Les cinq derniers investissements</h4>
+										<h4 class="card-title">Nouveaux investissements</h4>
 									</div>
 									<div class="card-body">
 										<div class="table-responsive">
