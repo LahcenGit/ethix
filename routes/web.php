@@ -55,11 +55,11 @@ Route::get('/downolad-file/{link}',[App\Http\Controllers\InvestorController::cla
 Route::resource('/app/add-file',UserDocumentController::class);
 Route::resource('/app/add-info',UserinformationController::class);
 Route::get('/app/properties', [App\Http\Controllers\InvestorController::class, 'properties']);
-Route::get('/app', [App\Http\Controllers\InvestorController::class, 'dashboard']);
+Route::get('/app', [App\Http\Controllers\InvestorController::class, 'dashboard'])->middleware('verified');
 Route::resource('/app/profil', ProfilController::class);
 
 Route::get('/app/detail-property/{id}', [App\Http\Controllers\InvestorController::class, 'detailProperty']);
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/dashboard-admin',AdminController::class)->middleware('can:admin');
