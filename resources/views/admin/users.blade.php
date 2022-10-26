@@ -61,13 +61,11 @@
                                     @endif
                                     @if($user->status == 0)
                                     <td><span class="badge badge-primary">Nouveau</span></td>
-                                    @elseif($user->status == 1)
+                                    @elseif($user->email_verified != null)
                                     <td><span class="badge badge-info">Email Validé</span></td>
-                                    @elseif($user->status == 2)
-                                    <td><span class="badge badge-secondary">Documents envoyés</span></td>
-                                    @elseif($user->status == 3)
+                                    @elseif($user->status == 1)
                                     <td><span class="badge badge-warning">En attente de validation</span></td>
-                                    @elseif($user->status == 4)
+                                    @elseif($user->status == 2)
                                     <td><span class="badge badge-success">Validé</span></td>
                                     @else
                                     <td><span class="badge badge-danger">Bloqué</span></td>

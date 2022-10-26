@@ -87,36 +87,33 @@
 												</thead>
 												<tbody>
 													
-												@foreach($users as $user)
-                                                     <tr>
-													  <td>{{$loop->iteration}}</td>
-														<td>{{$user->first_name}}</td>
-														<td>{{$user->last_name}}</td>
-														<td>{{$user->phone}}</td>
-														@if(!$user->solde)
-														<td>0</td>
-														@else
-														<td>{{$user->solde}}</td>
-														@endif
-														@if($user->status == 0)
-														<td><span class="badge badge-primary">Nouveau</span></td>
-														@elseif($user->status == 1)
-														<td><span class="badge badge-info">Email Validé</span></td>
-														@elseif($user->status == 2)
-														<td><span class="badge badge-secondary">Documents envoyés</span></td>
-														@elseif($user->status == 3)
-														<td><span class="badge badge-warning">En attente de validation</span></td>
-														@elseif($user->status == 4)
-														<td><span class="badge badge-success">Validé</span></td>
-														@else
-														<td><span class="badge badge-danger">Bloqué</span></td>
-														@endif
+													@foreach($users as $user)
+														<tr >
+														<td>{{$loop->iteration}}</td>
+															<td>{{$user->first_name}}</td>
+															<td>{{$user->last_name}}</td>
+															<td>{{$user->phone}}</td>
+															@if(!$user->solde)
+															<td>0</td>
+															@else
+															<td>{{$user->solde}}</td>
+															@endif
+															@if($user->status == 0)
+															<td><span class="badge badge-primary">Nouveau</span></td>
+															@elseif($user->email_verified != null)
+															<td><span class="badge badge-info">Email Validé</span></td>
+															@elseif($user->status == 1)
+															<td><span class="badge badge-warning">En attente de validation</span></td>
+															@elseif($user->status == 2)
+															<td><span class="badge badge-success">Validé</span></td>
+															@else
+															<td><span class="badge badge-danger">Bloqué</span></td>
+															@endif
 														
-													</tr>
-												@endforeach
+														</tr>
+													@endforeach
 												</tbody>
 											</table>
-											
 										</div>
 									</div>
 								</div>
@@ -173,6 +170,7 @@
 													</a>
 												</li>
 												@endif
+												@if($investor_email_valid !=0 )
 												<li>
 													<div class="timeline-badge info">
 													</div>
@@ -180,15 +178,6 @@
 														
 														<h6 class="mb-0"> <strong class="text-info">{{$investor_email_valid}}</strong> email validé(s)</h6>
 														
-													</a>
-												</li>
-												@if($investor_document_sent != 0)
-												<li>
-													<div class="timeline-badge secondary">
-													</div>
-													<a class="timeline-panel text-muted" href="#">
-														
-														<h6 class="mb-0"><strong class="text-secondary">{{$investor_document_sent}}</strong> documents envoyé(s)</h6>
 													</a>
 												</li>
 												@endif

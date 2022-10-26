@@ -65,11 +65,9 @@
                             <label>Statut :</label>
                                 <select  class="form-control " name="status"  class="selectpicker " data-live-search="true">
                                     <option value="0" @if($user->user->status == 0) selected @endif >Nouveau</option>
-                                    <option value="1" @if($user->user->status == 1) selected @endif>Email Validé</option>
-                                    <option value="2" @if($user->user->status == 2) selected @endif>Documents Envoyés</option>
-                                    <option value="3" @if($user->user->status == 3) selected @endif>En Attente de Validation</option>
-                                    <option value="4" @if($user->user->status == 4) selected @endif>Validé</option>
-                                    <option value="5" @if($user->user->status == 5) selected @endif>Bloqué</option>
+                                    <option value="1" @if($user->user->status == 1) selected @endif>En Attente de Validation</option>
+                                    <option value="2" @if($user->user->status == 2) selected @endif>Validé</option>
+                                    <option value="3" @if($user->user->status == 3) selected @endif>Bloqué</option>
                                 </select>
                             </div>
                         </div>

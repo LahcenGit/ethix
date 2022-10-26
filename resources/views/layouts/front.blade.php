@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="{{asset('Front/assets/css/intlTelInput.css')}}">
     <!-- Nice Select Css -->
     <link rel="stylesheet" href="{{asset('Front/assets/css/nice-select.css')}}">
-    
+    <link href="{{asset('Dashboard/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet">
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="{{asset('Front/assets/css/style.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"  />
@@ -44,6 +44,13 @@
         padding: 20px;
 
     }
+</style>
+<style>
+    .form-check-input:checked{
+        background-color: #4DAA7F;
+        border-color: #4DAA7F;
+    }
+   
 </style>
 
 <body>
@@ -188,7 +195,7 @@
     <div class="mouse-move mouse-outer"></div>
     <div class="mouse-move mouse-inner"></div>
     <!-- Mouse Cursor Ends -->
-
+    <script src="{{asset('Dashboard/vendor/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
     <!-- jquery -->
     <script src="{{asset('Front/assets/js/jquery-3.6.0.min.js')}}"></script>
     <!-- jquery Migrate -->

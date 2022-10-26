@@ -22,11 +22,11 @@ class AdminController extends Controller
         $users = User::limit('5')->orderBy('created_at','desc')->get();
         $investissements = Userproperty::limit('5')->orderBy('created_at','desc')->get();
         $new_investor = User::where('status',0)->count();
-        $investor_email_valid = User::where('status',1)->count();
-        $investor_document_sent = User::where('status',2)->count();
-        $investor_waiting = User::where('status',3)->count();
-        $investor_valid = User::where('status',4)->count();
-        $investor_blocked = User::where('status',5)->count();
+        $investor_email_valid = User::where('email_verified_at','!=',null)->count();
+       
+        $investor_waiting = User::where('status',1)->count();
+        $investor_valid = User::where('status',2)->count();
+        $investor_blocked = User::where('status',3)->count();
 
         $top_investors = Userproperty::selectRaw('sum(nbr_ethix) as sum')
                                         ->selectRaw('user_id')
@@ -38,6 +38,6 @@ class AdminController extends Controller
                                ->first();
        
         return view('admin.dashboard-admin',compact('nbr_properties','nbr_investor','nbr_ethix','users',
-        'investissements','new_investor','investor_email_valid','investor_document_sent','investor_waiting','investor_valid','investor_blocked','top_investors','total'));
+        'investissements','new_investor','investor_email_valid','investor_waiting','investor_valid','investor_blocked','top_investors','total'));
     }
 }

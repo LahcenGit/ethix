@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use App\Models\User;
 use App\Models\Userinformation;
 use Illuminate\Http\Request;
@@ -11,7 +12,8 @@ class UserinformationController extends Controller
 {
     //
     public function index(){
-        return view('investor.add-info');
+        $countries = Country::all();
+        return view('investor.add-info',compact('countries'));
     }
 
     public function store(Request $request){
@@ -28,7 +30,7 @@ class UserinformationController extends Controller
         $info->code_postal = $request->code_postal;
         $info->genre = $request->genre;
         $info->save();
-        $user->status = 3;
+        $user->status = 1;
         $user->save();
         return redirect('app');
     }

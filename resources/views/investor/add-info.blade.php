@@ -36,16 +36,37 @@
                         <p class="sigle-para mt-2"> Veuillez renseigner toutes informations </p>
                         <form class="login-wrapper-form custom-form padding-top-20" method="POST" action="{{ url('app/add-info') }}">
                             @csrf
-                           
-                            <div class="single-input mt-4">
-                                <label class="label-title mb-3"> Pays de résidence* : </label>
-                                <input class="form--control" type="text" name="country_of_residence"  required>
-                            </div>
+                            <label class="label-title mt-3 ">Genre* : </label>
+                            <div class="form-check form-check-inline">
                              
-                            <div class="single-input mt-4">
-                                <label class="label-title mb-3"> Pays de naissance* :  </label>
-                                <input class="form--control" type="text" name="country_of_birth"  required>
+                                <input class="form-check-input" type="radio" name="genre" id="inlineRadio1" value="0">
+                                <label class="form-check-label" for="inlineRadio1">Féminin</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="genre" id="inlineRadio2" value="1">
+                                <label class="form-check-label" for="inlineRadio2">Masculin</label>
                             </div>
+                            <div class="popup-contents-select">
+                             <label class="popup-contents-select-label"> Pays de résidence* : </label>
+                                <div class="js-select">
+                                <select class="form-control  @error('category') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="category" required>
+                                        @foreach($countries as $country)
+                                        <option value="{{$country->langFR}}">{{$country->langFR}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                             </div>
+                             
+                             <div class="popup-contents-select">
+                             <label class="popup-contents-select-label"> Pays de naissance* : </label>
+                                <div class="js-select">
+                                    <select name="country_of_birth">
+                                        @foreach($countries as $country)
+                                        <option value="{{$country->langFR}}">{{$country->langFR}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                             </div>
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3"> Ville de naissance* :  </label>
                                 <input class="form--control" type="text" name="cite_of_birth"  required>
@@ -69,13 +90,6 @@
                                 <input class="form--control" type="text"  name="code_postal" required>
                                 
                             </div>
-                            <div class="single-input mt-4">
-                                <label class="label-title mb-3">Genre* : </label>
-                                <input class="form--control" type="text"  name="genre" required>
-                                
-                            </div>
-                            
-                           
                             <button class="submit-btn w-100 mt-4" type="submit"> Envoyer</button>
                             
                         </form>

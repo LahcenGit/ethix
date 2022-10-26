@@ -18,7 +18,7 @@ class InvestorController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-        $users = User::where('type','investor')->get();
+        $users = User::with('informations','documents')->where('type','investor')->get();
         return view('admin.users',compact('users'));
     }
     public function edit($id){
