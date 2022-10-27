@@ -46,30 +46,26 @@
                                 <input class="form-check-input" type="radio" name="genre" id="inlineRadio2" value="1">
                                 <label class="form-check-label" for="inlineRadio2">Masculin</label>
                             </div>
-                            <div class="popup-contents-select">
-                             <label class="popup-contents-select-label"> Pays de résidence* : </label>
-                                <div class="js-select">
-                                <select name="country_of_birth" required>
-                                        @foreach($countries as $country)
-                                        <option value="{{$country->langFR}}">{{$country->langFR}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                             </div>
+                            <div class="form-group col-md-6 mt-3">
+                                <label>Pays de résidence* :</label>
+                                <select  class="form-control mt-3" id="sel1"  class="selectpicker" data-live-search="true" name="country_of_residence" >
+                                    @foreach($countries as $country)
+                                    <option value="{{$country->langFR}}" @if($country->langFR == 'France') selected @endif>{{$country->langFR}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                              
-                             <div class="popup-contents-select">
-                             <label class="popup-contents-select-label"> Pays de naissance* : </label>
-                                <div class="js-select">
-                                    <select name="country_of_birth">
-                                        @foreach($countries as $country)
-                                        <option value="{{$country->langFR}}">{{$country->langFR}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                             </div>
+                            <div class="form-group col-md-6 mt-3">
+                                <label>Pays de naissance* :</label>
+                                <select  class="form-control mt-3" id="sel1"  class="selectpicker" data-live-search="true" name="birth" >
+                                    @foreach($countries as $country)
+                                    <option value="{{$country->langFR}}" @if($country->langFR == 'France') selected @endif>{{$country->langFR}}</option>
+                                    @endforeach
+                                </select>
+                           </div>
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3"> Ville de naissance* :  </label>
-                                <input class="form--control" type="text" name="cite_of_birth"  required>
+                                <input class="form--control" type="text" name="cite_of_birth" placeholder="Paris"  required>
                             </div>
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3"> Date de naissance* : </label>
@@ -77,17 +73,17 @@
                             </div>
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3">Adresse* : </label>
-                                <input class="form--control" type="text"  name="address" required>
+                                <input class="form--control" type="text"  name="address" placeholder="129 AVENUE DE GENEVE" required>
                                 
                             </div>
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3">Numéro de département* : </label>
-                                <input class="form--control" type="text"  name="num_department" required>
+                                <input class="form--control" type="text"  name="num_department" placeholder="75" required>
                                 
                             </div>
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3">Code Postal* : </label>
-                                <input class="form--control" type="text"  name="code_postal" required>
+                                <input class="form--control" type="text"  name="code_postal" placeholder="75000" required>
                                 
                             </div>
                             <button class="submit-btn w-100 mt-4" type="submit"> Envoyer</button>

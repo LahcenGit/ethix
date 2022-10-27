@@ -12,7 +12,7 @@
 	<link rel=icon href="{{asset('Front/assets/img/logo-favicon.png')}}" sizes="16x16" type="icon/png">
     <link href="{{asset('Dashboard/vendor/jqvmap/css/jqvmap.min.css')}}" rel="stylesheet">
 	<link rel="stylesheet" href="{{asset('Dashboard/vendor/chartist/css/chartist.min.css')}}">
-  
+    <link href="{{asset('Dashboard/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet">
     <link href="{{asset('Dashboard/css/style.css')}}" rel="stylesheet">
 	<link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('Dashboard/uploader/pe-icon-7-stroke.css')}}">
@@ -238,7 +238,7 @@
     ***********************************-->
     <!-- Required vendors -->
     <script src="{{asset('Dashboard/vendor/global/global.min.js')}}"></script>
-
+	<script src="{{asset('Dashboard/vendor/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
     <script src="{{asset('Dashboard/vendor/chart.js/Chart.bundle.min.js')}}"></script>
     <script src="{{asset('Dashboard/js/custom.min.js')}}"></script>
 	<!-- Apex Chart -->
