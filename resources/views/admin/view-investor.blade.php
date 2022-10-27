@@ -31,7 +31,7 @@
                             <h5>Pays de naissance : <b style="color: #4DAA7F;"> {{$user->country_of_birth}}</b></h5>
                             <h5>Ville de naissance : <b style="color: #4DAA7F;"> {{$user->cite_of_birth}}</b></h5>
                             <h5>Date de naissance : <b style="color: #4DAA7F;"> {{$user->date_of_birth}}</b></h5>
-                            <h5>Genre : <b style="color: #4DAA7F;"> {{$user->genre}}</b></h5>
+                            <h5>Genre : <b style="color: #4DAA7F;"> @if($user->genre == 0) Féminin @else Masculin @endif</b></h5>
                         </div>
                     </div>
                 </div>
