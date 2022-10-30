@@ -44,6 +44,48 @@
                         </div>
                         <div class="faq-item wow fadeInLeft" data-wow-delay=".1s">
                             <h3 class="faq-title">
+                            Puis-je investir avec une société ? 
+                            </h3>
+                            <div class="faq-panel">
+                                <p class="faq-para"> Oui, vous pouvez investir avec votre société.
+
+                                  Nous vous demanderons simplement quelques documents supplémentaires de votre entreprise. </p>
+                            </div>
+                        </div>
+                        <div class="faq-item wow fadeInLeft" data-wow-delay=".1s">
+                            <h3 class="faq-title">
+                            Comment sont séléctionnés les projets Ethix ?
+                            </h3>
+                            <div class="faq-panel">
+                                <p class="faq-para"> Nos projets sont minutieusement sélectionnés, chaque opportunité est étudiée dans son ensemble :</p>
+                                    <ul>
+                                       <li> Le marché immobilier local</li>
+                                       <li>La structure du bien</li>
+                                       <li>L’urbanisme </li>
+                                       <li> Plusieurs estimations des travaux à effectuer pour apporter une valeur ajoutée au bien</li>
+                                       <li>Le niveau de marge à sortir</li>
+                                       <li>La fiscalité.</li>
+                                    </ul>
+                                       <p> Nous passons beaucoup de temps avant de signer le compromis d'achat et nous engager dans un projet.</p>
+                            </div>
+                            
+                        </div>
+                        <div class="faq-item wow fadeInLeft" data-wow-delay=".1s">
+                            <h3 class="faq-title">
+                            Comment se rémunère Ethix ?
+                            </h3>
+                            <div class="faq-panel">
+                                <p class="faq-para"> Aucun frais d'entrée ni de sortie n'est pris sur votre investissement.
+                                 Nous nous rémunérons en deux fois sur les projets pour impacter le moins possible vos <b>plus-values</b> :</p>
+                                 <ul>
+                                 <li>Lors de l'achat du bien, nous appliquons un pourcentage de 5% pour nous permettre d'engager les différents frais liés au suivi du projet.</li>
+                                 <li>Lors de la revente, nous appliquons les 5% restant pour nous rémunérer.</li>
+                                 </ul>
+                            </div>
+                            
+                        </div>
+                        <div class="faq-item wow fadeInLeft" data-wow-delay=".1s">
+                            <h3 class="faq-title">
                                 Quelle rendement espérer ? 
                             </h3>
                             <div class="faq-panel">
@@ -72,6 +114,7 @@
                                     Celui qui aura investi 5000€, reçoit donc un dividende de 750€ qu’il peut décider de réinvestir afin de profiter de l'effet cumulé</p>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>

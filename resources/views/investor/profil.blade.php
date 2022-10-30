@@ -14,8 +14,8 @@
             <div class="login-wrapper login-shadow bg-white">
                 <div class="login-wrapper-flex">
                    <div class="login-wrapper-contents login-padding">
-                        <h2 class="single-title"> Profil! </h2>
-                        <p class="sigle-para mt-2"> Modifier votre informations</p>
+                        <h2 class="single-title"> Profil </h2>
+                        <p class="sigle-para mt-2"> Modifier vos informations</p>
                          <form class="login-wrapper-contents-form custom-form" method="POST" action="{{url('app/profil/'.$user->id)}}">
                          <input type="hidden" name="_method" value="PUT">
                             @csrf

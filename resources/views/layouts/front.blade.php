@@ -369,9 +369,15 @@
     <script src="{{asset('Front/assets/js/isotope.pkgd.min.js')}}"></script>
     <!-- Magnific Popup Js -->
     <script src="{{asset('Front/assets/js/jquery.magnific-popup.js')}}"></script>
-    <!-- Nice Select Js -->
- 
+    <script src="{{asset('Front/assets/js/jquery.nice-select.js')}}"></script>
     <!-- Flat Picker Js -->
+    <script src="{{asset('Front/assets/js/flatpicker.js')}}"></script>
+    <!-- Range Slider Js -->
+    <script src="{{asset('Front/assets/js/nouislider-8.5.1.min.js')}}"></script>
+    <!-- TellInput Js -->
+    <script src="{{asset('Front/assets/js/intlTelInput.js')}}"></script>
+    <!-- main js -->
+    <script src="{{asset('Front/assets/js/main.js')}}"></script>
    
  
 

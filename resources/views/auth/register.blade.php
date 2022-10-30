@@ -92,7 +92,7 @@
                             <div class="alert alert-danger mt-3 alert-condition" role="alert" style="display: none;">
                                 <span style="font-size: 15px;">Veuillez confirmer votre acceptation de notre politique de confidentialité </span>
                             </div>
-                            <button class="submit-btn w-100 mt-4 btn-submit" > S'inscrir</button>
+                            <button class="submit-btn w-100 mt-4 btn-submit" > S'inscrire</button>
                             <span class="account color-light mt-3"> Vous avez déja un compte? <a class="color-one" href="{{asset('/login')}}"> Connecter </a> </span>
                         </form>
                     </div>

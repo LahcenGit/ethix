@@ -14,7 +14,7 @@
 
                     <div class="grid-list-contents">
                         <div class="grid-list-contents-flex">
-                            <p class="grid-list-contents-para"> Trouvez ici tous vos invesstissements :   </p>
+                            <p class="grid-list-contents-para"> Trouvez ici tous vos investissements :   </p>
                             
                         </div>
                     </div>
