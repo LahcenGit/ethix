@@ -2,7 +2,7 @@
     @if($user->status == 0 || $user->status == 1 )
 
     <div class="container mt-4 ">
-        <p class="mb-3" style="color: #024670">Veuillez compléter les étapes ci-dessus pour activer votre compte :</p> 
+        <p class="mb-3" style="color: #024670">Veuillez compléter les étapes ci-dessous pour activer votre compte :</p> 
         @if($test_document == 0)
         <div class="alert alert-warning" role="alert">
          <span style="font-size: 15px;"> Envoyez vos documents justificatifs, <a href="{{url('/add-file')}}" class="alert-link">cliquez-ici ! </a></span>
