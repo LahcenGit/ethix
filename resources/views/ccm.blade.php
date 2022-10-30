@@ -2,13 +2,14 @@
 @section('content')
 
 
-
     <!-- Booking area starts -->
     <section class="booking-area pat-100 pab-50">
         <div class="container">
             <div class="section-title center-text">
                 <h2 class="title"> l'investissement sans contraintes ! </h2>
                 <div class="section-title-shapes"> </div>
+                <h5 > Faites fructifier votre épargne avec notre solution.</h5>
+                
             </div>
             <div class="row gy-4 mt-5">
                 <div class="container py-5">
@@ -61,8 +62,54 @@
             <div class="section-title center-text">
                 <h2 class="title" > Nous vous proposons des projets clé en main </h2>
                 <div class="section-title-shapes"> </div>
+                <h5 class="mb-4">Nos équipes s'occupent de tout !.</h5>
             </div>
-       
+
+
+
+            <div class="row d-flex justify-content-center">
+
+              <div class="card" style="width: 14rem; margin-right:5px;">
+                <img  style="width: 300px; height: 300px; object-fit: scale-down;" src="https://ethix-invest.com/wp-content/uploads/2022/02/AdobeStock_392563812-scaled.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <b class="card-text text-center" style="color: #024670" >Recherche des opportunités</b>
+                </div>
+              </div>
+              <div class="card" style="width: 14rem; margin-right:5px;">
+                <img style="width: 300px; height: 300px; object-fit: scale-down;" src="https://ethix-invest.com/wp-content/uploads/2022/02/AdobeStock_297566920-scaled.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <b class="card-text text-center" style="color: #024670" >Négociation</b>
+                </div>
+              </div>
+              <div class="card" style="width: 14rem; margin-right:5px;">
+                <img style="width: 300px; height: 300px; object-fit: scale-down;" src="https://ethix-invest.com/wp-content/uploads/2022/02/AdobeStock_349552137-1-scaled.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <b class="card-text text-center" style="color: #024670" >Travaux</b>
+                </div>
+              </div>
+              <div class="card" style="width: 14rem; margin-right:5px;">
+                <img style="width: 300px; height: 300px; object-fit: scale-down;" src="https://ethix-invest.com/wp-content/uploads/2022/02/AdobeStock_237136901-scaled.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <b class="card-text text-center" style="color: #024670" >Revente</b>
+                </div>
+              </div>
+              <div class="card" style="width: 14rem; margin-right:5px;">
+                <img style="width: 300px; height: 300px; object-fit: scale-down;" src="https://ethix-invest.com/wp-content/uploads/2022/02/AdobeStock_368212815-scaled.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <b class="card-text text-center" style="color: #024670" >Suivi administratif et juridique du projet</b>
+                </div>
+              </div>
+             
+
+             
+
+
+            </div>
+
+           
+
+          
+          </div>
             
            
         </div>

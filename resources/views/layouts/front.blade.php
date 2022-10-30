@@ -199,6 +199,9 @@
     rgb(0, 65, 108)
   );
 }
+
+
+
 </style>
 <style>
     .form-check-input:checked{
@@ -231,7 +234,7 @@
                         <li class=" current-menu-item">
                             <a href="{{asset('/')}}">Accueil</a>
                         </li>
-                        <li><a href="{{asset('/cmm')}}"> Comment ça marche </a></li>
+                        <li><a href="{{asset('/ccm')}}"> Comment ça marche </a></li>
                         <li><a href="{{asset('/faq')}}"> FAQ </a></li>
                         <li><a href="#"> Contact </a></li>
                     </ul>
@@ -370,12 +373,7 @@
  
     <!-- Flat Picker Js -->
    
-    <!-- Range Slider Js -->
-    <script src="{{asset('Front/assets/js/nouislider-8.5.1.min.js')}}"></script>
-    <!-- TellInput Js -->
-    <script src="{{asset('Front/assets/js/intlTelInput.js')}}"></script>
-    <!-- main js -->
-    <script src="{{asset('Front/assets/js/main.js')}}"></script>
+ 
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>

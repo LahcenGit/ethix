@@ -27,7 +27,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">La tables des versments</h4>
+                        <h4 class="card-title">La table des versements</h4>
                         <button  type="button" class="btn btn-primary mt-3 add-versment" >Ajouter</a>
                     </div>
                     <div class="card-body">
