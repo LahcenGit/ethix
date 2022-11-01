@@ -302,6 +302,18 @@
         </div>
     </div>
     </div>
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+    <div id="liveToast2" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+        <i class="fas fa-exclamation-circle mr-2" style="color:#C41718" ></i>
+        <strong class="me-auto ml-2">Echec Inscription</strong>
+        <button type="button" class="btn-close close2" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+        Ce email existe déja  
+        </div>
+    </div>
+    </div>
     
     <!-- Newsletter area starts -->
     <div class="newsletter-area pat-50">
@@ -348,14 +360,22 @@ $( ".btn-newsletter" ).click(function(e) {
             email:email,
           },
           success:function(response){
-
+            if(response == true){
             $("#liveToast").show();
+            }
+            else{
+                $("#liveToast2").show();
+            }
           },
         
           });
 });
 $( ".btn-close" ).click(function(e) {
     $("#liveToast").hide();
+   
+});
+$( ".close2" ).click(function(e) {
+    $("#liveToast2").hide();
    
 });
 </script>
