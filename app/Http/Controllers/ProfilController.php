@@ -34,6 +34,8 @@ class ProfilController extends Controller
           }
         $user->save();
         $message = 'La modification a été bien enregistrer';
-        return view('investor.profil',compact('message','user'));
+        $test_document = Document::where('documenttable_id',$user->id)->count();
+        $test_info = Userinformation::where('user_id',$user->id)->count();
+        return view('investor.profil',compact('message','user','test_document','test_info'));
     }
 }

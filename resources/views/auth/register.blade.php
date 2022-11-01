@@ -52,7 +52,7 @@
                             </div>
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3"> N° de téléphone </label>
-                                <input class="form--control @error('phone') is-invalid @enderror" type="text" id="phone" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"name="phone" placeholder="Téléphone" value="{{old('phone')}}" required>
+                                <input class="form--control @error('phone') is-invalid @enderror" type="text"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"name="phone" placeholder="Téléphone" value="{{old('phone')}}" required>
                                         @error('phone')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>

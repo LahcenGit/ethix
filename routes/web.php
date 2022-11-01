@@ -9,6 +9,7 @@ use App\Http\Controllers\UserDocumentController;
 use App\Http\Controllers\VersmentController;
 use App\Http\Controllers\EthixController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\UserinformationController;
 
 use Illuminate\Support\Facades\Auth;
@@ -49,6 +50,7 @@ Route::resource('/dashboard-admin/properties',PropertyController::class)->middle
 Route::resource('/dashboard-admin/users',InvestorController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/versments',VersmentController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/investissements',UserpropertyController::class)->middleware('can:admin');
+Route::resource('/newsletter',NewsletterController::class);
 Route::get('/dashboard-admin/view-investor/{id}',[App\Http\Controllers\InvestorController::class,'getInvestor']);
 Route::get('/modal-update-ethix',[App\Http\Controllers\EthixController::class,'getModal']);
 Route::post('/update-ethix',[App\Http\Controllers\EthixController::class,'updateValue']);

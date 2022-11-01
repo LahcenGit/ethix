@@ -26,7 +26,7 @@
     <!-- TellInput Css -->
     <link rel="stylesheet" href="{{asset('Front/assets/css/intlTelInput.css')}}">
     <!-- Nice Select Css -->
-   
+
      
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="{{asset('Front/assets/css/style.css')}}">
@@ -272,6 +272,7 @@
             </div>
         </nav>
         <!-- Menu area end -->
+        
     </header>
     @yield('content')
     <!-- footer area start -->
@@ -379,8 +380,7 @@
     <!-- main js -->
     <script src="{{asset('Front/assets/js/main.js')}}"></script>
    
- 
-
+  
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
 
@@ -407,6 +407,7 @@
 @stack('achat-ethix-scripts')
 @stack('validate-scripts')
 @stack('check-condition')
+@stack('add-newsletter')
 </body>
 
 </html>

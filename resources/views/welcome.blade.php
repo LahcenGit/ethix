@@ -2,6 +2,7 @@
 @section('content')
 
 <!-- Banner area Starts -->
+
 <div class="banner-area banner-area-one">
         <div class="container p-0">
             <div class="row align-items-center flex-column-reverse flex-lg-row">
@@ -22,6 +23,7 @@
         </div>
     </div>
     <!-- Banner area end -->
+   
 
     <!-- Booking area starts -->
     <section class="booking-area pat-100 pab-50">
@@ -287,8 +289,20 @@
     </section>
     <!-- Question area end -->
    
-    
 
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+    <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+        <i class="fa-solid fa-check-to-slot mr-2" style="color: #4DAA7F"></i>
+        <strong class="me-auto ml-2">Inscription réussite</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+        Vous allez reçevoir toutes nos actualités 
+        </div>
+    </div>
+    </div>
+    
     <!-- Newsletter area starts -->
     <div class="newsletter-area pat-50">
         <div class="container">
@@ -299,6 +313,7 @@
                             <img src="{{asset('Front/assets/img/single-page/newsletter-shape1.png')}}" alt="shapes">
                             <img src="{{asset('Front/assets/img/single-page/newsletter-shape2.png')}}" alt="shapes">
                         </div>
+                       
                         <div class="newsletter-contents center-text">
                             <h3 class="newsletter-contents-title"> Newsletter </h3>
                             <p class="newsletter-contents-para mt-3"> 
@@ -306,11 +321,12 @@
                                  </p>
                             <div class="newsletter-contents-form custom-form mt-4">
                                 <div class="single-input">
-                                    <input type="text" class="form--control" placeholder="Enter Email">
-                                    <button type="submit"> Envoyer </button>
+                                    <input type="text" id="email" class="form--control" placeholder="Enter Email" required>
+                                    <button class="submit-btn btn-newsletter" id="toastr-info-top-right"> Envoyer </button>
                                 </div>
                             </div>
                         </div>
+                       
                     </div>
                 </div>
             </div>
@@ -319,3 +335,28 @@
     <!-- Newsletter area end -->
 
 @endsection
+@push('add-newsletter')
+<script>
+$( ".btn-newsletter" ).click(function(e) {
+    e.preventDefault();
+    let email = $('#email').val();
+    $.ajax({
+          type:"Post",  
+          url: '/newsletter',
+          data:{
+            "_token": "{{ csrf_token() }}",
+            email:email,
+          },
+          success:function(response){
+
+            $("#liveToast").show();
+          },
+        
+          });
+});
+$( ".btn-close" ).click(function(e) {
+    $("#liveToast").hide();
+   
+});
+</script>
+@endpush
