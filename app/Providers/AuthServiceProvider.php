@@ -4,6 +4,7 @@ namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
 
+use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Auth;
@@ -38,7 +39,15 @@ class AuthServiceProvider extends ServiceProvider
             return (new MailMessage)
                 ->subject('Ethix - Vérification Email')
                 ->line('Click the button below to verify your email address.')
-                ->action('Verify Email Address', $url);
+                ->action('Verify Email Address', $url)
+                ->view('vendor.notifications.email');
+        });
+
+        ResetPassword::toMailUsing(function ($notifiable, $token) {
+            $url = route('password.reset',$token).'?email='.$notifiable->getEmailForPasswordReset();
+            return (new MailMessage())
+                ->subject('Ethix - Mot De Passe Oublié')
+                ->view('vendor.notifications.reset-password', compact('url'));
         });
     }
 

@@ -50,7 +50,7 @@
                                                         <h4  >{{$property->profitability}}%</h4> rentabilité 
                                                     </div>
                                                     <div class="col-4">
-                                                        <h4 >{{$property->obj_revenu}}%</h4> Reverséss 
+                                                        <h4 >{{$property->obj_revenu}}%</h4> Reversés
                                                     </div >
                                                     <div class="col-4">
                                                         <div class="btn-wrapper">

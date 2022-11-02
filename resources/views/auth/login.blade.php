@@ -47,11 +47,14 @@
                                     <input class="check-input" type="checkbox" id="check15" name="remember_me">
                                     <label class="checkbox-label" for="check15"> Se souvenir de moi </label>
                                 </div>
+                                <div class="forgot-password">
+                                <a href="{{url('password/reset')}}" class="forgot-btn color-one"> Mot de passe oublié </a>
+                            </div>
                             </div>
                            
                             <button class="submit-btn w-100 mt-4" type="submit"> Connectez</button>
                             
-                            <span class="account color-light mt-3">Vous n'avez pas de compte ? <a class="color-one" href="{{asset('/register')}}"> S'inscrire maintenant </a> </span>
+                            <span class="account color-light mt-3">Vous n'avez pas de compte ? <a class="color-one" href="{{asset('/register')}}"> Créer un compte maintenant </a> </span>
                         </form>
                         
                      </div>

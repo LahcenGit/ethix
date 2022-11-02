@@ -14,27 +14,27 @@
                             @csrf
                             <div class="input-flex-item">
                                 <div class="single-input mt-4">
-                                    <label class="label-title mb-3"> Nom </label>
-                                    <input class="form--control  @error('first_name') is-invalid @enderror" type="text" name="first_name" value="{{old('first_name')}}" placeholder="Nom" required>
+                                   
+                                    <input class="form-control  @error('first_name') is-invalid @enderror" type="text" name="first_name" value="{{old('first_name')}}" placeholder="Nom" >
                                         @error('first_name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                         @enderror
                                 </div>
+                                
                                 <div class="single-input mt-4">
-                                    <label class="label-title mb-3"> Prénom </label>
-                                    <input class="form--control @error('last_name') is-invalid @enderror" type="text" name="last_name" placeholder="Prénom" value="{{old('last_name')}}" required>
-                                       @error('last_name')
-                                            <span class="invalid-feedback" role="alert">
+                                <input class="form-control @error('last_name') is-invalid @enderror" id="validationServer03" type="text" name="last_name" placeholder="Prénom" value="{{old('last_name')}}" aria-describedby="validationServer03Feedback" >
+                                        @error('last_name')
+                                            <div id="validationServer03Feedback" class="invalid-feedback" >
                                                 <strong>{{ $message }}</strong>
-                                            </span>
+                                            </div>
                                         @enderror
                                 </div>
                             </div>
+                           
                             <div class="single-input mt-4">
-                                <label class="label-title mb-3"> Username </label>
-                                <input class="form--control @error('username') is-invalid @enderror" type="text" name="username" placeholder="Username" value="{{old('username')}}" required>
+                                <input class="form-control @error('username') is-invalid @enderror" type="text" name="username" placeholder="Nom d'utilisateur" value="{{old('username')}}" >
                                         @error('username')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -42,8 +42,8 @@
                                         @enderror
                             </div>
                             <div class="single-input mt-4">
-                                <label class="label-title mb-3"> Email  </label>
-                                <input class="form--control @error('email') is-invalid @enderror" type="text" name="email" placeholder="Email" value="{{old('email')}}" required>
+                               
+                                <input class="form-control @error('email') is-invalid @enderror" type="text" name="email" placeholder="Email" value="{{old('email')}}" >
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -51,10 +51,10 @@
                                         @enderror
                             </div>
                             <div class="single-input mt-4">
-                                <label class="label-title mb-3"> N° de téléphone </label>
-                                <input class="form--control @error('phone') is-invalid @enderror" type="text"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"name="phone" placeholder="Téléphone" value="{{old('phone')}}" required>
+                                
+                                <input class="form-control @error('phone') is-invalid @enderror" type="text"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"name="phone" placeholder="Téléphone" value="{{old('phone')}}" >
                                         @error('phone')
-                                            <span class="invalid-feedback" role="alert">
+                                            <span class="invalid-feedback" >
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
@@ -62,7 +62,7 @@
                             <div class="input-flex-item">
                                 <div class="single-input mt-4">
                                     <label class="label-title mb-3"> Mot de passe </label>
-                                    <input class="form--control @error('password') is-invalid @enderror" type="password" name="password" placeholder="******"required>
+                                    <input class="form-control @error('password') is-invalid @enderror" type="password" name="password" placeholder="******">
                                        
                                     <div class="icon toggle-password">
                                         <div class="show-icon"> <i class="las la-eye-slash"></i> </div>
@@ -76,7 +76,7 @@
                                 </div>
                                 <div class="single-input mt-4">
                                     <label class="label-title mb-3"> Confirmer le mot de passe </label>
-                                    <input class="form--control" type="password" name="password_confirmation" placeholder="******"  required>
+                                    <input class="form-control" type="password" name="password_confirmation" placeholder="******"  >
                                     <div class="icon toggle-password">
                                         <div class="show-icon"> <i class="las la-eye-slash"></i> </div>
                                         <span class="hide-icon"> <i class="las la-eye"></i> </span>
@@ -86,14 +86,14 @@
                             
                             <div class="checkbox-inline mt-4">
                                 <input class="check-input" type="checkbox" id="check15">
-                                <label class="checkbox-label" for="check15"> Veuillez confirmer que vous acceptez notre
-                                     <a class="color-one" href="{{url('politique-confidentialite')}}">  politique de confidentialité </a> </label>
+                                <label class="checkbox-label" for="check15"> J'ai lu et j'accepte  
+                                     <a class="color-one" href="{{url('politique-confidentialite')}}"> les CGU et la  pol.de confidentialité </a> </label>
                             </div>
                             <div class="alert alert-danger mt-3 alert-condition" role="alert" style="display: none;">
                                 <span style="font-size: 15px;">Veuillez confirmer votre acceptation de notre politique de confidentialité </span>
                             </div>
                             <button class="submit-btn w-100 mt-4 btn-submit" > S'inscrire</button>
-                            <span class="account color-light mt-3"> Vous avez déja un compte? <a class="color-one" href="{{asset('/login')}}"> Connecter </a> </span>
+                            <span class="account color-light mt-3"> Vous avez déja un compte? <a class="color-one" href="{{asset('/login')}}"> Connectez-vous </a> </span>
                         </form>
                     </div>
                 </div>
