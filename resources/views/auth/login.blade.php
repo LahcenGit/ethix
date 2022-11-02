@@ -16,8 +16,8 @@
                         <form class="login-wrapper-contents-form custom-form" method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="single-input mt-4">
-                                <label class="label-title mb-3"> Email Ou User Name </label>
-                                <input class="form--control @error('username') is-invalid @enderror" type="text" placeholder="Email Ou User Name" name="username" required>
+                                
+                                <input class="form--control @error('username') is-invalid @enderror" type="text" placeholder="Email Ou Nom d'utilisateur" name="username" required>
                                         @error('username')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -25,7 +25,7 @@
                                         @enderror
                             </div>
                             <div class="single-input mt-4">
-                                <label class="label-title mb-3"> Mot de passe </label>
+                              
                                 <input class="form--control @error('password') is-invalid @enderror" type="password" placeholder="Mot de passe" name="password" required>
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">
