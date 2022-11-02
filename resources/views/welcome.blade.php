@@ -268,16 +268,16 @@
                         <div class="faq-question-form custom-form mat-20">
                             <form action="#">
                                 <div class="single-input">
-                                    <label class="label-title"> Nom </label>
-                                    <input type="text" class="form--control radius-10" placeholder="écrire votre nom,">
+                                    
+                                    <input type="text" class="form--control radius-10" placeholder=" Nom">
                                 </div>
                                 <div class="single-input">
-                                    <label class="label-title"> Email </label>
-                                    <input type="text" class="form--control radius-10" placeholder="écrire votre email">
+                                    
+                                    <input type="text" class="form--control radius-10" placeholder="Email">
                                 </div>
                                 <div class="single-input">
-                                    <label class="label-title"> Question </label>
-                                    <textarea name="message" class="form--control form-message radius-10" placeholder="rédiger votre question"></textarea>
+                                   
+                                    <textarea name="message" class="form--control form-message radius-10" placeholder="Question"></textarea>
                                 </div>
                                 <button class="submit-btn w-100 radius-10" type="submit"> Envoyer </button>
                             </form>
