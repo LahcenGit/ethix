@@ -66,6 +66,7 @@ class RegisterController extends Controller
             'username'=>['required', 'string', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ],
+        
         [
             'password.min' => 'Le mot de passe doit comporter au moins 8 caractères.',
             'email.unique' => 'Ce email existe déja',
