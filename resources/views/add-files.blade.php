@@ -39,17 +39,30 @@
                           @csrf
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3"> Carte d'identité recto :</label>
-                                <input class="form--control" type="file"  name="file_one" accept="image/*" required>
+                                <input class="form--control @error('file_one') is-invalid @enderror" type="file"  name="file_one" value="{{old('file_one')}}" accept="image/*" required>
+                                    @error('file_one')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                             </div>
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3">Carte d'identité verso : </label>
-                                <input class="form--control" type="file"  name="file_two" required>
-                                
+                                <input class="form--control @error('file_two') is-invalid @enderror" type="file" value="{{old('file_two')}}" name="file_two" required>
+                                    @error('file_two')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                             </div>
                             <div class="single-input mt-4">
                                 <label class="label-title mb-3">Passeport : </label>
-                                <input class="form--control" type="file"  name="file_tree" required>
-                                
+                                <input class="form--control @error('file_tree') is-invalid @enderror" type="file" value="{{old('file_tree')}}" name="file_tree" required>
+                                    @error('file_tree')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                             </div>
                             
                             <button class="submit-btn w-100 mt-4" type="submit"> Envoyer</button>

@@ -403,7 +403,12 @@
 });
     </script>
     
+<script>
+    $(document).ready(function(){
+          $(".flash-alert").slideDown(200).delay(2500).slideUp(200);
+    });
 
+</script>
 @stack('achat-ethix-scripts')
 @stack('validate-scripts')
 @stack('check-condition')

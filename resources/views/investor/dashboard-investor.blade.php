@@ -1,8 +1,9 @@
 @extends('layouts.front')
 @section('content')
 
+@include('flash-message')
 @include('investor.header-investor')
-    
+
     <!-- Dashboard area Starts -->
     <div class="body-overlay"></div>
     <div class="dashboard-area section-bg-2 dashboard-padding">

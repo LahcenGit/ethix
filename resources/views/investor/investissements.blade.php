@@ -2,7 +2,7 @@
 @section('content')
 
 
-
+@include('flash-message')
 @include('investor.header-investor')
 
 <div class="body-overlay"></div>

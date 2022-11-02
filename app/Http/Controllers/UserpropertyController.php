@@ -65,7 +65,7 @@ class UserpropertyController extends Controller
 
             (int)$user->solde = (int)$user->solde-($nbr_ethix * (int)$value_ethix->value);
             $user->save();
-            return redirect('app/investissements');
+            return redirect('app/investissements')->with('success','Achat effectué avec succès -'.$nbr_ethix.' ethixe(s), Merci!');
         }
     }
 

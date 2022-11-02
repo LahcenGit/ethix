@@ -15,6 +15,18 @@ class UserDocumentController extends Controller
         $this->middleware('auth');
     }
     public function store(Request $request){
+
+        $validated = $request->validate([
+            'file_one' => 'max:5000',
+            'file_two' => 'max:5000',
+            'file_tree' => 'max:5000',
+        ],
+        [
+        'file_one.max' => 'La taille de fichier ne doit pas dépasser 5 Mo',
+        'file_two.max' => 'La taille de fichier ne doit pas dépasser 5 Mo',
+        'file_tree.max' => 'La taille de fichier ne doit pas dépasser 5 Mo',
+        ]
+    );
         $user_auth = Auth::user(); 
         $user = User::find($user_auth->id);
         $file = $request->file_one;
@@ -46,7 +58,7 @@ class UserDocumentController extends Controller
 
         $user->status = 1;
         $user->save();
-        return redirect('app');
+        return redirect('app')->with('success','Nous avons bien reçu vos documents, Merci!');
    }
    
 

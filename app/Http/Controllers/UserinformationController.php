@@ -32,6 +32,6 @@ class UserinformationController extends Controller
         $info->save();
         $user->status = 1;
         $user->save();
-        return redirect('app');
+        return redirect('app')->with('success','Nous avons bien reçu vos informations, Merci!');
     }
 }

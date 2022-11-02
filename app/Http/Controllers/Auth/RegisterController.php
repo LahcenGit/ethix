@@ -64,11 +64,12 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'phone' => ['required', 'string', 'unique:users'],
             'username'=>['required', 'string', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8', 'confirmed' , 'regex:/[A-Z]/',  'regex:/[0-9]/'],
         ],
         
         [
-            'password.min' => 'Le mot de passe doit comporter au moins 8 caractères.',
+            'password.min' => '8 caractères , 1 majuscule , 1 chiffre',
+            'password.regex' =>'8 caractères , 1 majuscule , 1 chiffre ',
             'email.unique' => 'Ce email existe déja',
             'email.email' => 'e-mail doit être une adresse e-mail valide.',
             'username.unique' => 'Ce username existe déja',

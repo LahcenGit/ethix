@@ -68,13 +68,18 @@
                                         <div class="show-icon"> <i class="las la-eye-slash"></i> </div>
                                         <span class="hide-icon"> <i class="las la-eye"></i> </span>
                                     </div>
+                                       @if(!$errors->any())
+                                        <p>8 caractères,1 majuscule,1 chiffre</p>
+                                       @endif
                                        @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
                                 </div>
-                                <div class="single-input mt-4">
+                               
+                            </div>
+                            <div class="single-input mt-4">
                                     <label class="label-title mb-3"> Confirmer le mot de passe </label>
                                     <input class="form-control" type="password" name="password_confirmation" placeholder="******"  >
                                     <div class="icon toggle-password">
@@ -82,7 +87,6 @@
                                         <span class="hide-icon"> <i class="las la-eye"></i> </span>
                                     </div>
                                 </div>
-                            </div>
                             
                             <div class="checkbox-inline mt-4">
                                 <input class="check-input" type="checkbox" id="check15">
