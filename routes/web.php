@@ -42,6 +42,9 @@ Route::get('/ccm', function () {
 Route::get('/faq', function () {
     return view('faq');
 });
+Route::get('/contact', function () {
+    return view('contact');
+});
 
 
 

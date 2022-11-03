@@ -21,6 +21,7 @@
                             <i class="fas fa-user fa-2x mb-3"></i>
                             <h4 style="color: #ffff">1-S'inscrire en quelques clics</h4>
                             <p class="small text-white-50 mb-4 text-white" > Créer un compte Ethix </p>
+                            <img class="mb-4" style="border-radius: 25px;" src="{{asset('Front\assets\img\AdobeStock_273639400-930x620.jpeg')}}" alt="">
                             <p style="color: #ffff">Quelques informations et une copie de votre pièce d'identité seront nécessaires pour la création d'un compte investisseur.
                             </p>
                           </div>
@@ -32,6 +33,7 @@
                             <i class="fas fa-check fa-2x mb-3"></i>
                             <h4 style="color: #ffff">2-Validation de votre compte</h4>
                             <p class="small text-white-50 mb-4 text-white" >  Rejoindre le groupe d'investisseurs  </p>
+                            <img class="mb-4" style="border-radius: 25px;" src="{{asset('Front\assets\img\AdobeStock_228730968-930x620.jpeg')}}" alt="">
                             <p style="color: #ffff">Une fois l'inscription validée et le contrat Ethix dûment signé, vous rejoignez le groupe d’investisseurs Ethix.
                                 Vous avez désormais accès à votre tableau de bord et vous pouvez accéder aux informations concernant les investissements dans les projets en cours.
                             </p>
@@ -44,6 +46,7 @@
                             <i class="fas fa-euro-sign fa-2x mb-3"></i>
                             <h4 style="color: #ffff">3-Encaisser ou réinvestir sa plus-value </h4>
                             <p class="small text-white-50 mb-4 text-white" >Récoltez les Fruits de vos investissements  </p>
+                            <img class="mb-4" style="border-radius: 25px;" src="{{asset('Front\assets\img\AdobeStock_69307111-1024x734.jpeg')}}" alt="">
                             <p style="color: #ffff">Vous avez pris des parts dans un projet ? Récupérez vos gains lors de la vente de ce dernier et choisissez ou non de les réinvestir dans de nouveaux projets afin de bénéficier de l'effet cumulé.
                             </p>
                           </div>
@@ -69,33 +72,33 @@
 
             <div class="row d-flex justify-content-center">
 
-              <div class="card" style="width: 14rem; margin-right:5px;">
-                <img  style="width: 300px; height: 300px; object-fit: scale-down;" src="https://ethix-invest.com/wp-content/uploads/2022/02/AdobeStock_392563812-scaled.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
+              <div class="card card-edit-border" style="width: 14rem; margin-right:5px;">
+                <img src="{{asset('Front\assets\img\recherche-ethix.jpg')}}" class="card-img-top" alt="...">
+                <div class="card-body d-flex justify-content-center">
                   <b class="card-text text-center" style="color: #024670" >Recherche des opportunités</b>
                 </div>
               </div>
-              <div class="card" style="width: 14rem; margin-right:5px;">
-                <img style="width: 300px; height: 300px; object-fit: scale-down;" src="https://ethix-invest.com/wp-content/uploads/2022/02/AdobeStock_297566920-scaled.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
+              <div class="card card-edit-border" style="width: 14rem; margin-right:5px;">
+                <img  src="{{asset('Front\assets\img\negociation-ethix.jpg')}}" class="card-img-top" alt="...">
+                <div class="card-body d-flex justify-content-center ">
                   <b class="card-text text-center" style="color: #024670" >Négociation</b>
                 </div>
               </div>
-              <div class="card" style="width: 14rem; margin-right:5px;">
-                <img style="width: 300px; height: 300px; object-fit: scale-down;" src="https://ethix-invest.com/wp-content/uploads/2022/02/AdobeStock_349552137-1-scaled.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
+              <div class="card card-edit-border" style="width: 14rem; margin-right:5px;">
+                <img  src="{{asset('Front\assets\img\travaux-ethix.jpg')}}" class="card-img-top" alt="...">
+                <div class="card-body d-flex justify-content-center ">
                   <b class="card-text text-center" style="color: #024670" >Travaux</b>
                 </div>
               </div>
-              <div class="card" style="width: 14rem; margin-right:5px;">
-                <img style="width: 300px; height: 300px; object-fit: scale-down;" src="https://ethix-invest.com/wp-content/uploads/2022/02/AdobeStock_237136901-scaled.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
+              <div class="card card-edit-border" style="width: 14rem; margin-right:5px;">
+                <img  src="{{asset('Front\assets\img\revente-ethix.jpg')}}" class="card-img-top" alt="...">
+                <div class="card-body d-flex justify-content-center">
                   <b class="card-text text-center" style="color: #024670" >Revente</b>
                 </div>
               </div>
-              <div class="card" style="width: 14rem; margin-right:5px;">
-                <img style="width: 300px; height: 300px; object-fit: scale-down;" src="https://ethix-invest.com/wp-content/uploads/2022/02/AdobeStock_368212815-scaled.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
+              <div class="card card-edit-border" style="width: 14rem; margin-right:5px;">
+                <img  src="{{asset('Front\assets\img\suivi-ethix.jpg')}}" class="card-img-top" alt="...">
+                <div class="card-body d-flex justify-content-center">
                   <b class="card-text text-center" style="color: #024670" >Suivi administratif et juridique du projet</b>
                 </div>
               </div>

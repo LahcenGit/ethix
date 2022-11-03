@@ -333,7 +333,7 @@
                                  </p>
                             <div class="newsletter-contents-form custom-form mt-4">
                                 <div class="single-input">
-                                    <input type="text" id="email" class="form--control" placeholder="Enter Email" required>
+                                    <input type="text" id="email" class="form--control" placeholder="Taper votre email" required>
                                     <button class="submit-btn btn-newsletter" id="toastr-info-top-right"> Envoyer </button>
                                 </div>
                             </div>

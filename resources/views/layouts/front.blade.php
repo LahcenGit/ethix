@@ -103,9 +103,9 @@
   top: 18px;
   z-index: 1;
   right: 30px;
-  border: medium solid rgba(37, 117, 252, 1);
+  border: medium solid #064670;
   border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent rgba(37, 117, 252, 1);
+  border-color: transparent transparent transparent#064670;
 }
 
 /* Add arrows to the right container (pointing left) */
@@ -115,9 +115,9 @@
   top: 18px;
   z-index: 1;
   left: 30px;
-  border: medium solid rgba(245, 87, 108, 1);
+  border: medium solid #064670;
   border-width: 10px 10px 10px 0;
-  border-color: transparent rgba(245, 87, 108, 1) transparent transparent;
+  border-color: transparent #064670 transparent transparent;
 }
 
 /* Fix the circle for containers on the right side */
@@ -165,7 +165,7 @@
 
 .gradient-custom {
   /* fallback for old browsers */
-  background: #6a11cb;
+  background: #064670;
 
   /* Chrome 10-25, Safari 5.1-6 */
   background: -webkit-linear-gradient(
@@ -202,6 +202,10 @@
 }
 
 
+.card-edit-border{
+    border: 1px solid rgb(77, 170, 127) ! important;
+}
+
 
 </style>
 <style>
@@ -237,7 +241,8 @@
                         </li>
                         <li><a href="{{asset('/ccm')}}"> Comment ça marche </a></li>
                         <li><a href="{{asset('/faq')}}"> FAQ </a></li>
-                        <li><a href="#"> Contact </a></li>
+                        <li><a href="{{asset('/politique-confidentialite')}}"> CGU </a></li>
+                        <li><a href="{{asset('/contact')}}"> Contact </a></li>
                     </ul>
                 </div>
                 <div class="navbar-right-content show-nav-content">
@@ -351,10 +356,6 @@
     </div>
     <!-- back to top area end -->
 
-    <!-- Mouse Cursor start -->
-    <div class="mouse-move mouse-outer"></div>
-    <div class="mouse-move mouse-inner"></div>
-    <!-- Mouse Cursor Ends -->
 
     <!-- jquery -->
     <script src="{{asset('Front/assets/js/jquery-3.6.0.min.js')}}"></script>
@@ -401,7 +402,7 @@
             mergeFit:false
         }
     }
-});
+   });
     </script>
     
 <script>
