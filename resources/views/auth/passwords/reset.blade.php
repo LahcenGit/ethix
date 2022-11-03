@@ -1,10 +1,6 @@
 @extends('layouts.front')
 @section('content')
-@if ($errors->any())
-@foreach ($errors->all() as $error)
-    <div>{{$error}}</div>
-@endforeach
-@endif
+
 
         <div class="container d-flex justify-content-center " style="margin-top: 100px;margin-bottom: 100px;">
             <div class="login-wrapper login-shadow bg-white">
@@ -19,8 +15,9 @@
 
                             <div class="single-input mt-4">
                                 
-                                <input class="form--control @error('username') is-invalid @enderror" type="text" placeholder="Email " name="email" required>
-                                        @error('username')
+                                <input class="form--control @error('email') is-invalid @enderror" type="text" value="{{old('email')}}" placeholder="Email " name="email" required>
+                                       
+                                        @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
@@ -29,6 +26,9 @@
                             <div class="single-input mt-4">
                                 
                                 <input class="form--control @error('password') is-invalid @enderror" type="password" placeholder="Mot de passe" name="password" required>
+                                        @if(!$errors->any())
+                                            <p>8 caractères,1 majuscule,1 chiffre</p>
+                                        @endif
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
