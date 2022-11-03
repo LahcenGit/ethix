@@ -70,6 +70,7 @@
   width: 50%;
 }
 
+
 /* The circles on the timeline */
 .timeline-4::after {
   content: "";

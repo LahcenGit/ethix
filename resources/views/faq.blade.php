@@ -1,7 +1,11 @@
 @extends('layouts.front')
 @section('content')
 
-
+<style>
+    .text-blue {
+    color: #024670 !important;
+}
+</style>
 <!-- Question area starts -->
 <section class="question-area pat-50 pab-50">
     <div class="container">
@@ -18,7 +22,7 @@
                                 Qu'est-ce que Ethix ?
                             </h3>
                             <div class="faq-panel">
-                                <p class="faq-para"> Ethix est la première startup dédiée à l'investissement sans la pratique de l'usure.
+                                <p class="faq-para text-blue"> Ethix est la première startup dédiée à l'investissement sans la pratique de l'usure.
 
 
                                     Investir dès 100 euros dans des projets à forte valeur ajoutée dans le but de se constituer une épargne et des revenus réguliers devient désormais accessible à tous. </p>
