@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use Illuminate\Http\Request;
+use Illuminate\Notifications\Messages\MailMessage;
 
 class ForgotPasswordController extends Controller
 {
@@ -20,5 +23,5 @@ class ForgotPasswordController extends Controller
 
     use SendsPasswordResetEmails;
   
-    
+ 
 }

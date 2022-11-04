@@ -251,9 +251,10 @@
                         <div class="navbar-right-flex">
                             @auth
                             <div class="navbar-right-btn">
-                                 <span style="color: #4DAA7F"> <i class="fa-solid fa-wallet"></i> {{Auth::user()->solde}}€  </span>
+                                 <span style="color: #4DAA7F"> <i class="fa-solid fa-wallet"></i> @if(Auth::user()->solde)}}€ @else 0.00 € @endif </span>
                             </div>
                             <div class="btn-wrapper">
+                                @if(Auth::user()->email_verified_at != null)
                                 @if (Auth::user()->type == 'admin')
                                 <a href="{{asset('/dashboard-admin') }}"  class="cmn-btn btn-bg-1 radius-10">
                                     <span class="ml-2"> Dashboard <i class="fa-solid fa-caret-right"></i></span>
@@ -261,6 +262,15 @@
                                 @else
                                 <a href="{{asset('/app') }}"  class="cmn-btn btn-bg-1 radius-10">
                                     <span class="ml-2"> Dashboard <i class="fa-solid fa-caret-right"></i></span>
+                                </a>
+                                @endif
+                                @else
+                                <a href="{{route('logout')}}"  class="cmn-btn btn-bg-1 radius-10"onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                                    <span class="ml-2"> Déconnexion <i class="fa-solid fa-right-from-bracket "></i></span>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                                 </a>
                                 @endif
                             </div>

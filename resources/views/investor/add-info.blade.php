@@ -36,49 +36,39 @@
                         <p class="sigle-para mt-2"> Veuillez renseigner toutes informations </p>
                         <form class="login-wrapper-form custom-form padding-top-20" method="POST" action="{{ url('app/add-info') }}">
                             @csrf
-                            <label class="label-title mt-3 ">Genre* : </label>
-                            <div class="form-check form-check-inline">
-                             
+                           
+                            <div class="form-check form-check-inline mt-3">
                                 <input class="form-check-input" type="radio" name="genre" id="inlineRadio1" value="0">
                                 <label class="form-check-label" for="inlineRadio1">Féminin</label>
-                                </div>
-                                <div class="form-check form-check-inline">
+                            </div>
+                            <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="genre" id="inlineRadio2" value="1">
                                 <label class="form-check-label" for="inlineRadio2">Masculin</label>
                             </div>
                             
 
                             <div class="single-input mt-4">
-                                <label class="label-title mb-3"> Pays de résidence* : </label>
-                                <input class="form--control" type="text" name="country_of_residence" placeholder="France"  required>
+                               <input class="form--control" type="text" name="country_of_residence" placeholder=" Pays de résidence"  required>
                             </div>
                           
                            <div class="single-input mt-4">
-                                <label class="label-title mb-3"> Pays de naissance* :  </label>
-                                <input class="form--control" type="text" name="country_of_birth" placeholder="France"  required>
+                                <input class="form--control" type="text" name="country_of_birth" placeholder=" Pays de naissance"  required>
                             </div>
                             <div class="single-input mt-4">
-                                <label class="label-title mb-3"> Ville de naissance* :  </label>
-                                <input class="form--control" type="text" name="cite_of_birth" placeholder="Paris"  required>
-                            </div>
-                            <div class="single-input mt-4">
-                                <label class="label-title mb-3"> Date de naissance* : </label>
-                                <input class="form--control" type="date" name="date_of_birth"  required>
-                            </div>
-                            <div class="single-input mt-4">
-                                <label class="label-title mb-3">Adresse* : </label>
-                                <input class="form--control" type="text"  name="address" placeholder="129 AVENUE DE GENEVE" required>
                                 
+                                <input class="form--control" type="text" name="cite_of_birth" placeholder="Ville de naissance"  required>
                             </div>
                             <div class="single-input mt-4">
-                                <label class="label-title mb-3">Numéro de département* : </label>
-                                <input class="form--control" type="text"  name="num_department" placeholder="75" required>
-                                
+                               <input type="text" class="form--control" name="date_of_birth" placeholder="Date de naissance" onfocus="(this.type='date')" required>
                             </div>
                             <div class="single-input mt-4">
-                                <label class="label-title mb-3">Code Postal* : </label>
-                                <input class="form--control" type="text"  name="code_postal" placeholder="75000" required>
-                                
+                                <input class="form--control" type="text"  name="address" placeholder="Adresse" required>
+                            </div>
+                            <div class="single-input mt-4">
+                                <input class="form--control" type="text"  name="num_department" placeholder="Numéro de département" required>
+                            </div>
+                            <div class="single-input mt-4">
+                                <input class="form--control" type="text"  name="code_postal" placeholder="Code Postal" required>
                             </div>
                             <button class="submit-btn w-100 mt-4" type="submit"> Envoyer</button>
                             
