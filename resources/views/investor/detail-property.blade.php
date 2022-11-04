@@ -13,11 +13,12 @@
                 <div class="col-xl-8 col-lg-7">
                     <div class="details-left-wrapper">
                         <div class="details-contents bg-white radius-10">
-                            <div class="details-contents-header">
-                                <div class="owl-carousel owl-theme">
+                            <div class="details-contents-header ">
+                                <div id="owl-demo" class="owl-carousel owl-theme ">
                                     @foreach ($property->images as $img)
-                                        <div class="item" data-merge="{{$loop->iteration}}"><img src="{{asset('storage/images/properties/'.$img->link)}}"  width="50%" height="50%"  alt=""></div>
-                                    @endforeach
+                                    <div class="item"><img src="{{asset('storage/images/properties/'.$img->link)}}" alt="Owl Image"></div>
+                                        @endforeach
+                                
                                 </div>
                             </div>
 
@@ -60,38 +61,8 @@
                                         
                                     </div>
                                 </div>
-                                <div id="reviews" class="tab-content-item">
-                                    <div class="review-tab-contents">
-                                        <div class="review-tab-contents-single">
-                                            <div class="rating-wrap">
-                                                <div class="ratings">
-                                                    <span class="hide-rating"></span>
-                                                    <span class="show-rating"></span>
-                                                </div>
-                                                <p> <span class="total-ratings">(167)</span></p>
-                                            </div>
-                                            <p class="about-review-para mt-3"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a egestas leo. Aliquam ut ante lobortis tellus cursus pellentesque. Praesent feugiat tellus quis aliquet </p>
-                                            <div class="review-tab-contents-author mt-4">
-                                                <h4 class="review-tab-contents-author-name"> Sandra M. Hurt </h4>
-                                                <p class="review-tab-contents-author-para mt-2"> TrustPilot </p>
-                                            </div>
-                                        </div>
-                                        <div class="review-tab-contents-single">
-                                            <div class="rating-wrap">
-                                                <div class="ratings">
-                                                    <span class="hide-rating"></span>
-                                                    <span class="show-rating"></span>
-                                                </div>
-                                                <p> <span class="total-ratings">(236)</span></p>
-                                            </div>
-                                            <p class="about-review-para mt-3"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a egestas leo. Aliquam ut ante lobortis tellus cursus pellentesque. Praesent feugiat tellus quis aliquet </p>
-                                            <div class="review-tab-contents-author mt-4">
-                                                <h4 class="review-tab-contents-author-name"> Robert Fox </h4>
-                                                <p class="review-tab-contents-author-para mt-2"> Designer </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
+
                             </div>
                         </div>
                        
@@ -105,11 +76,11 @@
                                     <div class="single-reservation-details">
                                         <div class="single-reservation-details-item">
                                             <span class="single-reservation-details-subtitle" > Valeur d'une Ethix</span>
-                                            <h3 class="single-reservation-details-title" style="font-size: 25px;"> 10 €</h3>
+                                            <h3 class="single-reservation-details-title" style="font-size: 25px; color:#4DAA7F"> 100 €</h3>
                                         </div>
                                         <div class="single-reservation-details-item">
                                             <span class="single-reservation-details-subtitle"> Objectif de financement</span>
-                                            <h5 class="single-reservation-details-title"> {{number_format($property->obj_financement)}} €</h5>
+                                            <h5 class="single-reservation-details-title" style="font-size: 25px; color:#4DAA7F"> {{number_format($property->obj_financement)}} €</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -117,11 +88,11 @@
                                     <div class="single-reservation-details">
                                         <div class="single-reservation-details-item">
                                             <span class="single-reservation-details-subtitle"> Rentabilité cible</span>
-                                            <h5 class="single-reservation-details-title"> {{$property->profitability}}%</h5>
+                                            <h5 class="single-reservation-details-title" style="font-size: 25px;"> {{$property->profitability}}%</h5>
                                         </div>
                                         <div class="single-reservation-details-item">
                                             <span class="single-reservation-details-subtitle">Objectif de revenus</span>
-                                            <h5 class="single-reservation-details-title"> {{$property->obj_revenu}}%</h5>
+                                            <h5 class="single-reservation-details-title" style="font-size: 25px;"> {{$property->obj_revenu}}%</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -129,7 +100,7 @@
                                     <div class="single-reservation-details">
                                         <div class="single-reservation-details-item">
                                             <span class="single-reservation-details-subtitle"> Valorisation du bien</span>
-                                            <h5 class="single-reservation-details-title"> {{number_format($property->valuation)}} €</h5>
+                                            <h5 class="single-reservation-details-title" style="font-size: 25px;"> {{number_format($property->valuation)}} €</h5>
                                         </div>
                                        
                                     </div>

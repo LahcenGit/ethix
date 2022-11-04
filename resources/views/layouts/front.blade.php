@@ -207,8 +207,13 @@
 }
 
 
-</style>
-<style>
+
+#owl-demo .item img{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
     .form-check-input:checked{
         background-color: #4DAA7F;
         border-color: #4DAA7F;
@@ -251,7 +256,7 @@
                         <div class="navbar-right-flex">
                             @auth
                             <div class="navbar-right-btn">
-                                 <span style="color: #4DAA7F"> <i class="fa-solid fa-wallet"></i> @if(Auth::user()->solde)}}€ @else 0.00 € @endif </span>
+                                 <span style="color: #4DAA7F"> <i class="fa-solid fa-wallet"></i> {{Auth::user()->solde === NULL ? "0.00" : number_format(Auth::user()->solde,2) }} €  </span>
                             </div>
                             <div class="btn-wrapper">
                                 @if(Auth::user()->email_verified_at != null)
@@ -399,20 +404,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" referrerpolicy="no-referrer"></script>
 
     <script>
-        $('.owl-carousel').owlCarousel({
-    items:5,
-    loop:true,
-    margin:10,
-    merge:true,
-    responsive:{
-        678:{
-            mergeFit:true
-        },
-        1000:{
-            mergeFit:false
-        }
-    }
-   });
+     
+
+     $("#owl-demo").owlCarousel({
+ 
+        navigation : true, // Show next and prev buttons
+
+        slideSpeed : 300,
+        paginationSpeed : 400,
+
+        items : 1, 
+        itemsDesktop : false,
+        itemsDesktopSmall : false,
+        itemsTablet: false,
+        itemsMobile : false
+
+        });
     </script>
     
 <script>

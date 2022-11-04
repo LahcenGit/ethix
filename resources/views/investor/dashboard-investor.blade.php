@@ -11,21 +11,7 @@
             <div class="shop-contents-wrapper mt-5">
                
                 <div class="shop-grid-contents">
-                    <div class="grid-list-contents">
-                        <div class="grid-list-contents-flex">
-                            <p class="grid-list-contents-para"> Affichage 1-4 de 16 résultats </p>
-                            <div class="grid-list-view">
-                                <ul class="grid-list-view-flex d-flex tabs list-style-none">
-                                    <li class="grid-list-view-icons active" data-tab="tab-grid">
-                                        <a href="javascript:void(0)" class="icon" style="color: #0b9e9a"> <i class="las la-border-all"></i> </a>
-                                    </li>
-                                    <li class="grid-list-view-icons" data-tab="tab-list">
-                                        <a href="javascript:void(0)" class="icon" > <i class="las la-bars"></i> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    
                     
                     <div id="tab-grid" class="tab-content-item active mt-4">
                         <div class="row gy-4">
@@ -47,13 +33,13 @@
                                         <div class="hotel-view-contents-bottom pt-2">
                                             <div class="hotel-view-contents-bottom-flex">
                                                 <div class="hotel-view-contents-bottom-contents row">
-                                                    <div class="col-4">
+                                                    <div class="col-3 p-2">
                                                         <h4  >{{$property->profitability}}%</h4> rentabilité 
                                                     </div>
-                                                    <div class="col-4">
+                                                    <div class="col-3 p-2">
                                                         <h4 >{{$property->obj_revenu}}%</h4> Reversés
                                                     </div >
-                                                    <div class="col-4">
+                                                    <div class="col-6 text-center">
                                                         <div class="btn-wrapper">
                                                             <a href="{{asset('/app/detail-property/'.$property->id)}}" class="cmn-btn btn-bg-1  mt-2" > Acheter  </a>
                                                        </div>

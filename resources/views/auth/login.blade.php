@@ -11,13 +11,13 @@
                 <div class="login-wrapper-flex">
                    
                     <div class="login-wrapper-contents login-padding">
-                        <h2 class="single-title"> Bienvenue! </h2>
+                        <h2 class="single-title"> Bienvenue ! </h2>
                         <p class="sigle-para mt-2"> Connectez-vous pour continuer</p>
                         <form class="login-wrapper-contents-form custom-form" method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="single-input mt-4">
                                 
-                                <input class="form--control @error('username') is-invalid @enderror" type="text" placeholder="Email Ou Nom d'utilisateur" name="username" required>
+                                <input class="form--control @error('username') is-invalid @enderror" type="text" placeholder="email ou nom d'utilisateur" name="username" required>
                                         @error('username')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -26,7 +26,7 @@
                             </div>
                             <div class="single-input mt-4">
                               
-                                <input class="form--control @error('password') is-invalid @enderror" type="password" placeholder="Mot de passe" name="password" required>
+                                <input class="form--control @error('password') is-invalid @enderror" type="password" placeholder="mot de passe" name="password" required>
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
