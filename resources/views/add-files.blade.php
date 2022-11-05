@@ -42,7 +42,7 @@
                                 <input class="form--control @error('file_one') is-invalid @enderror" type="file"  name="file_one" value="{{old('file_one')}}" accept="image/*" required>
                                     @error('file_one')
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
+                                            <span>{{ $message }}</span>
                                         </span>
                                     @enderror
                             </div>
@@ -51,7 +51,7 @@
                                 <input class="form--control @error('file_two') is-invalid @enderror" type="file" value="{{old('file_two')}}" name="file_two" required>
                                     @error('file_two')
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
+                                            <span>{{ $message }}</span>
                                         </span>
                                     @enderror
                             </div>
@@ -60,7 +60,7 @@
                                 <input class="form--control @error('file_tree') is-invalid @enderror" type="file" value="{{old('file_tree')}}" name="file_tree" required>
                                     @error('file_tree')
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
+                                            <span>{{ $message }}</span>
                                         </span>
                                     @enderror
                             </div>

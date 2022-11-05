@@ -14,7 +14,7 @@
                                 <input class="form--control @error('username') is-invalid @enderror" type="text" placeholder="email ou nom d'utilisateur" name="username" required>
                                         @error('username')
                                             <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
+                                                <span>{{ $message }}</span>
                                             </span>
                                         @enderror
                             </div>
