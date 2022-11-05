@@ -1,6 +1,11 @@
 @extends('layouts.front')
 @section('content')
-
+<style>
+    .text-blue {
+    color: #024670 !important;
+    font-size: 17px;
+}
+</style>
 <!-- Banner area Starts -->
 
 <div class="banner-area banner-area-one">
@@ -162,7 +167,7 @@
                                     Qu'est-ce que Ethix ?
                                 </h3>
                                 <div class="faq-panel">
-                                    <p class="faq-para"> Ethix est la première startup dédiée à l'investissement sans la pratique de l'usure.
+                                    <p class="faq-para text-blue"> Ethix est la première startup dédiée à l'investissement sans la pratique de l'usure.
 
 
                                         Investir dès 100 euros dans des projets à forte valeur ajoutée dans le but de se constituer une épargne et des revenus réguliers devient désormais accessible à tous. </p>
@@ -173,7 +178,7 @@
                                     Quelles sont les conditions pour investir sur Ethix ?
                                 </h3>
                                 <div class="faq-panel">
-                                    <p class="faq-para"> Être majeur tout simplement !
+                                    <p class="faq-para text-blue"> Être majeur tout simplement !
                                         Des justificatifs d'identité vous seront ensuite demandés pour valider votre compte et vous permettre d'investir sur notre plateforme. </p>
                                 </div>
                             </div>
@@ -182,7 +187,7 @@
                                     En achetant des Ethix, est ce que je pratique de l'usure?
                                 </h3>
                                 <div class="faq-panel">
-                                    <p class="faq-para"> Non, tous nos projets sont financés avec nos fonds propres UNIQUEMENT.
+                                    <p class="faq-para text-blue"> Non, tous nos projets sont financés avec nos fonds propres UNIQUEMENT.
                                         Nous ne faisons donc jamais appel au crédit. </p>
                                 </div>
                             </div>
@@ -191,7 +196,7 @@
                             Puis-je investir avec une société ? 
                             </h3>
                             <div class="faq-panel">
-                                <p class="faq-para"> Oui, vous pouvez investir avec votre société.
+                                <p class="faq-para text-blue"> Oui, vous pouvez investir avec votre société.
 
                                   Nous vous demanderons simplement quelques documents supplémentaires de votre entreprise. </p>
                             </div>
@@ -201,7 +206,7 @@
                             Comment sont séléctionnés les projets Ethix ?
                             </h3>
                             <div class="faq-panel">
-                                <p class="faq-para"> Nos projets sont minutieusement sélectionnés, chaque opportunité est étudiée dans son ensemble :</p>
+                                <p class="faq-para text-blue"> Nos projets sont minutieusement sélectionnés, chaque opportunité est étudiée dans son ensemble :</p>
                                     <ul>
                                        <li> Le marché immobilier local</li>
                                        <li>La structure du bien</li>
@@ -210,7 +215,7 @@
                                        <li>Le niveau de marge à sortir</li>
                                        <li>La fiscalité.</li>
                                     </ul>
-                                       <p> Nous passons beaucoup de temps avant de signer le compromis d'achat et nous engager dans un projet.</p>
+                                       <p class="faq-para text-blue"> Nous passons beaucoup de temps avant de signer le compromis d'achat et nous engager dans un projet.</p>
                             </div>
                             
                         </div>
@@ -219,7 +224,7 @@
                             Comment se rémunère Ethix ?
                             </h3>
                             <div class="faq-panel">
-                                <p class="faq-para"> Aucun frais d'entrée ni de sortie n'est pris sur votre investissement.
+                                <p class="faq-para text-blue"> Aucun frais d'entrée ni de sortie n'est pris sur votre investissement.
                                  Nous nous rémunérons en deux fois sur les projets pour impacter le moins possible vos <b>plus-values</b> :</p>
                                  <ul>
                                  <li>Lors de l'achat du bien, nous appliquons un pourcentage de 5% pour nous permettre d'engager les différents frais liés au suivi du projet.</li>
@@ -233,7 +238,7 @@
                                     Quelle rendement espérer ? 
                                 </h3>
                                 <div class="faq-panel">
-                                    <p class="faq-para"> Chaque projet apporte un rendement différent, mais nous nous sommes fixé un objectif de plus-value entre 7 et 10% au minimum.
+                                    <p class="faq-para text-blue"> Chaque projet apporte un rendement différent, mais nous nous sommes fixé un objectif de plus-value entre 7 et 10% au minimum.
 
                                         Cette rentabilité n’est pas garantie, c’est une estimation. </p>
                                 </div>
@@ -243,7 +248,7 @@
                                     Comment sont calculés mes dividendes ?
                                 </h3>
                                 <div class="faq-panel">
-                                    <p class="faq-para"> Chaque année vous recevez un dividende calculé sur la base de votre investissement initial et de la plus-value générée à la suite des projets engagés dans l'année en cours.
+                                    <p class="faq-para text-blue"> Chaque année vous recevez un dividende calculé sur la base de votre investissement initial et de la plus-value générée à la suite des projets engagés dans l'année en cours.
 
                                         Exemple :
                                         

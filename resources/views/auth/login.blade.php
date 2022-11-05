@@ -1,12 +1,6 @@
 @extends('layouts.front')
 @section('content')
-@if ($errors->any())
-@foreach ($errors->all() as $error)
-    <div>{{$error}}</div>
-@endforeach
-@endif
-
-        <div class="container d-flex justify-content-center " style="margin-top: 100px;margin-bottom: 100px;">
+     <div class="container d-flex justify-content-center " style="margin-top: 100px;margin-bottom: 100px;">
             <div class="login-wrapper login-shadow bg-white">
                 <div class="login-wrapper-flex">
                    
@@ -25,17 +19,18 @@
                                         @enderror
                             </div>
                             <div class="single-input mt-4">
-                              
-                                <input class="form--control @error('password') is-invalid @enderror" type="password" placeholder="mot de passe" name="password" required>
-                                        @error('password')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
+                               <input class="form--control @error('password') is-invalid @enderror" type="password" placeholder="mot de passe" name="password" required>
                                 <div class="icon toggle-password">
                                     <div class="show-icon"> <i class="las la-eye-slash"></i> </div>
                                     <span class="hide-icon"> <i class="las la-eye"></i> </span>
                                 </div>
+                            </div>
+                            <div class="happy">
+                                @error('password')
+                                <span class="invalid-feedback" role="alert" style="display: block !important">
+                                    <span>{{ $message }}</span>
+                                </span>
+                                 @enderror
                             </div>
                             @if($error) 
                             <div class="alert alert-danger mt-3" role="alert">

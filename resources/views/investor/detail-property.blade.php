@@ -76,7 +76,7 @@
                                     <div class="single-reservation-details">
                                         <div class="single-reservation-details-item">
                                             <span class="single-reservation-details-subtitle" > Valeur d'une Ethix</span>
-                                            <h3 class="single-reservation-details-title" style="font-size: 25px; color:#4DAA7F"> 100 €</h3>
+                                            <h3 class="single-reservation-details-title" style="font-size: 25px; color:#4DAA7F"> {{$value_ethix->value}} €</h3>
                                         </div>
                                         <div class="single-reservation-details-item">
                                             <span class="single-reservation-details-subtitle"> Objectif de financement</span>

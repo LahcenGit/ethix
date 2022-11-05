@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Document;
+use App\Models\Ethix;
 use App\Models\Property;
 use App\Models\User;
 use App\Models\Userinformation;
@@ -56,7 +57,8 @@ class InvestorController extends Controller
         $user = Auth::user();
         $test_document = Document::where('documenttable_id',$user->id)->count();
         $test_info = Userinformation::where('user_id',$user->id)->count();
-        return view('investor.detail-property',compact('property','user','test_document','test_info'));
+        $value_ethix = Ethix::first();
+        return view('investor.detail-property',compact('property','user','test_document','test_info','value_ethix'));
     }
 
     public function showFile($id){

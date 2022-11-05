@@ -1,12 +1,5 @@
 @extends('layouts.front')
 @section('content')
-@if ($errors->any())
-@foreach ($errors->all() as $error)
-    <div>{{$error}}</div>
-@endforeach
-@endif
-
-
 
 @include('investor.header-investor')
 
@@ -47,7 +40,7 @@
                             </div>
                             <div class="single-input mt-1">
                                 <label class="label-title "> Mentionnez le nombre d'éthix :</label>
-                                <input class="form--control " type="number" @if($message)style="border-color:red ;"@endif value="{{$max_ethix}}" name="nbr_ethix"  required>
+                                <input class="form-control " type="number" min="1"  @if($max_ethix <= $ethix_total) max={{$max_ethix}} @else max={{$ethix_total}}@endif @if($message)style="border-color:red ;"@endif value="{{$max_ethix}}" name="nbr_ethix"   required>
                                 @if($message)
                                     <span style="font-size: 14px; color:red">
                                         <span>{{ $message }}</span>

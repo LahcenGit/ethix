@@ -41,6 +41,7 @@ class UserpropertyController extends Controller
         $message = null;
         $test_document = Document::where('documenttable_id',$user->id)->count();
         $test_info = Userinformation::where('user_id',$user->id)->count();
+       
         return view('investor.achat-ethix',compact('user','max_ethix','property','message','nbr_ethix','test_document','test_info','ethix_total'));
     }
 
@@ -55,11 +56,26 @@ class UserpropertyController extends Controller
         $ethix_total = intval($property->obj_financement / $ethix_val->value)  -  $ethix_property;
         $max_ethix_property = $property->max_ethix;
         $nbr_ethix = $request->nbr_ethix;
-        
+        $test_info = Userinformation::where('user_id',$user->id)->count();
         $test_document = Document::where('documenttable_id',$user->id)->count();
+        if($nbr_ethix <= 0){
+            $message = 'le nombre doit être supérieur à 0 ';
+            return view('investor.achat-ethix',compact('user','max_ethix','property','message','nbr_ethix','test_document','test_info','ethix_total'));
+        }
+        if($max_ethix >= $ethix_total){
+           $max = $ethix_total;
+        }
+        else{
+            $max = $max_ethix;
+        }
+        if($nbr_ethix > $max){
+            $message = 'le nombre doit être inférieur ou égale à '.$max;
+            return view('investor.achat-ethix',compact('user','max_ethix','property','message','nbr_ethix','test_document','test_info','ethix_total'));
+        }
+       
         if($request->nbr_ethix > $max_ethix){
          $message = 'le nombre doit être inférieur ou égale à '.$max_ethix;
-            return view('investor.achat-ethix',compact('user','max_ethix','property','message','nbr_ethix','test_document','ethix_total'));
+            return view('investor.achat-ethix',compact('user','max_ethix','property','message','nbr_ethix','test_document','$test_info','ethix_total'));
         }
        /* else if($request->nbr_ethix > $max_ethix_property){
             $message = 'le nombre doit être inférieur à '.$max_ethix_property;
@@ -75,7 +91,7 @@ class UserpropertyController extends Controller
 
             (int)$user->solde = (int)$user->solde-($nbr_ethix * (int)$value_ethix->value);
             $user->save();
-            return redirect('app/investissements')->with('success','Achat effectué avec succès -'.$nbr_ethix.' ethixe(s), Merci!');
+            return redirect('app/investissements')->with('success','Achat effectué avec succès ('.$nbr_ethix.' ethix), Merci!');
         }
     }
 

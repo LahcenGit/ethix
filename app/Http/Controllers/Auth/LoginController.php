@@ -35,7 +35,7 @@ class LoginController extends Controller
   
         $this->validate($request, [
             'username' => 'required',
-            'password' => ['required', 'string', 'min:8'],
+            'password' => ['required'],
         ],
         [
             'username.required' => 'Ce champ est obligatoire',
