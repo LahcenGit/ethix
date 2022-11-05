@@ -77,7 +77,7 @@
                                         </div>
                                 </div>
                                 <div class="form-row">
-                                        <div class="form-group col-md-3">
+                                        <div class="form-group col-md-4">
                                             <label>Valorisation* :</label>
                                             <input type="text"  class="form-control input-default @error('valuation') is-invalid @enderror" value="{{$property->valuation}} " name="valuation"  placeholder="0" required >
                                                 @error('valuation')
@@ -87,7 +87,7 @@
                                                 @enderror
 
                                         </div>
-                                        <div class="form-group col-md-3">
+                                        <div class="form-group col-md-4">
                                             <label>Rentabilité* :</label>
                                             <input type="text"  class="form-control input-default @error('profitability') is-invalid @enderror" value="{{$property->profitability}} " name="profitability"  placeholder="0%" required >
                                                 @error('profitability')
@@ -97,7 +97,7 @@
                                                 @enderror
 
                                         </div>
-                                        <div class="form-group col-md-3">
+                                        <div class="form-group col-md-4">
                                             <label>Objectif de revenus reversés* :</label>
                                             <input type="text"  class="form-control input-default @error('obj_revenu') is-invalid @enderror" value="{{$property->obj_revenu}} " name="obj_revenu"  placeholder="0%" required >
                                                 @error('obj_revenu')
@@ -107,15 +107,7 @@
                                                 @enderror
 
                                         </div>
-                                        <div class="form-group col-md-3">
-                                            <label>Max ethix* :</label>
-                                            <input type="text"  class="form-control input-default @error('max_ethix') is-invalid @enderror" value="{{$property->max_ethix}} " name="max_ethix"   required >
-                                                @error('max_ethix')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                @enderror
-                                        </div>
+                                        
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-4">

@@ -259,25 +259,29 @@
                                  <span style="color: #4DAA7F"> <i class="fa-solid fa-wallet"></i> {{Auth::user()->solde === NULL ? "0.00" : number_format(Auth::user()->solde,2) }} €  </span>
                             </div>
                             <div class="btn-wrapper">
-                                @if(Auth::user()->email_verified_at != null)
+
                                 @if (Auth::user()->type == 'admin')
                                 <a href="{{asset('/dashboard-admin') }}"  class="cmn-btn btn-bg-1 radius-10">
                                     <span class="ml-2"> Dashboard <i class="fa-solid fa-caret-right"></i></span>
                                 </a>
-                                @else
-                                <a href="{{asset('/app') }}"  class="cmn-btn btn-bg-1 radius-10">
-                                    <span class="ml-2"> Dashboard <i class="fa-solid fa-caret-right"></i></span>
-                                </a>
+                                @else 
+                                    @if( Auth::user()->type == 'investor' && Auth::user()->email_verified_at != null )
+                                
+                                    <a href="{{asset('/app') }}"  class="cmn-btn btn-bg-1 radius-10">
+                                        <span class="ml-2"> Dashboard <i class="fa-solid fa-caret-right"></i></span>
+                                    </a>
+                                
+                                    @else
+                                    <a href="{{route('logout')}}"  class="cmn-btn btn-bg-1 radius-10"onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                        <span class="ml-2"> Déconnexion <i class="fa-solid fa-right-from-bracket "></i></span>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </a>
+                                    @endif
                                 @endif
-                                @else
-                                <a href="{{route('logout')}}"  class="cmn-btn btn-bg-1 radius-10"onclick="event.preventDefault();
-                                 document.getElementById('logout-form').submit();">
-                                    <span class="ml-2"> Déconnexion <i class="fa-solid fa-right-from-bracket "></i></span>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </a>
-                                @endif
+                                
                             </div>
                             @else
                             <div class="navbar-right-btn">
