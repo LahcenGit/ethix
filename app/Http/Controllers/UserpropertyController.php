@@ -96,12 +96,13 @@ class UserpropertyController extends Controller
     }
 
     public function investissements(){
-        $investissements = Userproperty::with('property')->where('user_id',Auth::user()->id)->get();
-       /* $investissements = Userproperty::with('property')->select('value_ethix',DB::raw('sum(userproperties.nbr_ethix) as Valeur'))
-        ->groupBy('user_id')
-        ->get();
-        dd( $investissements );*/
 
+
+        $investissements = Userproperty::with('property')->where('user_id',Auth::user()->id)
+        ->groupBy('property_id')
+        ->selectRaw('*, sum(nbr_ethix) as sum_ethix')
+        ->get();
+     
         $user = Auth::user();
         $test_document = Document::where('documenttable_id',$user->id)->count();
         $test_info = Userinformation::where('user_id',$user->id)->count();

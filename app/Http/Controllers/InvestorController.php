@@ -7,6 +7,7 @@ use App\Models\Ethix;
 use App\Models\Property;
 use App\Models\User;
 use App\Models\Userinformation;
+use App\Models\Userproperty;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -55,10 +56,14 @@ class InvestorController extends Controller
     public function detailProperty($id){
         $property = Property::find($id);
         $user = Auth::user();
+        $ethix_val = Ethix::first();
         $test_document = Document::where('documenttable_id',$user->id)->count();
         $test_info = Userinformation::where('user_id',$user->id)->count();
         $value_ethix = Ethix::first();
-        return view('investor.detail-property',compact('property','user','test_document','test_info','value_ethix'));
+        $property = Property::find($id);
+        $ethix_property = Userproperty::where('property_id',$property->id)->sum('nbr_ethix');
+        $ethix_total = intval($property->obj_financement / $ethix_val->value) -  $ethix_property ;
+        return view('investor.detail-property',compact('property','user','test_document','test_info','value_ethix','ethix_total'));
     }
 
     public function showFile($id){

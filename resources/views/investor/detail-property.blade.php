@@ -98,9 +98,27 @@
                                 </div>
                                 <div class="single-reservation-item">
                                     <div class="single-reservation-details">
+
+
                                         <div class="single-reservation-details-item">
                                             <span class="single-reservation-details-subtitle"> Valorisation du bien</span>
                                             <h5 class="single-reservation-details-title" style="font-size: 25px;"> {{number_format($property->valuation)}} €</h5>
+                                        </div>
+                                        <div class="single-reservation-details-item">
+                                            <span class="single-reservation-details-subtitle">Reste </span>
+                                            <h5 class="single-reservation-details-title" style="font-size: 25px; color:#4DAA7F;" > {{$ethix_total}} <span style="font-size: 12px;">éthix</span> </h5> 
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+
+                                <div class="single-reservation-item">
+                                    <div class="single-reservation-details">
+                                        <div class="single-reservation-details-item">
+                                              <h6 class="mt-2 mb-1">{{$property->financing_percentage()}} % financé</h6>
+                                            <div class="progress mb-2">
+                                                <div class="progress-bar"  role="progressbar" style="width:{{$property->financing_percentage()}}%; background-color:#4daa7f" aria-valuenow="{{$property->financing_percentage()}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
                                         </div>
                                        
                                     </div>

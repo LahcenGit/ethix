@@ -27,11 +27,11 @@
                                     <tr  style="background-color:#ffff; margin-bottom:10px;">
                                         <th scope="row" style="width: 100px;"> <img src="{{asset('storage/images/properties/'.$investissement->property->images[0]->link)}}" height="50px;" width="50px;" alt="properties"></th>
                                         <td>  
-                                            <h5> <a href="#"> {{$investissement->property->designation}} </a> </h5> 
+                                            <h5> <a href="{{asset('/app/detail-property/'.$investissement->property->id)}}"> {{$investissement->property->designation}} </a> </h5> 
                                             <span style="color: #667085"> {{$investissement->property->addresse}}  </span>
                                         </td>
                                         <td>
-                                            <h6 class="mt-2"> <span class="badge " style="background-color: #4DAA7F">{{$investissement->nbr_ethix}} Ethixs investis </span> </h6>
+                                            <h6 class="mt-2"> <span class="badge " style="background-color: #4DAA7F">{{$investissement->sum_ethix}} Ethixs investis </span> </h6>
                                         </td>
                                         <td>
                                             <h6 class="mt-2 mb-1">{{$investissement->property->financing_percentage()}} % financé</h6>
