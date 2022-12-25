@@ -9,6 +9,7 @@ use App\Http\Controllers\UserDocumentController;
 use App\Http\Controllers\VersmentController;
 use App\Http\Controllers\EthixController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\UserinformationController;
 
@@ -45,6 +46,12 @@ Route::get('/faq', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+Route::get('/blogs', function () {
+    return view('blogs');
+});
+Route::get('/detail-blog', function () {
+    return view('detail-blog');
+});
 
 
 
@@ -52,6 +59,7 @@ Route::get('/contact', function () {
 Route::resource('/dashboard-admin/properties',PropertyController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/users',InvestorController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/versments',VersmentController::class)->middleware('can:admin');
+Route::resource('/dashboard-admin/blogs',BlogController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/investissements',UserpropertyController::class)->middleware('can:admin');
 Route::resource('/newsletter',NewsletterController::class);
 Route::get('/dashboard-admin/view-investor/{id}',[App\Http\Controllers\InvestorController::class,'getInvestor']);
@@ -70,6 +78,7 @@ Route::get('/app', [App\Http\Controllers\InvestorController::class, 'dashboard']
 Route::resource('/app/profil', ProfilController::class);
 
 Route::get('/app/detail-property/{id}', [App\Http\Controllers\InvestorController::class, 'detailProperty']);
+Route::get('/app/show-modal-virement-info', [App\Http\Controllers\InvestorController::class, 'showModal']);
 Auth::routes(['verify' => true]);
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

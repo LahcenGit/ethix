@@ -27,13 +27,13 @@
     <link rel="stylesheet" href="{{asset('Front/assets/css/intlTelInput.css')}}">
     <!-- Nice Select Css -->
 
-     
+
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="{{asset('Front/assets/css/style.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"  />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
 
-     
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" referrerpolicy="no-referrer" />
@@ -218,7 +218,7 @@
         background-color: #4DAA7F;
         border-color: #4DAA7F;
     }
-   
+
 </style>
 
 <body>
@@ -264,13 +264,15 @@
                                 <a href="{{asset('/dashboard-admin') }}"  class="cmn-btn btn-bg-1 radius-10">
                                     <span class="ml-2"> Dashboard <i class="fa-solid fa-caret-right"></i></span>
                                 </a>
-                                @else 
+                                @else
                                     @if( Auth::user()->type == 'investor' && Auth::user()->email_verified_at != null )
-                                
+
                                     <a href="{{asset('/app') }}"  class="cmn-btn btn-bg-1 radius-10">
                                         <span class="ml-2"> Dashboard <i class="fa-solid fa-caret-right"></i></span>
                                     </a>
-                                
+                                    <a href="#" class="cmn-btn btn-bg-1 radius-10 add-money">
+                                        <span class="ml-2"> Ajouter de l'argent <i class="fa-solid fa-caret-right"></i></span>
+                                    </a>
                                     @else
                                     <a href="{{route('logout')}}"  class="cmn-btn btn-bg-1 radius-10"onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
@@ -281,12 +283,12 @@
                                     </a>
                                     @endif
                                 @endif
-                                
+
                             </div>
                             @else
                             <div class="navbar-right-btn">
                                 <a href="{{ route('login') }}"> Connexion </a>
-                                
+
                             </div>
                             <div class="btn-wrapper">
                                 <a href="{{ route('register') }}" class="cmn-btn btn-bg-1 radius-10"> Pré-inscription </a>
@@ -297,7 +299,7 @@
             </div>
         </nav>
         <!-- Menu area end -->
-        
+
     </header>
     @yield('content')
     <!-- footer area start -->
@@ -308,7 +310,7 @@
                     <div class="footer-wrapper pat-100 pab-100">
                         <div class="footer-contents center-text">
                             <div class="footer-contents-logo">
-                               {{--<a href="index.html" class="footer-contents-logo-img"> <img src="assets/img/logo-favicon.png" alt="logo"> </a>--}} 
+                               {{--<a href="index.html" class="footer-contents-logo-img"> <img src="assets/img/logo-favicon.png" alt="logo"> </a>--}}
                                 <h3 class="footer-contents-logo-title text-white"> <a href="index.html"> Ethix-invest  </a> </h3>
                                 <p class="footer-contents-logo-para mt-3"> L'investissement immobilier Ethique. </p>
                             </div>
@@ -324,11 +326,11 @@
                                         <li class="footer-widget-social-list-item">
                                             <a class="footer-widget-social-list-link" href="javascript:void(0)"> <i class="lab la-instagram"></i> </a>
                                         </li>
-                                      
+
                                     </ul>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -400,24 +402,24 @@
     <script src="{{asset('Front/assets/js/intlTelInput.js')}}"></script>
     <!-- main js -->
     <script src="{{asset('Front/assets/js/main.js')}}"></script>
-   
-  
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" referrerpolicy="no-referrer"></script>
 
     <script>
-     
+
 
      $("#owl-demo").owlCarousel({
- 
+
         navigation : true, // Show next and prev buttons
 
         slideSpeed : 300,
         paginationSpeed : 400,
 
-        items : 1, 
+        items : 1,
         itemsDesktop : false,
         itemsDesktopSmall : false,
         itemsTablet: false,
@@ -425,17 +427,31 @@
 
         });
     </script>
-    
+
 <script>
     $(document).ready(function(){
           $(".flash-alert").slideDown(200).delay(3500).slideUp(200);
     });
 
 </script>
+<script>
+    $( ".add-money" ).click(function() {
+        $.ajax({
+        url: '/app/show-modal-virement-info',
+        type: "GET",
+        success: function (res) {
+
+          $('#modal-show-virement').html(res);
+          $("#modal").modal('show');
+        }
+      });
+      });
+</script>
 @stack('achat-ethix-scripts')
 @stack('validate-scripts')
 @stack('check-condition')
 @stack('add-newsletter')
+
 </body>
 
 </html>

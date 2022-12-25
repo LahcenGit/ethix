@@ -44,7 +44,7 @@ class InvestorController extends Controller
         $properties = Property::all();
         return view('investor.properties',compact('properties'));
     }
-    
+
 
     public function dashboard(){
         $properties = Property::all();
@@ -69,7 +69,7 @@ class InvestorController extends Controller
     public function showFile($id){
         $user = User::find($id);
         $test = Document::where('documenttable_id',$user->id)->first();
-        return view('admin.modal-show-file',compact('user','test')); 
+        return view('admin.modal-show-file',compact('user','test'));
     }
 
     public function downloadFile($link){
@@ -100,13 +100,17 @@ class InvestorController extends Controller
                     );
             }
              return response()->download($file , $link , $headers);
-                
+
                 }
         public function getInvestor($id){
             $user = Userinformation::with('user')->where('user_id',$id)->first();
             $documents = Document::where('documenttable_id',$id)->get();
             return view('admin.view-investor',compact('user','documents'));
         }
-   
+
+        public function showModal(){
+            return view('investor.modal-show-info-virement');
+        }
+
     }
 

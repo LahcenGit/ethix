@@ -9,10 +9,10 @@
     <div class="dashboard-area section-bg-2 dashboard-padding">
         <div class="container">
             <div class="shop-contents-wrapper mt-5">
-               
+
                 <div class="shop-grid-contents">
-                    
-                    
+
+
                     <div id="tab-grid" class="tab-content-item active mt-4">
                         <div class="row gy-4">
                             @foreach($properties as $property)
@@ -29,12 +29,12 @@
                                                 <span class="hotel-view-contents-location-para"> {{$property->addresse}}  </span>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="hotel-view-contents-bottom pt-2">
                                             <div class="hotel-view-contents-bottom-flex">
                                                 <div class="hotel-view-contents-bottom-contents row">
                                                     <div class="col-3 p-2">
-                                                        <h4  >{{$property->profitability}}%</h4> rentabilité 
+                                                        <h4  >{{$property->profitability}}%</h4> rentabilité
                                                     </div>
                                                     <div class="col-3 p-2">
                                                         <h4 >{{$property->obj_revenu}}%</h4> Reversés
@@ -44,10 +44,10 @@
                                                             <a href="{{asset('/app/detail-property/'.$property->id)}}" class="cmn-btn btn-bg-1  mt-2" > Acheter  </a>
                                                        </div>
                                                     </div >
-                                                    
+
                                                 </div>
                                             </div>
-                                            
+
                                             <h6 class="mt-2 mb-1">{{$property->financing_percentage()}} % financé</h6>
                                             <div class="progress mb-2">
                                                 <div class="progress-bar"  role="progressbar" style="width:{{$property->financing_percentage()}}%; background-color:#4daa7f" aria-valuenow="{{$property->financing_percentage()}}" aria-valuemin="0" aria-valuemax="100"></div>
@@ -58,12 +58,12 @@
                                 </div>
                             </div>
                             @endforeach
-                            
-                            
+
+
                         </div>
-                       
+
                     </div>
-                   
+
                 </div>
             </div>
         </div>
@@ -92,4 +92,8 @@
         </div>
     </div>
     <!-- popup ends  -->
+    <div id="modal-show-virement">
+
+    </div>
 @endsection
+
