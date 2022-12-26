@@ -12,7 +12,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\UserinformationController;
-
+use App\Http\Controllers\VirmentController;
+use App\Http\Controllers\VirmentAdminController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -61,10 +62,14 @@ Route::resource('/dashboard-admin/users',InvestorController::class)->middleware(
 Route::resource('/dashboard-admin/versments',VersmentController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/blogs',BlogController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/investissements',UserpropertyController::class)->middleware('can:admin');
+Route::resource('/dashboard-admin/virments',VirmentAdminController::class)->middleware('can:admin');
+Route::get('/dashboard-admin/edit-compte/{id_user}/{id_virment}', [App\Http\Controllers\VirmentAdminController::class, 'showModal']);
 Route::resource('/newsletter',NewsletterController::class);
 Route::get('/dashboard-admin/view-investor/{id}',[App\Http\Controllers\InvestorController::class,'getInvestor']);
 Route::get('/modal-update-ethix',[App\Http\Controllers\EthixController::class,'getModal']);
 Route::post('/update-ethix',[App\Http\Controllers\EthixController::class,'updateValue']);
+
+Route::get('/app/show-modal-virement-info', [App\Http\Controllers\InvestorController::class, 'showModal']);
 Route::get('/show-file/{id}',[App\Http\Controllers\InvestorController::class,'showFile']);
 Route::get('app/achat-ethix/{id}',[App\Http\Controllers\UserpropertyController::class,'achatEthix']);
 Route::get('dashboard-admin/add-versment',[App\Http\Controllers\VersmentController::class,'addVersment']);
@@ -76,9 +81,9 @@ Route::resource('/app/add-info',UserinformationController::class);
 Route::get('/app/properties', [App\Http\Controllers\InvestorController::class, 'properties']);
 Route::get('/app', [App\Http\Controllers\InvestorController::class, 'dashboard'])->middleware('verified');
 Route::resource('/app/profil', ProfilController::class);
-
+Route::resource('/app/virment', VirmentController::class);
+Route::get('/send-mail', [App\Http\Controllers\VirmentMailController::class, 'index']);
 Route::get('/app/detail-property/{id}', [App\Http\Controllers\InvestorController::class, 'detailProperty']);
-Route::get('/app/show-modal-virement-info', [App\Http\Controllers\InvestorController::class, 'showModal']);
 Auth::routes(['verify' => true]);
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

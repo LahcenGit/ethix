@@ -12,7 +12,7 @@
     }
     .price-range-slider .ui-range-slider.noUi-target .noUi-base .noUi-connect {
         background-color:#0b9e9a !important;
-      
+
     }
     .price-range-slider .ui-range-slider.noUi-target .noUi-handle {
         background: #0b9e9a !important;
@@ -49,7 +49,7 @@
                     <div class="banner-location-single">
                         <div class="banner-location-single-flex">
                             <div class="banner-location-single-contents">
-                            <span class="banner-location-single-contents-subtitle mr-5">les biens</span> 
+                            <span class="banner-location-single-contents-subtitle mr-5">les biens</span>
                             </div>
                         </div>
                     </div>
@@ -62,16 +62,16 @@
                     </div>
                     <div class="banner-location-single">
                         <div class="banner-location-single-flex">
-                            
+
                             <div class="banner-location-single-contents">
                                 <span class="banner-location-single-contents-subtitle mr-5">Mes ventes </span>
-                                
+
                             </div>
                         </div>
                     </div>
-                    
-                    
-                    
+
+
+
                 </div>
             </div>
             <div class="shop-contents-wrapper mt-5">
@@ -104,8 +104,8 @@
                                 </div>
                             </div>
                         </div>
-              
-                        
+
+
                     </div>
                 </div>
                 <div class="shop-grid-contents">
@@ -140,14 +140,14 @@
                                                 <span class="hotel-view-contents-location-para"> {{$property->addresse}}  </span>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="hotel-view-contents-bottom">
                                             <div class="hotel-view-contents-bottom-flex">
                                                 <div class="hotel-view-contents-bottom-contents">
                                                     <h4 class="hotel-view-contents-bottom-title" style="color:#0b9e9a ;"> {{$property->profitability}} <sub> Rentabilité </sub> | {{$property->obj_revenu}}<sub> Reversés </sub></h4>
                                                     <p class="hotel-view-contents-bottom-para"> ({{$property->nbr_bedroom}} Chambres, {{$property->nbr_bathroom}} Salles-de-bain) </p>
                                                 </div>
-                                                
+
                                             </div>
                                             <div class="btn-wrapper">
                                                     <a href="javascript:void(0)" class="cmn-btn btn-bg-1 btn-small" style="background-color: #0b9e9a;"> Acheter </a>
@@ -157,8 +157,8 @@
                                 </div>
                             </div>
                             @endforeach
-                            
-                            
+
+
                         </div>
                         <div class="row mt-5">
                             <div class="col">
@@ -429,3 +429,5 @@
 
 
 @endsection
+
+@endpush

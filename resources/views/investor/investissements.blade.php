@@ -9,13 +9,13 @@
     <div class="dashboard-area section-bg-2 dashboard-padding">
         <div class="container">
             <div class="shop-contents-wrapper mt-5">
-               
+
                 <div class="shop-grid-contents">
 
                     <div class="grid-list-contents">
                         <div class="grid-list-contents-flex">
                             <p class="grid-list-contents-para"> Trouvez ici tous vos investissements :   </p>
-                            
+
                         </div>
                     </div>
 
@@ -26,8 +26,8 @@
                                     @foreach($investissements as $investissement)
                                     <tr  style="background-color:#ffff; margin-bottom:10px;">
                                         <th scope="row" style="width: 100px;"> <img src="{{asset('storage/images/properties/'.$investissement->property->images[0]->link)}}" height="50px;" width="50px;" alt="properties"></th>
-                                        <td>  
-                                            <h5> <a href="{{asset('/app/detail-property/'.$investissement->property->id)}}"> {{$investissement->property->designation}} </a> </h5> 
+                                        <td>
+                                            <h5> <a href="{{asset('/app/detail-property/'.$investissement->property->id)}}"> {{$investissement->property->designation}} </a> </h5>
                                             <span style="color: #667085"> {{$investissement->property->addresse}}  </span>
                                         </td>
                                         <td>
@@ -41,14 +41,15 @@
                                 </tbody>
                             </table>
 
-                         
+
                         </div>
-                       
+
                     </div>
-                   
+
                 </div>
             </div>
         </div>
     </div>
 
 @endsection
+

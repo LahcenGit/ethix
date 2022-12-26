@@ -270,9 +270,7 @@
                                     <a href="{{asset('/app') }}"  class="cmn-btn btn-bg-1 radius-10">
                                         <span class="ml-2"> Dashboard <i class="fa-solid fa-caret-right"></i></span>
                                     </a>
-                                    <a href="#" class="cmn-btn btn-bg-1 radius-10 add-money">
-                                        <span class="ml-2"> Ajouter de l'argent <i class="fa-solid fa-caret-right"></i></span>
-                                    </a>
+
                                     @else
                                     <a href="{{route('logout')}}"  class="cmn-btn btn-bg-1 radius-10"onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
@@ -301,7 +299,11 @@
         <!-- Menu area end -->
 
     </header>
+
     @yield('content')
+    <div id="modal-show-virement">
+
+    </div>
     <!-- footer area start -->
     <footer class="footer-area footer-area-one footer-border-round footer-bg-1">
         <div class="container">
@@ -364,7 +366,7 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="copyright-contents-main"> © 2022, All Rights Reserved by <a href="index.html"> InnoDev </a> </span>
+                        <span class="copyright-contents-main"> © 2022, All Rights Reserved by <a href="#"> InnoDev </a> </span>
                     </div>
                 </div>
             </div>

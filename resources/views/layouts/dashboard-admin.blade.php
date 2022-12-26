@@ -70,7 +70,7 @@
             Nav header end
         ***********************************-->
 
-		
+
         <!--**********************************
             Header start
         ***********************************-->
@@ -89,7 +89,7 @@
                                     </form>
                                 </div>
                             </div>
-                           
+
                         </div>
 
                         <ul class="navbar-nav header-right">
@@ -162,7 +162,7 @@
                         <ul aria-expanded="false">
                             <li><a href="{{url('dashboard-admin/properties/create')}}">Ajouter</a></li>
                             <li><a href="{{url('dashboard-admin/properties')}}">Toutes</a></li>
-                            
+
                         </ul>
                     </li>
                     <li class="nav-label">Investisseurs</li>
@@ -172,7 +172,7 @@
 						</a>
                         <ul aria-expanded="false">
                             <li><a href="{{url('dashboard-admin/users')}}">Tous</a></li>
-                           
+
                         </ul>
                     </li>
                     <li class="nav-label">Versements</li>
@@ -182,7 +182,7 @@
 						</a>
                         <ul aria-expanded="false">
                             <li><a href="{{url('dashboard-admin/versments')}}">Tous</a></li>
-                           
+
                         </ul>
                     </li>
                     <li class="nav-label">Investissements</li>
@@ -192,10 +192,20 @@
 						</a>
                         <ul aria-expanded="false">
                             <li><a href="{{url('dashboard-admin/investissements')}}">Tous</a></li>
-                           
+
                         </ul>
                     </li>
-                    
+                    <li class="nav-label">Virements</li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><path d="M3,4 L20,4 C20.5522847,4 21,4.44771525 21,5 L21,7 C21,7.55228475 20.5522847,8 20,8 L3,8 C2.44771525,8 2,7.55228475 2,7 L2,5 C2,4.44771525 2.44771525,4 3,4 Z M3,10 L13,10 C13.5522847,10 14,10.4477153 14,11 L14,13 C14,13.5522847 13.5522847,14 13,14 L3,14 C2.44771525,14 2,13.5522847 2,13 L2,11 C2,10.4477153 2.44771525,10 3,10 Z M3,16 L13,16 C13.5522847,16 14,16.4477153 14,17 L14,19 C14,19.5522847 13.5522847,20 13,20 L3,20 C2.44771525,20 2,19.5522847 2,19 L2,17 C2,16.4477153 2.44771525,16 3,16 Z" fill="#000000"/><rect fill="#000000" opacity="0.3" x="16" y="10" width="5" height="10" rx="1"/></g></svg>
+							<span class="nav-text">Virements</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{url('dashboard-admin/virments')}}">Tous</a></li>
+
+                        </ul>
+                    </li>
+
                 </ul>
             </div>
 
@@ -218,7 +228,7 @@
         <!--**********************************
             Footer end
         ***********************************-->
-		
+
         <!--**********************************
            Support ticket button start
         ***********************************-->
@@ -243,11 +253,11 @@
     <script src="{{asset('Dashboard/js/custom.min.js')}}"></script>
 	<!-- Apex Chart -->
 	<script src="{{asset('Dashboard/vendor/apexchart/apexchart.js')}}"></script>
-	
+
     <!-- Vectormap -->
 	<!-- Chart piety plugin files -->
     <script src="{{asset('Dashboard/vendor/peity/jquery.peity.min.js')}}"></script>
-	
+
     <!-- Chartist -->
     <script src="{{asset('Dashboard/vendor/chartist/js/chartist.min.js')}}"></script>
 	<!-- Datatable -->
@@ -263,7 +273,7 @@
     <!-- Summernote init -->
     <script src="{{asset('Dashboard/js/plugins-init/summernote-init.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/fontawesome.min.js" referrerpolicy="no-referrer"></script>
-    
+
 	<script>
 	(function($) {
 		"use strict"
@@ -271,7 +281,7 @@
 		var direction =  getUrlParams('dir');
 		if(direction != 'rtl')
 		{direction = 'ltr'; }
-		
+
 		new dezSettings({
 			typography: "roboto",
 			version: "light",
@@ -284,12 +294,12 @@
 			headerPosition: "fixed",
 			containerLayout: "wide",
 			direction: direction
-		}); 
+		});
 
-	})(jQuery);	
+	})(jQuery);
 	</script>
     <script>
-	
+
     $(document).ready(function(){
     $('input[type=file]').drop_uploader({
         uploader_text: 'Drop files to upload, or',
@@ -308,9 +318,9 @@
         time_show_errors: 5,
         layout: 'thumbnails',
         method: 'normal',
-        chunk_size: 1000000, 
-        concurrent_uploads: 5, 
-        show_percentage: true, 
+        chunk_size: 1000000,
+        concurrent_uploads: 5,
+        show_percentage: true,
         existing_files: false,
         existing_files_removable: true,
         send_existing_files: false,
@@ -318,7 +328,7 @@
         delete_url: 'ajax_delete.php',
     });
 });
-	
+
     </script>
 <script>
   $.ajaxSetup({
@@ -337,7 +347,7 @@ $(".update-ethix-value").on('click',function() {
       $("#ethixModal").modal('show');
     }
   });
-  
+
 });
 </script>
 <script>
@@ -351,29 +361,30 @@ $(".update-ethix-value").on('click',function() {
      e.preventDefault();
         let value = $('#value').val();
         $.ajax({
-          type:"Post",  
+          type:"Post",
           url: '/update-ethix',
           data:{
             "_token": "{{ csrf_token() }}",
             value:value,
-           
+
           },
           success:function(response){
-           
+
             $('#modal-update-ethix').find('#successMsg').show();
-            $('#ethixModal').modal('hide'); 
+            $('#ethixModal').modal('hide');
             console.log(response);
-            location.reload(); 
+            location.reload();
           },
-        
+
           });
-       
+
    });
-</script>  
+</script>
 @stack('modal-edit-investor-scripts')
 @stack('form-update-scripts')
 @stack('modal-show-file-scripts')
 @stack('modal-add-versment-scripts')
 @stack('form-store-versment-scripts')
+@stack('modal-edit-compte-scripts')
 </body>
 </html>

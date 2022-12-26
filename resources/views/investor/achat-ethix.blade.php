@@ -4,7 +4,7 @@
 @include('investor.header-investor')
 
     @if($user->status == 0 || $user->status == 1)
-    
+
     <div class="container d-flex justify-content-center " style="margin-top: 100px;margin-bottom: 100px;">
         <div class="login-wrapper login-shadow bg-white">
             <div class="login-wrapper-flex">
@@ -27,14 +27,14 @@
                          <form class="login-wrapper-contents-form custom-form" method="POST" action="{{url('app/store-ethix')}}">
                           @csrf
                             <div class="single-input mt-4">
-                                <label class="label-title "> Votre Solde est de : <b style="color: #4DAA7F;"> 
-                                    {{ $user->solde == NULL ? "0.00" : $user->solde }}   €</b> 
-                                
+                                <label class="label-title "> Votre Solde est de : <b style="color: #4DAA7F;">
+                                    {{ $user->solde == NULL ? "0.00" : $user->solde }}   €</b>
+
                                 </label>
-                              
+
                             </div>
                             <div class="single-input mt-1">
-                                <label class="label-title "> 
+                                <label class="label-title ">
                                     Vous pouvez acheter jusqu'a <b style="color: #4DAA7F;">   {{ $max_ethix <= $ethix_total  ? $max_ethix : $ethix_total  }} </b> éthix
                                 </label>
                             </div>
@@ -56,3 +56,4 @@
         </div>
         @endif
 @endsection
+

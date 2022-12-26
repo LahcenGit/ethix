@@ -92,8 +92,7 @@
         </div>
     </div>
     <!-- popup ends  -->
-    <div id="modal-show-virement">
 
-    </div>
 @endsection
+
 

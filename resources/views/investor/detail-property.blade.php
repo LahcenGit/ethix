@@ -18,7 +18,7 @@
                                     @foreach ($property->images as $img)
                                     <div class="item"><img src="{{asset('storage/images/properties/'.$img->link)}}" alt="Owl Image"></div>
                                         @endforeach
-                                
+
                                 </div>
                             </div>
 
@@ -52,20 +52,20 @@
                             <div class="details-contents-tab">
                                 <ul class="tabs details-tab details-tab-border">
                                     <li class="active" data-tab="about"> Description </li>
-                                    
+
                                 </ul>
                                 <div id="about" class="tab-content-item active">
                                     <div class="about-tab-contents">
-                                       
+
                                         <p class="about-tab-contents-para mt-4"> {!! $property->description !!} </p>
-                                        
+
                                     </div>
                                 </div>
-                                
+
 
                             </div>
                         </div>
-                       
+
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-5">
@@ -106,9 +106,9 @@
                                         </div>
                                         <div class="single-reservation-details-item">
                                             <span class="single-reservation-details-subtitle">Reste </span>
-                                            <h5 class="single-reservation-details-title" style="font-size: 25px; color:#4DAA7F;" > {{$ethix_total}} <span style="font-size: 12px;">éthix</span> </h5> 
+                                            <h5 class="single-reservation-details-title" style="font-size: 25px; color:#4DAA7F;" > {{$ethix_total}} <span style="font-size: 12px;">éthix</span> </h5>
                                         </div>
-                                       
+
                                     </div>
                                 </div>
 
@@ -120,10 +120,10 @@
                                                 <div class="progress-bar"  role="progressbar" style="width:{{$property->financing_percentage()}}%; background-color:#4daa7f" aria-valuenow="{{$property->financing_percentage()}}" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
-                                       
+
                                     </div>
                                 </div>
-                              
+
                                 <div class="btn-wrapper mt-4">
                                     <a href="{{url('app/achat-ethix/'.$property->id)}}" class="cmn-btn btn-bg-1"> Achat d'un Ethix</a>
                                 </div>
@@ -131,42 +131,42 @@
                         </div>
                         <div class="hotel-details-widget widget bg-white radius-10">
                             <div class="hotel-view">
-                                
+
                                 <div class="hotel-view-contents">
                                     <div class="hotel-view-contents-header">
                                         <h3 class="hotel-view-contents-title"> Pourquoi vous devriez investir ? </h3>
-                                        
+
                                     </div>
                                     <div class="hotel-view-contents-middle">
-                                           <h5 class="mt-2 mb-2" style="color: #4DAA7F"><b>Situation idéale</b> </h5> 
+                                           <h5 class="mt-2 mb-2" style="color: #4DAA7F"><b>Situation idéale</b> </h5>
                                            <p>
-                                            L’actif est situé à 10 minutes à pied de l’ensemble des principaux lieux touristiques de Porto ainsi qu’à 600 mètres d’une station de métro. 
+                                            L’actif est situé à 10 minutes à pied de l’ensemble des principaux lieux touristiques de Porto ainsi qu’à 600 mètres d’une station de métro.
                                            </p>
-                                           <h5 class="mt-2 mb-2" style="color: #4DAA7F"><b>Revenus locatifs</b> </h5> 
+                                           <h5 class="mt-2 mb-2" style="color: #4DAA7F"><b>Revenus locatifs</b> </h5>
                                            <p>
-                                            L’actif est situé à 10 minutes à pied de l’ensemble des principaux lieux touristiques de Porto ainsi qu’à 600 mètres d’une station de métro. 
+                                            L’actif est situé à 10 minutes à pied de l’ensemble des principaux lieux touristiques de Porto ainsi qu’à 600 mètres d’une station de métro.
                                            </p>
-                                           <h5 class="mt-2 mb-2" style="color: #4DAA7F"><b>État du bien</b> </h5> 
+                                           <h5 class="mt-2 mb-2" style="color: #4DAA7F"><b>État du bien</b> </h5>
                                            <p>
-                                            L’actif est situé à 10 minutes à pied de l’ensemble des principaux lieux touristiques de Porto ainsi qu’à 600 mètres d’une station de métro. 
+                                            L’actif est situé à 10 minutes à pied de l’ensemble des principaux lieux touristiques de Porto ainsi qu’à 600 mètres d’une station de métro.
                                            </p>
-                                           <h5 class="mt-2 mb-2" style="color: #4DAA7F"><b>Evolution du marché</b> </h5> 
+                                           <h5 class="mt-2 mb-2" style="color: #4DAA7F"><b>Evolution du marché</b> </h5>
                                            <p>
-                                            L’actif est situé à 10 minutes à pied de l’ensemble des principaux lieux touristiques de Porto ainsi qu’à 600 mètres d’une station de métro. 
+                                            L’actif est situé à 10 minutes à pied de l’ensemble des principaux lieux touristiques de Porto ainsi qu’à 600 mètres d’une station de métro.
                                            </p>
-        
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- Hotel Details area end -->
-   
+
 
 @endsection
 
