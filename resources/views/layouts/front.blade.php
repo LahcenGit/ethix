@@ -439,7 +439,7 @@
 <script>
     $( ".add-money" ).click(function() {
         $.ajax({
-        url: '/app/show-modal-virement-info',
+        url: '/public/app/show-modal-virement-info',
         type: "GET",
         success: function (res) {
 
