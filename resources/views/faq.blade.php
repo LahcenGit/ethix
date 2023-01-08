@@ -49,7 +49,7 @@
                         </div>
                         <div class="faq-item wow fadeInLeft" data-wow-delay=".1s">
                             <h3 class="faq-title">
-                            Puis-je investir avec une société ? 
+                            Puis-je investir avec une société ?
                             </h3>
                             <div class="faq-panel">
                                 <p class="faq-para text-blue"> Oui, vous pouvez investir avec votre société.
@@ -73,30 +73,29 @@
                                     </ul>
                                        <p  class="faq-para text-blue"> Nous passons beaucoup de temps avant de signer le compromis d'achat et nous engager dans un projet.</p>
                             </div>
-                            
+
                         </div>
                         <div class="faq-item wow fadeInLeft" data-wow-delay=".1s">
                             <h3 class="faq-title">
                             Comment se rémunère Ethix ?
                             </h3>
                             <div class="faq-panel">
-                                <p class="faq-para text-blue"> Aucun frais d'entrée ni de sortie n'est pris sur votre investissement.
-                                 Nous nous rémunérons en deux fois sur les projets pour impacter le moins possible vos <b>plus-values</b> :</p>
+                                <p class="faq-para text-blue"> Aucun frais d'entrée ni de sortie n'est pris sur votre investissement. Nous nous rémunérons en une fois sur les projets pour impacter le moins possible vos 
+                                     <b>plus-values locatives </b> :</p>
                                  <ul>
-                                 <li>Lors de l'achat du bien, nous appliquons un pourcentage de 5% pour nous permettre d'engager les différents frais liés au suivi du projet.</li>
-                                 <li>Lors de la revente, nous appliquons les 5% restant pour nous rémunérer.</li>
+                                 <li>Lors de l'achat du bien, nous appliquons un pourcentage de 10% pour nous permettre d'engager les différents frais liés au suivi du projet et pour nous rémunérer</li>
+
                                  </ul>
                             </div>
-                            
+
                         </div>
                         <div class="faq-item wow fadeInLeft" data-wow-delay=".1s">
                             <h3 class="faq-title">
-                                Quelle rendement espérer ? 
+                                Quelle rendement espérer ?
                             </h3>
                             <div class="faq-panel">
-                                <p class="faq-para text-blue"> Chaque projet apporte un rendement différent, mais nous nous sommes fixé un objectif de plus-value entre 7 et 10% au minimum.
-
-                                    Cette rentabilité n’est pas garantie, c’est une estimation. </p>
+                                <p class="faq-para text-blue"> Chaque projet apporte un rendement différent, mais nous nous sommes fixés un objectif de plus-value entre 3 et 10% au minimum. Cette rentabilité n’est pas garantie, c’est une estimation.
+                                </p>
                             </div>
                         </div>
                         <div class="faq-item wow fadeInLeft" data-wow-delay=".1s">
@@ -107,19 +106,19 @@
                                 <p class="faq-para text-blue"> Chaque année vous recevez un dividende calculé sur la base de votre investissement initial et de la plus-value générée à la suite des projets engagés dans l'année en cours.
 
                                     Exemple :
-                                    
+
                                     Nous démarrons un projet d'une valeur totale de 100000€ en mars.
-                                    
+
                                     Celui-ci dure 9 mois entre achat, travaux et revente.
-                                    
+
                                     A la revente nous enregistrons une plus-value nette de 15000€
-                                    
+
                                     Celle-ci est divisée entre les investisseurs au prorata de leur investissement.
-                                    
+
                                     Celui qui aura investi 5000€, reçoit donc un dividende de 750€ qu’il peut décider de réinvestir afin de profiter de l'effet cumulé</p>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -130,15 +129,15 @@
                     <div class="faq-question-form custom-form mat-20">
                         <form action="#">
                             <div class="single-input">
-                               
+
                                 <input type="text" class="form--control radius-10" placeholder="Nom">
                             </div>
                             <div class="single-input">
-                                
+
                                 <input type="text" class="form--control radius-10" placeholder="Email">
                             </div>
                             <div class="single-input">
-                               
+
                                 <textarea name="message" class="form--control form-message radius-10" placeholder="Question"></textarea>
                             </div>
                             <button class="submit-btn w-100 radius-10" type="submit"> Envoyer </button>
@@ -150,8 +149,8 @@
     </div>
 </section>
 <!-- Question area end -->
-    
-    
+
+
 
 
 

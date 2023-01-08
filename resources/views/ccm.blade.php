@@ -9,7 +9,7 @@
                 <h2 class="title"> l'investissement sans contraintes ! </h2>
                 <div class="section-title-shapes"> </div>
                 <h5 > Faites fructifier votre épargne avec notre solution.</h5>
-                
+
             </div>
             <div class="row gy-4 mt-5">
                 <div class="container py-5">
@@ -34,8 +34,8 @@
                             <h4 style="color: #ffff">2-Validation de votre compte</h4>
                             <p class="small text-white-50 mb-4 text-white" >  Rejoindre le groupe d'investisseurs  </p>
                             <img class="mb-4" style="border-radius: 25px;" src="{{asset('Front\assets\img\AdobeStock_228730968-930x620.jpeg')}}" alt="">
-                            <p style="color: #ffff">Une fois l'inscription validée et le contrat Ethix dûment signé, vous rejoignez le groupe d’investisseurs Ethix.
-                                Vous avez désormais accès à votre tableau de bord et vous pouvez accéder aux informations concernant les investissements dans les projets en cours.
+                            <p style="color: #ffff">Une fois l'inscription et votre profil validé par l’administrateur, vous rejoignez le groupe d’investisseurs Ethix. Vous avez désormais accès à votre tableau de bord et vous pouvez accéder aux informations concernant vos investissements dans les projets en cours.
+
                             </p>
                           </div>
                         </div>
@@ -57,7 +57,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Booking area ends -->
     <!-- Booking area starts -->
     <section class="booking-area pat-100 pab-50">
@@ -93,7 +93,7 @@
               <div class="card card-edit-border" style="width: 14rem; margin-right:5px;">
                 <img  src="{{asset('Front\assets\img\revente-ethix.jpg')}}" class="card-img-top" alt="...">
                 <div class="card-body d-flex justify-content-center">
-                  <b class="card-text text-center" style="color: #024670" >Revente</b>
+                  <b class="card-text text-center" style="color: #024670" >Location ou revente</b>
                 </div>
               </div>
               <div class="card card-edit-border" style="width: 14rem; margin-right:5px;">
@@ -102,26 +102,26 @@
                   <b class="card-text text-center" style="color: #024670" >Suivi administratif et juridique du projet</b>
                 </div>
               </div>
-             
 
-             
+
+
 
 
             </div>
 
-           
 
-          
+
+
           </div>
-            
-           
+
+
         </div>
     </section>
-    
+
     <!-- Booking area ends -->
-    
-    
-    
+
+
+
 
 
 

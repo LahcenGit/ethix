@@ -320,13 +320,13 @@
                                 <div class="footer-widget-social mt-4">
                                     <ul class="footer-widget-social-list list-style-none justify-content-center">
                                         <li class="footer-widget-social-list-item">
-                                            <a class="footer-widget-social-list-link" href="https://www.facebook.com/groups/247713964064377"> <i class="lab la-facebook-f"></i> </a>
+                                            <a class="footer-widget-social-list-link" href="https://www.facebook.com/Ethix.invest"> <i class="lab la-facebook-f"></i> </a>
                                         </li>
                                         <li class="footer-widget-social-list-item">
-                                            <a class="footer-widget-social-list-link" href="javascript:void(0)"> <i class="lab la-twitter"></i> </a>
+                                            <a class="footer-widget-social-list-link" href="https://www.linkedin.com/in/ethix-invest-496891233/"> <i class="lab la-linkedin"></i> </a>
                                         </li>
                                         <li class="footer-widget-social-list-item">
-                                            <a class="footer-widget-social-list-link" href="javascript:void(0)"> <i class="lab la-instagram"></i> </a>
+                                            <a class="footer-widget-social-list-link" href="https://www.instagram.com/ethix.invest/?hl=fr"> <i class="lab la-instagram"></i> </a>
                                         </li>
 
                                     </ul>
@@ -439,7 +439,7 @@
 <script>
     $( ".add-money" ).click(function() {
         $.ajax({
-        url: '/public/app/show-modal-virement-info',
+        url: '/app/show-modal-virement-info',
         type: "GET",
         success: function (res) {
 

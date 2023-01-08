@@ -18,7 +18,7 @@
         </div>
 
         @if($user)
-            
+
             <div class="row col">
                 <div class="card col-md-4 mr-4">
                     <div class="card-body">
@@ -43,13 +43,13 @@
                             <div class="form-row">
                                 @foreach($documents as $document)
                                 <div class="form-col-4">
-                                <a href="{{url('downolad-file/'.$document->link)}}"> <img src="{{url('downolad-file/'.$document->link)}}"  height="100px" width="100px" alt=""> </a>
+                                <a href="{{url('downolad-file/'.$document->link)}}"> <img src="{{url('storage/documents/'.$document->link)}}"  height="100px" width="100px" alt=""> </a>
                                 </div>
                                 @endforeach
                             </div>
-                        </div> 
-                    </div> 
-                    
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -72,7 +72,7 @@
                             <button type="submit" class="btn btn-primary mt-3">Enregistrer</button>
                         </form>
                     </div>
-                </div> 
+                </div>
             </div>
 
         @else
@@ -80,7 +80,7 @@
                 <div class="card-body">
                     Cet utilisateur n'a pas encore envoyé des informations !
                 </div>
-            </div>                                                                  
+            </div>
         @endif
 
     </div>

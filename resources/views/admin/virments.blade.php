@@ -61,7 +61,7 @@
 
                                             <td>
                                                 <div class="d-flex">
-                                                <a target="_blank" href="{{url('storage/images/virments/'.$virment->received)}}" type="button" class="btn btn-success shadow btn-xs sharp mr-1 r"><i class="fa fa-eye"></i></a>
+                                                <a target="_blank" href="{{asset('storage/images/'.$virment->received)}}" type="button" class="btn btn-success shadow btn-xs sharp mr-1 r"><i class="fa fa-eye"></i></a>
                                                 <button class="btn btn-warning shadow btn-xs sharp edit-compte" id = {{ $virment->user->id }} data-id ={{ $virment->id }}><i class="fa fa-pen"></i></button>
                                                 </div>
                                                 </form>

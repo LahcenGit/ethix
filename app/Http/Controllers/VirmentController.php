@@ -27,7 +27,7 @@ class VirmentController extends Controller
         $virment = new Virment();
         $virment->user_id = $user->id;
         $virment->amount = $request->amount;
-        $destination = 'public/images/virments';
+        $destination = 'public/images';
         $path = $request->received->store($destination);
         $storageName = basename($path);
         $virment->received = $storageName;

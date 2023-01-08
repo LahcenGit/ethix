@@ -21,14 +21,14 @@
                                 <a  href="{{ route('register') }}" class="submit-btn w-30 radius-10 mt-2 " type="submit" style="font-size:23px;"> Je veux investir ! </a>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="col-lg-6 bg-image banner-right-bg radius-20" style="background-image: url(Front/assets/img/banner/banner.jpg);"></div>
             </div>
         </div>
     </div>
     <!-- Banner area end -->
-   
+
 
     <!-- Booking area starts -->
     <section class="booking-area pat-100 pab-50">
@@ -85,7 +85,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Booking area ends -->
     <!-- Booking area starts -->
     <section class="booking-area pat-100 pab-50">
@@ -109,7 +109,7 @@
                 <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInRight radius-20" data-wow-delay=".2s" style="background-image: url(Front/assets/img/banner/vision1.jpg);">
                 </div>
             </div>
-            
+
             <div class="row gy-4 mt-5">
                 <div class="col-xl-6 col-lg-6 col-md-6 wow fadeInRight radius-20" data-wow-delay=".2s" style="background-image: url(Front/assets/img/banner/vision2.jpg);">
                 </div>
@@ -117,37 +117,36 @@
                     <div class="single-why center-text bg-white single-why-border radius-10">
                         <div class="single-why-contents mt-3">
                             <h4 class="single-why-contents-title" style="color: #4DAA7F"> <a href="javascript:void(0)">  L’immobilier comme valeur refuge </a> </h4>
-                            <p class="single-why-contents-para mt-3">L’immobilier reste l’investissement le plus sécurisé c’est pourquoi nous avons sélectionné ce support permettant d’obtenir des rendements annuels de 10%  en moyenne!
-
-                                Nous attachons beaucoup d’importance au choix des projets dans lesquels nous investissons; Une étude minutieuse nous permet de réaliser des opérations à fort rendement habituellement inaccessibles sans faire appel au crédit bancaire. </p>
+                            <p class="single-why-contents-para mt-3">L’immobilier reste l’investissement le plus sécurisé c’est pourquoi nous avons sélectionné ce support permettant d’obtenir des rendements annuels pouvant aller jusqu’à  10%!  Nous attachons beaucoup d’importance au choix des projets dans lesquels nous investissons; Une étude minutieuse nous permet de réaliser des opérations à fort rendement habituellement inaccessibles sans faire appel au crédit bancaire.
+                            </p>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </section>
-    
+
     <!-- Booking area ends -->
-    
-    
+
+
     <!-- shots area starts -->
     <section class="shots-area pat-50 pab-50">
         <div class="container">
             <div class="section-title center-text">
-                <h2 class="title"> 
+                <h2 class="title">
                     Rejoignez la communauté des investisseurs Ethix
                      </h2>
                 <div class="section-title-shapes"> </div>
             </div>
             <div class="center-text mt-4">
-                <p class="single-why-contents-para"> Démarrez dès maintenant votre projet de vie et rejoignez le groupe d'investisseurs 
+                <p class="single-why-contents-para"> Démarrez dès maintenant votre projet de vie et rejoignez le groupe d'investisseurs
                      </p>
-                
+
                 <button  class="submit-btn w-30 radius-10 mt-4" style="font-size:21px;"> Pré-inscription! </button>
-               
+
             </div>
-           
+
         </div>
     </section>
     <!-- shots area end -->
@@ -193,7 +192,7 @@
                             </div>
                             <div class="faq-item wow fadeInLeft" data-wow-delay=".1s">
                             <h3 class="faq-title">
-                            Puis-je investir avec une société ? 
+                            Puis-je investir avec une société ?
                             </h3>
                             <div class="faq-panel">
                                 <p class="faq-para text-blue"> Oui, vous pouvez investir avec votre société.
@@ -217,7 +216,7 @@
                                     </ul>
                                        <p class="faq-para text-blue"> Nous passons beaucoup de temps avant de signer le compromis d'achat et nous engager dans un projet.</p>
                             </div>
-                            
+
                         </div>
                         <div class="faq-item wow fadeInLeft" data-wow-delay=".1s">
                             <h3 class="faq-title">
@@ -225,22 +224,21 @@
                             </h3>
                             <div class="faq-panel">
                                 <p class="faq-para text-blue"> Aucun frais d'entrée ni de sortie n'est pris sur votre investissement.
-                                 Nous nous rémunérons en deux fois sur les projets pour impacter le moins possible vos <b>plus-values</b> :</p>
+                                    Nous nous rémunérons en une fois sur les projets pour impacter le moins possible vos <b>plus-values locatives </b> :</p>
                                  <ul>
-                                 <li>Lors de l'achat du bien, nous appliquons un pourcentage de 5% pour nous permettre d'engager les différents frais liés au suivi du projet.</li>
-                                 <li>Lors de la revente, nous appliquons les 5% restant pour nous rémunérer.</li>
+                                 <li>Lors de l'achat du bien, nous appliquons un pourcentage de 10% pour nous permettre d'engager les différents frais liés au suivi du projet et pour nous rémunérer.</li>
+
                                  </ul>
                             </div>
-                            
+
                         </div>
                             <div class="faq-item wow fadeInLeft" data-wow-delay=".1s">
                                 <h3 class="faq-title">
-                                    Quelle rendement espérer ? 
+                                    Quelle rendement espérer ?
                                 </h3>
                                 <div class="faq-panel">
-                                    <p class="faq-para text-blue"> Chaque projet apporte un rendement différent, mais nous nous sommes fixé un objectif de plus-value entre 7 et 10% au minimum.
-
-                                        Cette rentabilité n’est pas garantie, c’est une estimation. </p>
+                                    <p class="faq-para text-blue"> Chaque projet apporte un rendement différent, mais nous nous sommes fixés un objectif de plus-value entre 3 et 10% au minimum. Cette rentabilité n’est pas garantie, c’est une estimation.
+                                    </p>
                                 </div>
                             </div>
                             <div class="faq-item wow fadeInLeft" data-wow-delay=".1s">
@@ -251,15 +249,15 @@
                                     <p class="faq-para text-blue"> Chaque année vous recevez un dividende calculé sur la base de votre investissement initial et de la plus-value générée à la suite des projets engagés dans l'année en cours.
 
                                         Exemple :
-                                        
+
                                         Nous démarrons un projet d'une valeur totale de 100000€ en mars.
-                                        
+
                                         Celui-ci dure 9 mois entre achat, travaux et revente.
-                                        
+
                                         A la revente nous enregistrons une plus-value nette de 15000€
-                                        
+
                                         Celle-ci est divisée entre les investisseurs au prorata de leur investissement.
-                                        
+
                                         Celui qui aura investi 5000€, reçoit donc un dividende de 750€ qu’il peut décider de réinvestir afin de profiter de l'effet cumulé</p>
                                 </div>
                             </div>
@@ -273,15 +271,15 @@
                         <div class="faq-question-form custom-form mat-20">
                             <form action="#">
                                 <div class="single-input">
-                                    
+
                                     <input type="text" class="form--control radius-10" placeholder=" Nom">
                                 </div>
                                 <div class="single-input">
-                                    
+
                                     <input type="text" class="form--control radius-10" placeholder="Email">
                                 </div>
                                 <div class="single-input">
-                                   
+
                                     <textarea name="message" class="form--control form-message radius-10" placeholder="Question"></textarea>
                                 </div>
                                 <button class="submit-btn w-100 radius-10" type="submit"> Envoyer </button>
@@ -293,7 +291,7 @@
         </div>
     </section>
     <!-- Question area end -->
-   
+
 
     <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
     <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
@@ -303,7 +301,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
         <div class="toast-body">
-        Vous allez reçevoir toutes nos actualités 
+        Vous allez reçevoir toutes nos actualités
         </div>
     </div>
     </div>
@@ -315,11 +313,11 @@
         <button type="button" class="btn-close close2" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
         <div class="toast-body">
-        Ce email existe déja  
+        Ce email existe déja
         </div>
     </div>
     </div>
-    
+
     <!-- Newsletter area starts -->
     <div class="newsletter-area pat-50">
         <div class="container">
@@ -330,10 +328,10 @@
                             <img src="{{asset('Front/assets/img/single-page/newsletter-shape1.png')}}" alt="shapes">
                             <img src="{{asset('Front/assets/img/single-page/newsletter-shape2.png')}}" alt="shapes">
                         </div>
-                       
+
                         <div class="newsletter-contents center-text">
                             <h3 class="newsletter-contents-title"> Newsletter </h3>
-                            <p class="newsletter-contents-para mt-3"> 
+                            <p class="newsletter-contents-para mt-3">
                                 Inscrivez-vous à notre newsletter pour suivre nos actualités.
                                  </p>
                             <div class="newsletter-contents-form custom-form mt-4">
@@ -343,7 +341,7 @@
                                 </div>
                             </div>
                         </div>
-                       
+
                     </div>
                 </div>
             </div>
@@ -358,7 +356,7 @@ $( ".btn-newsletter" ).click(function(e) {
     e.preventDefault();
     let email = $('#email').val();
     $.ajax({
-          type:"Post",  
+          type:"Post",
           url: '/newsletter',
           data:{
             "_token": "{{ csrf_token() }}",
@@ -372,16 +370,16 @@ $( ".btn-newsletter" ).click(function(e) {
                 $("#liveToast2").show();
             }
           },
-        
+
           });
 });
 $( ".btn-close" ).click(function(e) {
     $("#liveToast").hide();
-   
+
 });
 $( ".close2" ).click(function(e) {
     $("#liveToast2").hide();
-   
+
 });
 </script>
 @endpush

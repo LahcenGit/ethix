@@ -19,8 +19,8 @@
                 <input type="text" class="form-control"style="height: 50px;" id="recipient-name" value="BIC/SWIFT:BNPOFTPPXXX" disabled>
             </div>
             <div class="mb-3">
-                <label for="recipient-name" class="col-form-label">Bénéficiare:</label>
-                <input type="text" class="form-control" style="height: 50px;" id="recipient-name" value="Farid ethix" disabled>
+                <label for="recipient-name" class="col-form-label">Benéficiaire :</label>
+                <input type="text" class="form-control" style="height: 50px;" id="recipient-name" value="Ethix invest " disabled>
             </div>
           </form>
           <p><a href="{{ asset('app/virment/create') }}"><b>Cliquiez ici</b></a> pour envoyer le reçu de votre virement bancaire,après la réception votre compte sera automatiquement crédité</p>
