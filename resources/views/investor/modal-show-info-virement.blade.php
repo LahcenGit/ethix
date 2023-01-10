@@ -6,7 +6,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p>Voici le RIB sur le quel vous pouvez effectuer votre virement.Pour information,un virement met en moyenne 72h à arriver sur votre portefeuille Ethix.
+          <p>Voici le RIB sur lequel vous pouvez effectuer votre virement.Pour information,un virement met en moyenne 72h à arriver sur votre portefeuille Ethix.
             <b></b>
           </p>
           <form>

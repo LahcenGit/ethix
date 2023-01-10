@@ -350,7 +350,7 @@
                                     </div>
                                     <div class="copyright-contents-single-details">
                                         <span class="copyright-contents-single-details-title"> Télephone </span>
-                                        <a href="tel:3104372766" class="copyright-contents-single-details-link"> 0626773538</a>
+                                        <a style="cursor: pointer;" class="copyright-contents-single-details-link"> 0626773538</a>
                                     </div>
                                 </div>
                             </div>
@@ -361,7 +361,7 @@
                                     </div>
                                     <div class="copyright-contents-single-details">
                                         <span class="copyright-contents-single-details-title"> Email</span>
-                                        <a href="mailto:unreal@example.com" class="copyright-contents-single-details-link"> contact@ethix-invest.com </a>
+                                        <a style="cursor: pointer;" class="copyright-contents-single-details-link"> contact@ethix-invest.com </a>
                                     </div>
                                 </div>
                             </div>
