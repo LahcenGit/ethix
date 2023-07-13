@@ -41,7 +41,7 @@
                                                     </div >
                                                     <div class="col-6 text-center">
                                                         <div class="btn-wrapper">
-                                                            <a href="{{asset('/app/detail-property/'.$property->id)}}" class="cmn-btn btn-bg-1  mt-2" > Acheter  </a>
+                                                            <a href="#" id="btnBien" class="cmn-btn btn-bg-1  mt-2" > Acheter  </a>
                                                        </div>
                                                     </div >
 

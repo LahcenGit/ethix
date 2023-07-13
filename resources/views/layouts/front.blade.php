@@ -37,6 +37,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" referrerpolicy="no-referrer" />
+    <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.min.css " rel="stylesheet">
 </head>
 
 <style>
@@ -218,7 +219,10 @@
         background-color: #4DAA7F;
         border-color: #4DAA7F;
     }
-
+    .btn-color {
+        background-color: #4DAA7F !important;
+        border-color: #4DAA7F !important;
+    }
 </style>
 
 <body>
@@ -285,7 +289,7 @@
                             </div>
                             @else
                             <div class="navbar-right-btn">
-                                <a href="{{ route('login') }}"> Connexion </a>
+                                <a href="{{ asset('/login') }}" > Connexion </a>
 
                             </div>
                             <div class="btn-wrapper">
@@ -350,7 +354,7 @@
                                     </div>
                                     <div class="copyright-contents-single-details">
                                         <span class="copyright-contents-single-details-title"> Télephone </span>
-                                        <a style="cursor: pointer;" class="copyright-contents-single-details-link"> 0626773538</a>
+                                        <a style="cursor: pointer;" class="copyright-contents-single-details-link"> 0613431381</a>
                                     </div>
                                 </div>
                             </div>
@@ -405,7 +409,7 @@
     <!-- main js -->
     <script src="{{asset('Front/assets/js/main.js')}}"></script>
 
-
+    <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.all.min.js "></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
 
@@ -448,6 +452,22 @@
         }
       });
       });
+</script>
+<script>
+    $( "#btnBien" ).click(function() {
+        Swal.fire({
+        title: 'Bientôt disponible !',
+        showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+        },
+        customClass: {
+                confirmButton: 'btn-color'
+        }
+    })
+});
 </script>
 @stack('achat-ethix-scripts')
 @stack('validate-scripts')
