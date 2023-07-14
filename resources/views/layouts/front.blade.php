@@ -454,7 +454,7 @@
       });
 </script>
 <script>
-    $( "#btnBien" ).click(function() {
+    $( ".btnBien" ).click(function() {
         Swal.fire({
         title: 'Bientôt disponible !',
         showClass: {
