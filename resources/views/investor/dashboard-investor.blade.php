@@ -18,12 +18,12 @@
                             @foreach($properties as $property)
                             <div class="col-md-4">
                                 <div class="hotel-view bg-white radius-20">
-                                    <a href="{{asset('/app/detail-property/'.$property->id)}}" class="hotel-view-thumb hotel-view-grid-thumb bg-image" ><img src="{{asset('storage/images/properties/'.$property->images[0]->link)}}" alt="properties">
+                                    <a href="#" class="hotel-view-thumb hotel-view-grid-thumb bg-image btnBien" ><img src="{{asset('storage/images/properties/'.$property->images[0]->link)}}" alt="properties">
                                     </a>
                                     <div class="hotel-view-contents">
                                         <div class="hotel-view-contents-header">
                                             <span class="hotel-view-contents-review"> {{number_format($property->valuation)}} <span class="hotel-view-contents-review-count">€</span> </span>
-                                            <h3 class="hotel-view-contents-title"> <a href="{{asset('/app/detail-property/'.$property->id)}}"> {{$property->designation}} </a> </h3>
+                                            <h3 class="hotel-view-contents-title"> <a href="#" class="btnBien"> {{$property->designation}} </a> </h3>
                                             <div class="hotel-view-contents-location mt-2">
                                                 <span class="hotel-view-contents-location-icon"> <i class="las la-map-marker-alt"></i> </span>
                                                 <span class="hotel-view-contents-location-para"> {{$property->addresse}}  </span>
