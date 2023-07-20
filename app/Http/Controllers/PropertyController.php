@@ -26,7 +26,7 @@ class PropertyController extends Controller
         $property = new Property();
         $property->designation = $request->designation;
         $property->addresse = $request->address;
-        $property->description = $request->description; 
+        $property->description = $request->description;
         $property->type = $request->type;
         $property->valuation = $request->valuation;
         $property->profitability = $request->profitability;
@@ -38,7 +38,7 @@ class PropertyController extends Controller
         $property->max_ethix = 0;
         $property->save();
         $hasFile = $request->hasFile('photos');
-      
+
         if($hasFile){
             foreach($request->file('photos') as $file){
                 $destination = 'public/images/properties';
@@ -47,14 +47,14 @@ class PropertyController extends Controller
                 $image = new Image();
                 $image->link= $storageName;
                 $property->images()->save($image);
-            } 
+            }
             }
         return redirect('dashboard-admin/properties');
     }
 
     public function edit($id){
         $property = Property::find($id);
-       
+
         return view('admin.edit-property',compact('property'));
     }
 
@@ -62,7 +62,7 @@ class PropertyController extends Controller
         $property = Property::find($id);
         $property->designation = $request->designation;
         $property->addresse = $request->address;
-        $property->description = $request->description; 
+        $property->description = $request->description;
         $property->type = $request->type;
         $property->valuation = $request->valuation;
         $property->profitability = $request->profitability;
@@ -74,7 +74,7 @@ class PropertyController extends Controller
         $property->max_ethix = 0;
         $property->save();
         $hasFile = $request->hasFile('photos');
-      
+
         if($hasFile){
             $image = Image::where('property_id',$id)->count();
             if($image == 0){
@@ -85,12 +85,13 @@ class PropertyController extends Controller
                 $image = new Image();
                 $image->link= $storageName;
                 $property->images()->save($image);
-            } 
+            }
             }
             else{
                 $images = Image::where('property_id',$id)->get();
                 foreach($images as $image){
                     $image->delete();
+                    Storage::disk('public')->delete('images/properties/'.$image->link);
                 }
             foreach($request->file('photos') as $file){
                 $destination = 'public/images/properties';
@@ -99,7 +100,7 @@ class PropertyController extends Controller
                 $image = new Image();
                 $image->link= $storageName;
                 $property->images()->save($image);
-                } 
+                }
             }
             }
         return redirect('dashboard-admin/properties');

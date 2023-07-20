@@ -30,7 +30,7 @@
         width: 600px !important;
       }
     }
-    
+
     @media (max-width: 620px) {
       .u-row-container {
         max-width: 100% !important;
@@ -52,42 +52,42 @@
         margin: 0 auto;
       }
     }
-    
+
     body {
       margin: 0;
       padding: 0;
     }
-    
+
     table,
     tr,
     td {
       vertical-align: top;
       border-collapse: collapse;
     }
-    
+
     p {
       margin: 0;
     }
-    
+
     .ie-container table,
     .mso-container table {
       table-layout: fixed;
     }
-    
+
     * {
       line-height: inherit;
     }
-    
+
     a[x-apple-data-detectors='true'] {
       color: inherit !important;
       text-decoration: none !important;
     }
-    
+
     table,
     td {
       color: #000000;
     }
-    
+
     #u_body a {
       color: #0000ee;
       text-decoration: underline;
@@ -129,7 +129,7 @@
                           <tr>
                             <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Cabin',sans-serif;" align="left">
 
-                             
+
 
                             </td>
                           </tr>
@@ -366,7 +366,7 @@
 
                               <div style="color: #43bb95; line-height: 160%; text-align: center; word-wrap: break-word;">
                                 <p style="font-size: 14px; line-height: 160%;"><span style="font-size: 20px; line-height: 32px;"><strong>Contactez-nous</strong></span></p>
-                                <p style="font-size: 14px; line-height: 160%;"><span style="font-size: 16px; line-height: 25.6px; color: #07466f;">0626773538</span></p>
+                                <p style="font-size: 14px; line-height: 160%;"><span style="font-size: 16px; line-height: 25.6px; color: #07466f;">0613431381</span></p>
                                 <p style="font-size: 14px; line-height: 160%;"><span style="font-size: 14px; line-height: 22.4px;"><span style="font-size: 16px; line-height: 25.6px; color: #07466f;"><a rel="noopener" href="mailto:contact@ethix-invest.com" target="_blank" style="color: #07466f; text-decoration: underline;">contact@ethix-invest.com</a><br /></span></span>
                                 </p>
                               </div>

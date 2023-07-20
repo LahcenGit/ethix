@@ -385,7 +385,7 @@
 
                               <div style="color: #43bb95; line-height: 160%; text-align: center; word-wrap: break-word;">
                                 <p style="font-size: 14px; line-height: 160%;"><span style="font-size: 20px; line-height: 32px;"><strong>Contactez-nous</strong></span></p>
-                                <p style="font-size: 14px; line-height: 160%;"><span style="font-size: 16px; line-height: 25.6px; color: #07466f;">0626773538</span></p>
+                                <p style="font-size: 14px; line-height: 160%;"><span style="font-size: 16px; line-height: 25.6px; color: #07466f;">0613431381</span></p>
                                 <p style="font-size: 14px; line-height: 160%;"><span style="font-size: 14px; line-height: 22.4px;"><span style="font-size: 16px; line-height: 25.6px; color: #07466f;"><a rel="noopener" href="mailto:contact@ethix-invest.com" target="_blank" style="color: #07466f; text-decoration: underline;">contact@ethix-invest.com</a><br /></span></span>
                                 </p>
                               </div>
