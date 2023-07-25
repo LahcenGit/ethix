@@ -22,7 +22,7 @@
 											</div>
 										</div>
 									</div>
-									
+
 								</div>
 							</div>
 							<div class="col-xl-3 col-xxl-3 col-lg-6 col-sm-6">
@@ -35,7 +35,7 @@
 											</div>
 										</div>
 									</div>
-									
+
 								</div>
 							</div>
 							<div class="col-xl-3 col-xxl-3 col-lg-6 col-sm-6">
@@ -48,7 +48,7 @@
 											</div>
 										</div>
 									</div>
-									
+
 								</div>
 							</div>
 							<div class="col-xl-3 col-xxl-3 col-lg-6 col-sm-6">
@@ -61,11 +61,11 @@
 											</div>
 										</div>
 									</div>
-									
+
 								</div>
 							</div>
-						
-							
+
+
 							<div class="col-xl-6 col-xxl-6 col-lg-12 col-md-12">
 								<div class="card">
 									<div class="card-header border-0 pb-0">
@@ -82,11 +82,11 @@
 														<th>Phone</th>
 														<th>Solde</th>
 														<th>Statut</th>
-														
+
                                     	            </tr>
 												</thead>
 												<tbody>
-													
+
 													@foreach($users as $user)
 														<tr >
 														<td>{{$loop->iteration}}</td>
@@ -109,7 +109,7 @@
 															@else
 															<td><span class="badge badge-danger">Bloqué</span></td>
 															@endif
-														
+
 														</tr>
 													@endforeach
 												</tbody>
@@ -146,9 +146,9 @@
 													</tr>
 												  @endforeach
 												</tbody>
-												
+
 											</table>
-											
+
 										</div>
 									</div>
 								</div>
@@ -165,7 +165,7 @@
 												<li>
 													<div class="timeline-badge primary"></div>
 													<a class="timeline-panel text-muted" href="#">
-														
+
 														<h6 class="mb-0"><strong class="text-primary">{{$new_investor}} </strong> nouveau(x)</h6>
 													</a>
 												</li>
@@ -175,9 +175,9 @@
 													<div class="timeline-badge info">
 													</div>
 													<a class="timeline-panel text-muted" href="#">
-														
+
 														<h6 class="mb-0"> <strong class="text-info">{{$investor_email_valid}}</strong> email validé(s)</h6>
-														
+
 													</a>
 												</li>
 												@endif
@@ -186,7 +186,7 @@
 													<div class="timeline-badge warning">
 													</div>
 													<a class="timeline-panel text-muted" href="#">
-														
+
 														<h6 class="mb-0"><strong class="text-warning">{{$investor_waiting}}</strong>  en attente(s)</h6>
 													</a>
 												</li>
@@ -196,7 +196,7 @@
 													<div class="timeline-badge success">
 													</div>
 													<a class="timeline-panel text-muted" href="#">
-														
+
 														<h6 class="mb-0"> <strong class="text-success">{{$investor_valid}}</strong>  validé(s)</h6>
 													</a>
 												</li>
@@ -206,7 +206,7 @@
 													<div class="timeline-badge danger">
 													</div>
 													<a class="timeline-panel text-muted" href="#">
-														
+
 														<h6 class="mb-0"> <strong class="text-danger">{{$investor_blocked}}</strong>  bloqué(s)</h6>
 													</a>
 												</li>
@@ -222,7 +222,7 @@
                             <div class="card-header pb-0 border-0">
                                 <h4 class="card-title text-white">TOP INVESTISSEURS</h4>
                             </div>
-                            <div class="card-body"> 
+                            <div class="card-body">
                                 <div class="widget-media">
                                     <ul class="timeline">
 										@foreach($top_investors as $top_investor)
@@ -234,25 +234,26 @@
                                                 <div class="media-body">
 													<h5 class="mb-1 text-white">{{$top_investor->user->first_name}} {{$top_investor->user->last_name}}</h5>
 													<small class="d-block">{{$top_investor->sum}} Ethix investi(s) </small>
+                                                    <h6> @if($top_investor->user->status == 1)<span class="badge badge-warning">En attente de validation</span> @elseif($top_investor->user->status == 0)<span class="badge badge-warning"> En attente d'envoi des documents </span>@elseif($top_investor->user->status == 2)<span class="badge badge-info"> Validé </span>@endif</h6>
 												</div>
-												
+
 											</div>
                                         </li>
 										@endforeach
                                      </ul>
                                 </div>
                             </div>
-							 							
+
                         </div>
-						
-					
+
+
 					</div>
 						</div>
 					</div>
-					
-					
-					
-					
+
+
+
+
 			   </div>
             </div>
         </div>

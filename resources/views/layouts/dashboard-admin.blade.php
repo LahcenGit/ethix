@@ -19,12 +19,16 @@
 	<link rel="stylesheet" href="{{asset('Dashboard/uploader/drop_uploader.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" referrerpolicy="no-referrer" />
     <link href="{{asset('Dashboard/vendor/summernote/summernote.css')}}" rel="stylesheet">
+    <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.min.css " rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('dashboard/vendor/toastr/css/toastr.min.css')}}">
 </head>
 
-
-
-
-
+<style>
+    .swal-button--confirm {
+     background-color: #4DAA7F !important;
+     border-color: #4DAA7F !important;
+}
+</style>
 
 <body>
 
@@ -273,6 +277,8 @@
     <!-- Summernote init -->
     <script src="{{asset('Dashboard/js/plugins-init/summernote-init.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/fontawesome.min.js" referrerpolicy="no-referrer"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.all.min.js "></script>
+    <script src="{{asset('dashboard/vendor/toastr/js/toastr.min.js')}}"></script>
 
 	<script>
 	(function($) {
@@ -380,6 +386,7 @@ $(".update-ethix-value").on('click',function() {
 
    });
 </script>
+@stack('mail-script')
 @stack('modal-edit-investor-scripts')
 @stack('form-update-scripts')
 @stack('modal-show-file-scripts')

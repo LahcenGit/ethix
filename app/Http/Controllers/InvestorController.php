@@ -8,6 +8,7 @@ use App\Models\Property;
 use App\Models\User;
 use App\Models\Userinformation;
 use App\Models\Userproperty;
+use App\Models\Virment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -105,7 +106,9 @@ class InvestorController extends Controller
         public function getInvestor($id){
             $user = Userinformation::with('user')->where('user_id',$id)->first();
             $documents = Document::where('documenttable_id',$id)->get();
-            return view('admin.view-investor',compact('user','documents'));
+            $virement = Virment::where('user_id',$id)->first();
+
+            return view('admin.view-investor',compact('user','documents','virement'));
         }
 
         public function showModal(){

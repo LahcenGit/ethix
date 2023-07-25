@@ -42,15 +42,34 @@
                             <h5><span class="badge mb-4 " style="background-color: #4DAA7F;color: #ffff">Documents :</span> </h5>
                             <div class="form-row">
                                 @foreach($documents as $document)
-                                <div class="form-col-4">
-                                <a href="{{url('downolad-file/'.$document->link)}}"> <img src="{{url('storage/documents/'.$document->link)}}"  height="100px" width="100px" alt=""> </a>
-                                </div>
+                                    <div class="form-col-4">
+                                        @if(in_array(pathinfo($document->link, PATHINFO_EXTENSION), ['jpg', 'jpeg', 'png', 'gif']))
+                                            <!-- Le document est une image -->
+                                            <a href="{{url('downolad-file/'.$document->link)}}">
+                                                <img src="{{url('storage/documents/'.$document->link)}}"  height="100px" width="100px" alt="">
+                                            </a>
+                                        @else
+                                            <!-- Le document est un fichier -->
+                                            <a href="{{url('downolad-file/'.$document->link)}}">
+                                                <img src="{{url('Dashboard/images/pdf.jpg')}}"  height="100px" width="120px" alt="">
+                                            </a>
+                                        @endif
+                                    </div>
                                 @endforeach
+                            </div>
+                            <h5><span class="badge mb-4 mt-3 " style="background-color: #4DAA7F;color: #ffff">Reçu :</span> </h5>
+                            <div class="form-row">
+                                @if($virement)
+                                <div class="form-col-4">
+                                    <a href="{{url('storage/images/'.$virement->received)}}"> <img src="{{url('storage/images/'.$virement->received)}}"  height="100px" width="100px" alt=""> </a>
+                                </div>
+                                @endif
                             </div>
                         </div>
                     </div>
 
                 </div>
+
 
             </div>
             <div class="row col">

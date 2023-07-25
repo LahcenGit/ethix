@@ -14,6 +14,8 @@ use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\UserinformationController;
 use App\Http\Controllers\VirmentController;
 use App\Http\Controllers\VirmentAdminController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FaqMailController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -30,10 +32,10 @@ use Illuminate\Support\Facades\Auth;
 
 
 Route::get('/symlink', function () {
-   
+
     $target =$_SERVER['DOCUMENT_ROOT'].'/storage/app/public';
     $link = $_SERVER['DOCUMENT_ROOT'].'/public/storage';
-   
+
     symlink($target, $link);
     echo "Done";
  });
@@ -66,7 +68,7 @@ Route::get('/detail-blog', function () {
 
 
 
-
+//admin route
 Route::resource('/dashboard-admin/properties',PropertyController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/users',InvestorController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/versments',VersmentController::class)->middleware('can:admin');
@@ -78,11 +80,13 @@ Route::resource('/newsletter',NewsletterController::class);
 Route::get('/dashboard-admin/view-investor/{id}',[App\Http\Controllers\InvestorController::class,'getInvestor']);
 Route::get('/modal-update-ethix',[App\Http\Controllers\EthixController::class,'getModal']);
 Route::post('/update-ethix',[App\Http\Controllers\EthixController::class,'updateValue']);
+Route::get('dashboard-admin/add-versment',[App\Http\Controllers\VersmentController::class,'addVersment']);
+Route::get('reminder-mail',[App\Http\Controllers\ReminderController::class,'index']);
 
+//investor route
 Route::get('/app/show-modal-virement-info', [App\Http\Controllers\InvestorController::class, 'showModal']);
 Route::get('/show-file/{id}',[App\Http\Controllers\InvestorController::class,'showFile']);
 Route::get('app/achat-ethix/{id}',[App\Http\Controllers\UserpropertyController::class,'achatEthix']);
-Route::get('dashboard-admin/add-versment',[App\Http\Controllers\VersmentController::class,'addVersment']);
 Route::get('app/investissements',[App\Http\Controllers\UserpropertyController::class,'investissements']);
 Route::post('app/store-ethix',[App\Http\Controllers\UserpropertyController::class,'storeEthix']);
 Route::get('/downolad-file/{link}',[App\Http\Controllers\InvestorController::class,'downloadFile']);
@@ -98,3 +102,7 @@ Auth::routes(['verify' => true]);
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/dashboard-admin',AdminController::class)->middleware('can:admin');
+// contact route
+Route::resource('/contact',ContactController::class);
+//faq mail route
+Route::resource('/faq-mail',FaqMailController::class);

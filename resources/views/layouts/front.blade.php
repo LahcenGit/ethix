@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" referrerpolicy="no-referrer" />
     <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.min.css " rel="stylesheet">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 <style>
@@ -293,7 +294,7 @@
 
                             </div>
                             <div class="btn-wrapper">
-                                <a href="{{ route('register') }}" class="cmn-btn btn-bg-1 radius-10"> Pré-inscription </a>
+                                <a href="{{ route('register') }}" class="cmn-btn btn-bg-1 radius-10"> Inscription </a>
                             </div>
                             @endauth
                         </div>
@@ -469,11 +470,13 @@
     })
 });
 </script>
+
 @stack('achat-ethix-scripts')
 @stack('validate-scripts')
 @stack('check-condition')
 @stack('add-newsletter')
-
+@stack('contact-scripts')
+@stack('faq-mail-scripts')
 </body>
 
 </html>

@@ -127,18 +127,22 @@
                     <h3 class="faq-question-title"> Encore des questions ?
                     </h3>
                     <div class="faq-question-form custom-form mat-20">
-                        <form action="#">
+                        <form id="faq-mail-form" action="{{asset('/faq-mail')}}" method="POST">
+                            @csrf
                             <div class="single-input">
 
-                                <input type="text" class="form--control radius-10" placeholder="Nom">
+                                <input type="text" class="form--control radius-10" placeholder="Nom" id="name" required>
                             </div>
                             <div class="single-input">
 
-                                <input type="text" class="form--control radius-10" placeholder="Email">
+                                <input type="text" class="form--control radius-10" placeholder="Email" id="email" required>
                             </div>
                             <div class="single-input">
 
-                                <textarea name="message" class="form--control form-message radius-10" placeholder="Question"></textarea>
+                                <textarea name="message" class="form--control form-message radius-10" placeholder="Question" id="question" required></textarea>
+                            </div>
+                            <div id="show_contact_msg" >
+
                             </div>
                             <button class="submit-btn w-100 radius-10" type="submit"> Envoyer </button>
                         </form>
@@ -149,9 +153,44 @@
     </div>
 </section>
 <!-- Question area end -->
-
-
-
-
-
 @endsection
+@push('faq-mail-scripts')
+<script>
+      $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+   $("#faq-mail-form").on("submit", function (e)
+    {
+        $('#show_contact_msg').html('<div >En cours....</div>');
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var message = $('#question').val();
+        var formURL = $(this).attr("action");
+        var data = {
+            name: name,
+            email: email,
+            message: message
+        };
+        $.ajax(
+                {
+                    url: formURL,
+                    type: "POST",
+                    data: data,
+                    success: function (res) {
+                        if (res === '1') {
+                            $('#show_contact_msg').html('<div class="alert alert-success mt-2" id="form-success flash-alert" role="alert"> Votre messgae à été bien envoyer !</div>');
+                            $(".flash-alert").slideDown(200).delay(3500).slideUp(200);
+                        }
+
+
+                    }
+                });
+        e.preventDefault();
+    });
+
+</script>
+
+@endpush
