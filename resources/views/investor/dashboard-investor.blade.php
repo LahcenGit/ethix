@@ -32,11 +32,21 @@
 
                                         <div class="hotel-view-contents-bottom pt-2">
                                             <div class="hotel-view-contents-bottom-flex">
+<<<<<<< Updated upstream
                                                 <div class="hotel-view-contents-bottom-contents row">
                                                     <div class="col-6 p-2">
                                                         <h4  >{{$property->profitability}}%</h4> rentabilité
                                                     </div>
 
+=======
+                                                <div class="hotel-view-contents-bottom-contents row" style="width: 500px;">
+                                                    <div class="col-6 p-2">
+                                                        <h4  >{{$property->profitability}}%</h4> Revenus net estimés
+                                                    </div>
+                                                {{--<div class="col-3 p-2">
+                                                        <h4 >{{$property->obj_revenu}}%</h4> Reversés
+                                                    </div >--}}
+>>>>>>> Stashed changes
                                                     <div class="col-6 text-center">
                                                         <div class="btn-wrapper">
                                                             <a href="#"  class="cmn-btn btn-bg-1  mt-2 btnBien" > Acheter  </a>

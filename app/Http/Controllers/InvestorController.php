@@ -10,6 +10,7 @@ use App\Models\Userinformation;
 use App\Models\Userproperty;
 use App\Models\Virment;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -73,36 +74,47 @@ class InvestorController extends Controller
         return view('admin.modal-show-file',compact('user','test'));
     }
 
-    public function downloadFile($link){
-        $document = Document::where('link',$link)->first();
-        $file ='storage/documents/'.$document->link;
-         $ext = pathinfo($link, PATHINFO_EXTENSION);
+    public function downloadFile($name){
+        $document = Document::where('link',$name)->first();
+        $url = public_path('storage/documents/').$document->link;
+        $ext = pathinfo($name, PATHINFO_EXTENSION);
+        $image = file_get_contents($url);
+         
 
-            if($ext == 'png' || 'PNG'){
-            $headers = array(
-                'Content-Type:image/png',
-                );
+        if($ext == 'png' || $ext == 'PNG'){
+
+            $response = new Response($image, 200);
+            $response->header('Content-Type', 'image/png');
+            $response->header('Content-Disposition', 'attachment');
+
+        }
+
+            else if($ext == 'jpg' || $ext == 'jpeg' || $ext == 'JPEG' ||$ext == 'JPG'){
+           
+                $response = new Response($image, 200);
+            $response->header('Content-Type', 'image/jpeg');
+            $response->header('Content-Disposition', 'attachment');
+
+
             }
 
-            else if($ext == 'jpg' || 'jpeg' || 'JPEG' || 'JPG'){
-            $headers = array(
-                'Content-Type:image/jpeg',
-                );
-            }
+            else if($ext == 'gif' || $ext == 'GIF'){
+        
+                $response = new Response($image, 200);
+                $response->header('Content-Type', 'image/gif');
+                $response->header('Content-Disposition', 'attachment');
 
-            else if($ext == 'gif' || 'GIF'){
-            $headers = array(
-                'Content-Type:image/gif',
-                );
             }
             else{
-                $headers = array(
-                    'Content-Type:application/pdf',
-                    );
+                    $response = new Response($image, 200);
+                    $response->header('Content-Type', 'application/pdf');
+                    $response->header('Content-Disposition', 'attachment');
             }
-             return response()->download($file , $link , $headers);
+             return $response;
 
-                }
+         }
+
+                
         public function getInvestor($id){
             $user = Userinformation::with('user')->where('user_id',$id)->first();
             $documents = Document::where('documenttable_id',$id)->get();

@@ -22,30 +22,30 @@
     </div>
     @endif
 
-    <div class="row d-flex justify-content-center " >
-        <div class=" col-6  col-md-1 text-center mb-2 mt-2">
-            <a href="{{url('app/')}}"> <i class="fa-solid fa-house-fire fa-2x" style="color:#4DAA7F; " > </i> <br> propriétés </a>
-        </div>
-
-        <div class=" col-6 col-md-1 text-center mb-2 mt-2">
-            <a href="{{url('app/investissements')}}"> <i class="fa-solid fa-money-bill-trend-up fa-2x" style="color:#4DAA7F; " > </i> <br> Investissements </a>
-        </div>
-        <div class=" col-6 col-md-1 text-center mb-2 mt-2 ">
-            <a href="#" class="add-money"> <i class="fa-solid fa-money-bill-transfer fa-2x"style="color:#4DAA7F; " > </i> <br> Virement </a>
-        </div>
-        <div class="col-6 col-md-1 text-center mb-2 mt-2">
-            <a href="{{url('app/profil')}}"> <i class="fa-solid fa-user fa-2x" style="color:#4DAA7F; " > </i> <br> Profil </a>
-        </div>
-
-        <div class="col-6 col-md-1 text-center mb-2 mt-2">
-            <a href="{{route('logout')}}"> <i class="fa-solid fa-right-from-bracket fa-2x" style="color:#818181; " onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();" > </i> <br> Déconnexion
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
-            </a>
+    <div class="container" style="max-width: 900px;">
+        <div class="row d-flex justify-content-center">
+            <div class="col text-center mb-2 mt-2" style="">
+                <a href="{{url('app/')}}"> <i class="fa-solid fa-house-fire fa-2x" style="color:#4DAA7F;" > </i> <br> propriétés </a>
+            </div>
+            <div class="col text-center mb-2 mt-2">
+                <a href="{{url('app/investissements')}}"> <i class="fa-solid fa-money-bill-trend-up fa-2x" style="color:#4DAA7F;"> </i> <br> Investissements </a>
+            </div>
+            <div class="col text-center mb-2 mt-2 ">
+                <a href="#" class="add-money"> <i class="fa-solid fa-money-bill-transfer fa-2x"style="color:#4DAA7F;"> </i> <br> Virement </a>
+            </div>
+            <div class="col text-center mb-2 mt-2">
+                <a href="{{url('app/profil')}}"> <i class="fa-solid fa-user fa-2x" style="color:#4DAA7F;"></i> <br> Profil </a>
+            </div>
+            <div class="col text-center mb-2 mt-2">
+                <a href="{{route('logout')}}"> <i class="fa-solid fa-right-from-bracket fa-2x" style="color:#818181;" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();" > </i> <br> Déconnexion
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </a>
+            </div>
+    
         </div>
     </div>
-
 
 </div>

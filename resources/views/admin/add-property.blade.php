@@ -86,8 +86,8 @@
                                                 @enderror
 
                                         </div>
-                                        <div class="form-group col-md-4">
-                                            <label>Rentabilité* :</label>
+                                        <div class="form-group col-md-8">
+                                            <label>Revenus net estimés:</label>
                                             <input type="text"  class="form-control input-default @error('profitability') is-invalid @enderror" value="{{old('profitability')}}" name="profitability"  placeholder="0%" required >
                                                 @error('profitability')
                                                         <span class="invalid-feedback" role="alert">
@@ -96,7 +96,7 @@
                                                 @enderror
 
                                         </div>
-                                        <div class="form-group col-md-4">
+                                        {{--<div class="form-group col-md-4">
                                             <label>Objectif de revenus reversés* :</label>
                                             <input type="text"  class="form-control input-default @error('obj_revenu') is-invalid @enderror" value="{{old('obj_revenu')}}" name="obj_revenu"  placeholder="0%" required >
                                                 @error('obj_revenu')
@@ -106,7 +106,7 @@
                                                 @enderror
 
                                         </div>
-                                        {{--<div class="form-group col-md-3">
+                                        <div class="form-group col-md-3">
                                             <label>Max ethix* :</label>
                                             <input type="number"  class="form-control input-default @error('max_ethix') is-invalid @enderror" value="{{old('max_ethix')}}" name="max_ethix"  placeholder="0" required >
                                                 @error('max_ethix')
