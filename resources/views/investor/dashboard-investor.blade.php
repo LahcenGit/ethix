@@ -18,7 +18,7 @@
                             @foreach($properties as $property)
                             <div class="col-md-4">
                                 <div class="hotel-view bg-white radius-20">
-                                    <a href="#" class="hotel-view-thumb hotel-view-grid-thumb bg-image " ><img src="{{asset('storage/images/properties/'.$property->images[0]->link)}}" alt="properties">
+                                    <a href="{{asset('/app/detail-property/'.$property->id)}}" class="hotel-view-thumb hotel-view-grid-thumb bg-image " ><img src="{{asset('storage/images/properties/'.$property->images[0]->link)}}" alt="properties">
                                     </a>
                                     <div class="hotel-view-contents">
                                         <div class="hotel-view-contents-header">
@@ -44,9 +44,9 @@
 
                                                     <div class="col-6 text-center">
                                                         <div class="btn-wrapper">
-                                                            <a href="#"  class="cmn-btn btn-bg-1  mt-2 " > Acheter  </a>
+                                                            <a href="{{asset('/app/detail-property/'.$property->id)}}"  class="cmn-btn btn-bg-1  mt-2 " > Acheter  </a>
                                                        </div>
-                                                    </div >
+                                                    </div>
 
                                                 </div>
                                             </div>
