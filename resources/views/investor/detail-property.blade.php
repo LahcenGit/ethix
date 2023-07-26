@@ -2,6 +2,19 @@
 @section('content')
 
 
+<style>
+.analyse td{
+       color: rgb(61, 74, 87);
+}
+.analyse-result{
+    background-color: #4DAA7F;
+}
+.analyse-result td{
+    color:#ffff!important;
+    font-weight: 600;
+}
+</style>
+
 
 
 @include('investor.header-investor')
@@ -129,7 +142,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="hotel-details-widget widget bg-white radius-10">
+                       {{--<div class="hotel-details-widget widget bg-white radius-10">
                             <div class="hotel-view">
 
                                 <div class="hotel-view-contents">
@@ -158,7 +171,115 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>--}} 
+
+                        <div class="hotel-details-widget widget bg-white radius-10">
+                            <div class="hotel-view">
+
+                                <div class="hotel-view-contents">
+                                    <div class="hotel-view-contents-header">
+                                        <h3 class="hotel-view-contents-title"> Diagnostic Technique </h3>
+
+                                    </div>
+                                    <div class="hotel-view-contents-middle">
+                                          <img src="{{asset('/dpe.jpg')}}" alt="">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        <div class="hotel-details-widget widget bg-white radius-10">
+                            <div class="hotel-view">
+
+                                <div class="hotel-view-contents">
+                                    <div class="hotel-view-contents-header">
+                                        <h3 class="hotel-view-contents-title"> L’analyse Financière </h3>
+
+                                    </div>
+                                    <div class="hotel-view-contents-middle">
+                                        <div>
+                                            <h5 class="mt-2 mb-2" style="color: #4DAA7F"><b>Valorisation</b> </h5>
+                                            <table class="table analyse">
+                                                <tbody>
+                                                  <tr>
+                                                    <td>Nombre d'ethix</td>
+                                                    <td >1260</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Valorisation du bien</td>
+                                                    <td>116 000 €</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Reserve</td>
+                                                    <td>10 000 €</td>
+                                                  </tr>
+                                                  <tr class="analyse-result">
+                                                    <td>Valeur totale</td>
+                                                    <td>126 000  €</td>
+                                                  </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div>
+                                            <h5 class="mt-2 mb-2" style="color: #4DAA7F"><b>Acquisition</b> </h5>
+                                            <table class="table analyse">
+                                                <tbody>
+                                                  <tr>
+                                                    <td>Prix d’acquisition</td>
+                                                    <td >10 2000 €</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Rémunération Ethix</td>
+                                                    <td>5 000 €</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Frais de notaire</td>
+                                                    <td>9 000 €</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Réserve argent (travaux)</td>
+                                                    <td>10 000 €</td>
+                                                  </tr>
+                                                  <tr class="analyse-result">
+                                                    <td>Cout d'acquisition total</td>
+                                                    <td>126 000 €</td>
+                                                  </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div>
+                                            <h5 class="mt-2 mb-2" style="color: #4DAA7F"><b>Rendement locatif cible</b> </h5>
+                                            <table class="table analyse">
+                                                <tbody>
+                                                  <tr>
+                                                    <td>Loyers collectés</td>
+                                                    <td >10 500 €</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Charges (frais copro, etc.)</td>
+                                                    <td>4 274 €</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Taxe foncièree</td>
+                                                    <td>1 040 €</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Réserve argent (travaux)</td>
+                                                    <td>10 000 €</td>
+                                                  </tr>
+                                                  <tr class="analyse-result">
+                                                    <td>Revenus reversés </td>
+                                                    <td>5186 €/an 4,12%</td>
+                                                  </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
 
                     </div>
                 </div>

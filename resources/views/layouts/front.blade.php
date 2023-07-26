@@ -454,6 +454,7 @@
       });
       });
 </script>
+
 <script>
     $( ".btnBien" ).click(function() {
         Swal.fire({

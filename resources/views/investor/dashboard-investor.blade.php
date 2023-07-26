@@ -18,12 +18,12 @@
                             @foreach($properties as $property)
                             <div class="col-md-4">
                                 <div class="hotel-view bg-white radius-20">
-                                    <a href="#" class="hotel-view-thumb hotel-view-grid-thumb bg-image btnBien" ><img src="{{asset('storage/images/properties/'.$property->images[0]->link)}}" alt="properties">
+                                    <a href="#" class="hotel-view-thumb hotel-view-grid-thumb bg-image " ><img src="{{asset('storage/images/properties/'.$property->images[0]->link)}}" alt="properties">
                                     </a>
                                     <div class="hotel-view-contents">
                                         <div class="hotel-view-contents-header">
                                             <span class="hotel-view-contents-review"> {{number_format($property->valuation)}} <span class="hotel-view-contents-review-count">€</span> </span>
-                                            <h3 class="hotel-view-contents-title"> <a href="#" class="btnBien"> {{$property->designation}} </a> </h3>
+                                            <h3 class="hotel-view-contents-title"> <a href="{{asset('/app/detail-property/'.$property->id)}}" class=""> {{$property->designation}} </a> </h3>
                                             <div class="hotel-view-contents-location mt-2">
                                                 <span class="hotel-view-contents-location-icon"> <i class="las la-map-marker-alt"></i> </span>
                                                 <span class="hotel-view-contents-location-para"> {{$property->addresse}}  </span>
@@ -32,13 +32,8 @@
 
                                         <div class="hotel-view-contents-bottom pt-2">
                                             <div class="hotel-view-contents-bottom-flex">
-<<<<<<< Updated upstream
-                                                <div class="hotel-view-contents-bottom-contents row">
-                                                    <div class="col-6 p-2">
-                                                        <h4  >{{$property->profitability}}%</h4> rentabilité
-                                                    </div>
+                                             
 
-=======
                                                 <div class="hotel-view-contents-bottom-contents row" style="width: 500px;">
                                                     <div class="col-6 p-2">
                                                         <h4  >{{$property->profitability}}%</h4> Revenus net estimés
@@ -46,10 +41,10 @@
                                                 {{--<div class="col-3 p-2">
                                                         <h4 >{{$property->obj_revenu}}%</h4> Reversés
                                                     </div >--}}
->>>>>>> Stashed changes
+
                                                     <div class="col-6 text-center">
                                                         <div class="btn-wrapper">
-                                                            <a href="#"  class="cmn-btn btn-bg-1  mt-2 btnBien" > Acheter  </a>
+                                                            <a href="#"  class="cmn-btn btn-bg-1  mt-2 " > Acheter  </a>
                                                        </div>
                                                     </div >
 
