@@ -65,7 +65,6 @@
                             <div class="details-contents-tab">
                                 <ul class="tabs details-tab details-tab-border">
                                     <li class="active" data-tab="about"> Description </li>
-
                                 </ul>
                                 <div id="about" class="tab-content-item active">
                                     <div class="about-tab-contents">
@@ -74,8 +73,15 @@
 
                                     </div>
                                 </div>
-
-
+                                <div class="card" style="width: 18rem; left: 20px;margin-bottom: 10px;">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Card title</h5>
+                                      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                      <a href="#" class="card-link">Card link</a>
+                                      <a href="#" class="card-link">Another link</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -103,19 +109,13 @@
                                             <span class="single-reservation-details-subtitle"> Rentabilité cible</span>
                                             <h5 class="single-reservation-details-title" style="font-size: 25px;"> {{$property->profitability}}%</h5>
                                         </div>
-                                        <div class="single-reservation-details-item">
-                                            <span class="single-reservation-details-subtitle">Objectif de revenus</span>
-                                            <h5 class="single-reservation-details-title" style="font-size: 25px;"> {{$property->obj_revenu}}%</h5>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="single-reservation-item">
                                     <div class="single-reservation-details">
-
-
                                         <div class="single-reservation-details-item">
                                             <span class="single-reservation-details-subtitle"> Valorisation du bien</span>
-                                            <h5 class="single-reservation-details-title" style="font-size: 25px;"> {{number_format($property->valuation)}} €</h5>
+                                            <h5 class="single-reservation-details-title" style="font-size: 25px;"> {{number_format($property->total_valorisation)}} €</h5>
                                         </div>
                                         <div class="single-reservation-details-item">
                                             <span class="single-reservation-details-subtitle">Reste </span>
@@ -171,7 +171,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>--}} 
+                        </div>--}}
 
                         <div class="hotel-details-widget widget bg-white radius-10">
                             <div class="hotel-view">
@@ -203,19 +203,19 @@
                                                 <tbody>
                                                   <tr>
                                                     <td>Nombre d'ethix</td>
-                                                    <td >1260</td>
+                                                    <td >{{ $property->nbr_ethix }}</td>
                                                   </tr>
                                                   <tr>
                                                     <td>Valorisation du bien</td>
-                                                    <td>116 000 €</td>
+                                                    <td>{{ number_format($property->valuation, 0, ',', ' ') }} €</td>
                                                   </tr>
                                                   <tr>
                                                     <td>Reserve</td>
-                                                    <td>10 000 €</td>
+                                                    <td>{{ number_format($property->reserve, 0, ',', ' ') }} €</td>
                                                   </tr>
                                                   <tr class="analyse-result">
                                                     <td>Valeur totale</td>
-                                                    <td>126 000  €</td>
+                                                    <td>{{ number_format($property->total_valorisation, 0, ',', ' ') }}  €</td>
                                                   </tr>
                                                 </tbody>
                                             </table>
@@ -226,23 +226,23 @@
                                                 <tbody>
                                                   <tr>
                                                     <td>Prix d’acquisition</td>
-                                                    <td >10 2000 €</td>
+                                                    <td >{{ number_format($property->acquisition_price, 0, ',', ' ') }} €</td>
                                                   </tr>
                                                   <tr>
                                                     <td>Rémunération Ethix</td>
-                                                    <td>5 000 €</td>
+                                                    <td>{{ number_format($property->remuneration_ethix, 0, ',', ' ') }} €</td>
                                                   </tr>
                                                   <tr>
                                                     <td>Frais de notaire</td>
-                                                    <td>9 000 €</td>
+                                                    <td>{{ number_format($property->notary_fees, 0, ',', ' ') }} €</td>
                                                   </tr>
                                                   <tr>
                                                     <td>Réserve argent (travaux)</td>
-                                                    <td>10 000 €</td>
+                                                    <td>{{ number_format($property->money_reserve_acquisition, 0, ',', ' ') }} €</td>
                                                   </tr>
                                                   <tr class="analyse-result">
                                                     <td>Cout d'acquisition total</td>
-                                                    <td>126 000 €</td>
+                                                    <td>{{ number_format($property->total_acquisition, 0, ',', ' ') }} €</td>
                                                   </tr>
                                                 </tbody>
                                             </table>
@@ -253,19 +253,19 @@
                                                 <tbody>
                                                   <tr>
                                                     <td>Loyers collectés</td>
-                                                    <td >10 500 €</td>
+                                                    <td >{{ number_format($property->rent_collected, 0, ',', ' ') }} €</td>
                                                   </tr>
                                                   <tr>
                                                     <td>Charges (frais copro, etc.)</td>
-                                                    <td>4 274 €</td>
+                                                    <td>{{ number_format($property->charge, 0, ',', ' ') }} €</td>
                                                   </tr>
                                                   <tr>
                                                     <td>Taxe foncièree</td>
-                                                    <td>1 040 €</td>
+                                                    <td>{{ number_format($property->property_tax, 0, ',', ' ') }} €</td>
                                                   </tr>
                                                   <tr>
                                                     <td>Réserve argent (travaux)</td>
-                                                    <td>10 000 €</td>
+                                                    <td>{{ number_format($property->money_reserve_rendement, 0, ',', ' ') }} €</td>
                                                   </tr>
                                                   <tr class="analyse-result">
                                                     <td>Revenus reversés </td>

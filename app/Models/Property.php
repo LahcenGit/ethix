@@ -29,9 +29,10 @@ class Property extends Model
             $line_calcul = $item->nbr_ethix * $item->value_ethix;
             $total = $total +$line_calcul ;
         }
+
         $percentage = ($total * 100) / (int)$property->valuation;
         $percentage = number_format($percentage,2);
         return  $percentage;
-        
+
     }
 }
