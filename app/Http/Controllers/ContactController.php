@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\MailContact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 
 class ContactController extends Controller
 {
@@ -12,8 +13,19 @@ class ContactController extends Controller
       return view('contact');
     }
     public function store(Request $request){
+        $validator = Validator::make($request->all(), [
+            'captcha' => 'required|captcha'
+        ], ['captcha.captcha' => 'Le code Captcha est invalide.']);
 
-        Mail::to('contact@ethix-invest.com')->send(new MailContact($request));
-        return 1;
+        if ($validator->fails()) {
+            return false;
+        }
+
+        Mail::to('benosmanhind@gmail.com')->send(new MailContact($request));
+        return true;
+    }
+    public function refreshCaptcha()
+    {
+        return response()->json(['captcha'=> captcha_img()]);
     }
 }

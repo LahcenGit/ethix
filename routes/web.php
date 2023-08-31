@@ -66,7 +66,9 @@ Route::get('/detail-blog', function () {
     return view('detail-blog');
 });
 
-
+Route::get('/logout', function () {
+    return redirect('/login'); // Redirige l'utilisateur vers la page login.
+});
 
 //admin route
 Route::resource('/dashboard-admin/properties',PropertyController::class)->middleware('can:admin');
@@ -104,5 +106,6 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::resource('/dashboard-admin',AdminController::class)->middleware('can:admin');
 // contact route
 Route::resource('/contact',ContactController::class);
+Route::get('refresh_captcha', [App\Http\Controllers\ContactController::class, 'refreshCaptcha'])->name('refresh_captcha');
 //faq mail route
 Route::resource('/faq-mail',FaqMailController::class);

@@ -269,7 +269,7 @@
                                                   </tr>
                                                   <tr class="analyse-result">
                                                     <td>Revenus reversés </td>
-                                                    <td>5186 €/an 4,12%</td>
+                                                    <td>5186 €/an 4,12(%)</td>
                                                   </tr>
                                                 </tbody>
                                             </table>

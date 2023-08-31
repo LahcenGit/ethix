@@ -35,6 +35,21 @@
 
                                 <textarea name="message" class="form--control form-message radius-10" placeholder="Message" id="message" required></textarea>
                             </div>
+                            <div class="form-group{{ $errors->has('captcha') ? ' has-error' : '' }}">
+                                <div class="col-md-12  mt-3">
+                                    <div class="captcha">
+                                    <span>{!! captcha_img() !!}</span>
+                                    <button type="button" class="btn btn-success btn-refresh"><i class="fa fa-refresh"></i></button>
+                                    </div>
+                                    <input id="captcha" type="text" class="form--control radius-10 mt-3" placeholder="Entrez le Captcha" id="captcha" required>
+                                    @if ($errors->has('captcha'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('captcha') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+
                             <div id="show_contact_msg" >
 
                             </div>
@@ -62,20 +77,26 @@
         var name = $('#name').val();
         var email = $('#email').val();
         var message = $('#message').val();
+        var captcha = $('#captcha').val();
         var formURL = $(this).attr("action");
         var data = {
             name: name,
             email: email,
-            message: message
+            message: message,
+            captcha: captcha,
         };
         $.ajax(
                 {
                     url: formURL,
                     type: "POST",
                     data: data,
-                    success: function (res) {
-                        if (res === '1') {
-                            $('#show_contact_msg').html('<div class="alert alert-success mt-2 flash-alert" id="form-success" role="alert"> Votre messgae à été bien envoyer !</div>');
+                    success: function (response) {
+                        if (response == true) {
+                            $('#show_contact_msg').html('<div class="alert alert-success mt-2 flash-alert" id="form-success" role="alert">Votre messgae à été bien envoyer !</div>');
+                            $(".flash-alert").slideDown(200).delay(3500).slideUp(200);
+                        }
+                        else{
+                            $('#show_contact_msg').html('<div class="alert alert-danger mt-2 flash-alert" id="form-success" role="alert">Le code Captcha est invalide</div>');
                             $(".flash-alert").slideDown(200).delay(3500).slideUp(200);
                         }
 
@@ -87,4 +108,17 @@
 
 </script>
 
+<script type="text/javascript">
+
+
+    $(".btn-refresh").click(function(){
+      $.ajax({
+         type:'GET',
+         url:'/refresh_captcha',
+         success:function(data){
+            $(".captcha span").html(data.captcha);
+         }
+      });
+    });
+</script>
 @endpush
