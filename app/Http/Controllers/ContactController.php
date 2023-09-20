@@ -21,7 +21,7 @@ class ContactController extends Controller
             return false;
         }
 
-        Mail::to('benosmanhind@gmail.com')->send(new MailContact($request));
+        Mail::to('contact@ethix-invest.com')->send(new MailContact($request));
         return true;
     }
     public function refreshCaptcha()

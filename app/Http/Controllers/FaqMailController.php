@@ -19,7 +19,7 @@ class FaqMailController extends Controller
             return false;
         }
 
-        Mail::to('benosmanhind@gmail.com')->send(new FaqMail($request));
+        Mail::to('contact@ethix-invest.com')->send(new FaqMail($request));
         return true;
       }
 }
