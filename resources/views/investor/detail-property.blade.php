@@ -68,20 +68,39 @@
                                 </ul>
                                 <div id="about" class="tab-content-item active">
                                     <div class="about-tab-contents">
-
                                         <p class="about-tab-contents-para mt-4"> {!! $property->description !!} </p>
+                                    </div>
+                                </div>
+                               
+                            </div>
 
+                     
+                        </div>
+
+                        <div class="hotel-details-widget widget bg-white radius-10 mt-4">
+                            <div class="hotel-view">
+
+                                <div class="hotel-view-contents">
+                                    <div class="hotel-view-contents-header">
+                                        <h3 class="hotel-view-contents-title"> Stratégie d’investissement : </h3>
+                                    </div>
+                                    <div style="padding: 20px; padding-top:0px!important;">
+                                      <p style="color: rgb(61, 74, 87);">il s’agit d’une stratégie de rendement locatif d’un appartement dans 
+                                        une ville dont le marché immobilier est en croissance constante.</p>
+                                      <p style="color: rgb(61, 74, 87);">Les revenus seront versés mensuellement au moment du paiement du loyer et seront disponibles immédiatement dans votre portefeuille Ethix.
+                                    </p>
                                     </div>
                                 </div>
-                                <div class="card" style="width: 18rem; left: 20px;margin-bottom: 10px;">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Card title</h5>
-                                      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                      <a href="#" class="card-link">Card link</a>
-                                      <a href="#" class="card-link">Another link</a>
-                                    </div>
-                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="card" style=" margin-bottom: 10px; margin-top:10px;background-color: #4daa7f;">
+                            <div class="card-body">
+                           
+                              <p class="card-text text-white">Tout investissement comporte des risques de perte en capital. Les performances présentées ne peuvent être garanties. Nous sommes à votre écoute pour répondre à toutes vos questions au <b>06 13 43 13 81</b>  ou par email à <b>contact@ethix-invest.com</b></p>
+                              
                             </div>
                         </div>
 
@@ -137,9 +156,16 @@
                                     </div>
                                 </div>
 
-                                <div class="btn-wrapper mt-4">
-                                    <a href="{{url('app/achat-ethix/'.$property->id)}}" class="cmn-btn btn-bg-1"> Achat d'un Ethix</a>
+                                <div class="row">
+                                    <div class=" col-6 btn-wrapper mt-4 ">
+                                        <a href="{{url('app/achat-ethix/'.$property->id)}}" class="cmn-btn btn-bg-1 "> Achat d'un Ethix</a>
+                                    </div>
+                                    <div class=" col-6 btn-wrapper mt-4 ">
+                                        <a href="{{url('app/engagement-ethix/'.$property->id)}}" class="cmn-btn btn-bg-1 red"> Je m'engage</a>
+                                    </div>
+
                                 </div>
+                             
                             </div>
                         </div>
                        {{--<div class="hotel-details-widget widget bg-white radius-10">

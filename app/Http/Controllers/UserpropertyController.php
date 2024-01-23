@@ -95,14 +95,27 @@ class UserpropertyController extends Controller
         }
     }
 
+
+    public function engagementEthix($id){
+        $user = Auth::user();
+        $ethix_val = Ethix::first();
+        $max_ethix = $user->solde/$ethix_val->value;
+        $property = Property::find($id);
+        $ethix_property = Userproperty::where('property_id',$property->id)->sum('nbr_ethix');
+        $ethix_total = intval($property->obj_financement / $ethix_val->value) -  $ethix_property ;
+        $nbr_ethix = 0;
+        $message = null;
+        $test_document = Document::where('documenttable_id',$user->id)->count();
+        $test_info = Userinformation::where('user_id',$user->id)->count();
+        return view('investor.engagement',compact('user','max_ethix','property','message','nbr_ethix','test_document','test_info','ethix_total'));
+    }
+
+
     public function investissements(){
-
-
         $investissements = Userproperty::with('property')->where('user_id',Auth::user()->id)
         ->groupBy('property_id')
         ->selectRaw('*, sum(nbr_ethix) as sum_ethix')
         ->get();
-     
         $user = Auth::user();
         $test_document = Document::where('documenttable_id',$user->id)->count();
         $test_info = Userinformation::where('user_id',$user->id)->count();

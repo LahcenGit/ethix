@@ -26,6 +26,9 @@
     <!-- TellInput Css -->
     <link rel="stylesheet" href="{{asset('Front/assets/css/intlTelInput.css')}}">
     <!-- Nice Select Css -->
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('signature/css/jquery.signature.css')}}">
+    <!-- Nice Select Css -->
 
 
     <!-- Main Stylesheet -->
@@ -38,6 +41,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" referrerpolicy="no-referrer" />
     <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.min.css " rel="stylesheet">
+
+
+
+
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
@@ -224,6 +232,17 @@
         background-color: #4DAA7F !important;
         border-color: #4DAA7F !important;
     }
+
+    .red {
+  background: #d10014 !important;
+  border: 2px solid #d10014 !important;
+}
+    .red:hover {
+  color: #d10014 !important;
+  background: #ffffff !important;
+  border: 2px solid #d10014 !important;
+}
+
 </style>
 
 <body>
@@ -384,9 +403,11 @@
     </div>
     <!-- back to top area end -->
 
-
     <!-- jquery -->
     <script src="{{asset('Front/assets/js/jquery-3.6.0.min.js')}}"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="{{asset('signature/js/jquery.signature.js')}}"></script>
+
     <!-- jquery Migrate -->
     <script src="{{asset('Dashboard/vendor/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
     <script src="{{asset('Front/assets/js/imagesloaded.pkgd.min.js')}}"></script>
@@ -478,6 +499,7 @@
 @stack('add-newsletter')
 @stack('contact-scripts')
 @stack('faq-mail-scripts')
+@stack('script-signature')
 </body>
 
 </html>

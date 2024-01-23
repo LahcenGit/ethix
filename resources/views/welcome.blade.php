@@ -18,7 +18,9 @@
                             <h2 class="banner-single-content-title fw-500 mt-2 " style="font-size:25px;"> L'immobilier sans crédit à partir de 100€ ! </h2>
                            {{--<p class="banner-single-content-para "> Achetez des parts de nos projets immobiliers
                                 Et faites fructifier votre épargne !  </p>--}}
+                                <div style="margin-top: 25px;">
                                 <a  href="{{ route('register') }}" class="submit-btn w-30 radius-10 mt-2 " style="font-size:23px;"> Je veux investir ! </a>
+                                </div>
                         </div>
                     </div>
 
@@ -142,7 +144,7 @@
             <div class="center-text mt-4">
                 <p class="single-why-contents-para"> Démarrez dès maintenant votre projet de vie et rejoignez le groupe d'investisseurs
                 </p>
-                <button class="submit-btn w-30 radius-10 mt-2 " style="font-size:21px;"> Inscription! </button>
+                <button class="submit-btn w-30 radius-10 mt-2 " style="font-size:21px;"> <a href="{{asset('/register')}}">Inscription!</a>  </button>
             </div>
 
         </div>

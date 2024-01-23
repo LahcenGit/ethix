@@ -15,7 +15,10 @@ use App\Http\Controllers\UserinformationController;
 use App\Http\Controllers\VirmentController;
 use App\Http\Controllers\VirmentAdminController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\EngagementAdminController;
+use App\Http\Controllers\EngagementController;
 use App\Http\Controllers\FaqMailController;
+use App\Http\Controllers\SignaturePadController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -77,6 +80,10 @@ Route::resource('/dashboard-admin/versments',VersmentController::class)->middlew
 Route::resource('/dashboard-admin/blogs',BlogController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/investissements',UserpropertyController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/virments',VirmentAdminController::class)->middleware('can:admin');
+Route::resource('/dashboard-admin/engagements',EngagementAdminController::class)->middleware('can:admin');
+
+Route::get('/dashboard-admin/engagementprint/{id}',[App\Http\Controllers\EngagementAdminController::class,'EngagementPrint'])->middleware('can:admin');
+
 Route::get('/dashboard-admin/edit-compte/{id_user}/{id_virment}', [App\Http\Controllers\VirmentAdminController::class, 'showModal']);
 Route::resource('/newsletter',NewsletterController::class);
 Route::get('/dashboard-admin/view-investor/{id}',[App\Http\Controllers\InvestorController::class,'getInvestor']);
@@ -89,6 +96,10 @@ Route::get('reminder-mail',[App\Http\Controllers\ReminderController::class,'inde
 Route::get('/app/show-modal-virement-info', [App\Http\Controllers\InvestorController::class, 'showModal']);
 Route::get('/show-file/{id}',[App\Http\Controllers\InvestorController::class,'showFile']);
 Route::get('app/achat-ethix/{id}',[App\Http\Controllers\UserpropertyController::class,'achatEthix']);
+//engagement
+Route::get('app/engagement-ethix/{id}',[App\Http\Controllers\UserpropertyController::class,'engagementEthix']);
+
+
 Route::get('app/investissements',[App\Http\Controllers\UserpropertyController::class,'investissements']);
 Route::post('app/store-ethix',[App\Http\Controllers\UserpropertyController::class,'storeEthix']);
 Route::get('/downolad-file/{link}',[App\Http\Controllers\InvestorController::class,'downloadFile']);
@@ -109,3 +120,10 @@ Route::resource('/contact',ContactController::class);
 Route::get('refresh_captcha', [App\Http\Controllers\ContactController::class, 'refreshCaptcha'])->name('refresh_captcha');
 //faq mail route
 Route::resource('/faq-mail',FaqMailController::class);
+
+//signature
+Route::get('signaturepad', [SignaturePadController::class, 'index']);
+Route::post('signaturepad', [SignaturePadController::class, 'upload'])->name('signaturepad.upload');
+
+Route::resource('app/engagement',EngagementController::class);
+

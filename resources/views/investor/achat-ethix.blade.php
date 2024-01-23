@@ -3,7 +3,7 @@
 
 @include('investor.header-investor')
 
-    @if($user->status == 0 || $user->status == 1)
+   {{-- @if($user->status == 0 || $user->status == 1)
 
     <div class="container d-flex justify-content-center " style="margin-top: 100px;margin-bottom: 100px;">
         <div class="login-wrapper login-shadow bg-white">
@@ -14,10 +14,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--}}
 
     <!-- Breadcrumb area end -->
-       @else
+      
         <div class="container d-flex justify-content-center " style="margin-top: 100px;margin-bottom: 100px;">
             <div class="login-wrapper login-shadow bg-white">
                 <div class="login-wrapper-flex">
@@ -54,6 +54,6 @@
                 </div>
             </div>
         </div>
-        @endif
+       
 @endsection
 
