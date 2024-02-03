@@ -30,16 +30,16 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    
+
     public function redirectTo()
-    {   
+    {
         if(Auth::user()){
             return 'app';
-    } 
-       
     }
-          
-    
+
+    }
+
+
     /**
      * Create a new controller instance.
      *
@@ -65,8 +65,9 @@ class RegisterController extends Controller
             'phone' => ['required', 'string', 'unique:users'],
             'username'=>['required', 'string', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed' , 'regex:/[A-Z]/',  'regex:/[0-9]/'],
+            'captcha' => 'required|captcha',
         ],
-        
+
         [
             'password.min' => '8 caractères , 1 majuscule , 1 chiffre',
             'password.regex' =>'8 caractères , 1 majuscule , 1 chiffre ',
@@ -81,6 +82,7 @@ class RegisterController extends Controller
             'email.required' => 'Ce champ est obligatoire',
             'username.required' => 'Ce champ est obligatoire',
             'phone.required' => 'Ce champ est obligatoire',
+            'captcha.captcha' => 'Le code Captcha est invalide.'
         ]
     );
     }
