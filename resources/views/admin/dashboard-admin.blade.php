@@ -14,7 +14,7 @@
 						<div class="row">
 							<div class="col-xl-3 col-xxl-3 col-lg-6 col-sm-6 ">
 								<div class="card overflow-hidden ">
-									<div class="card-body  pt-4">
+									<div class="card-body pt-4">
 										<div class="row">
 											<div class="col">
 												<h5 class="mb-1">{{$nbr_properties}}</h5>
