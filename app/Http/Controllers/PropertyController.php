@@ -6,7 +6,7 @@ use App\Models\Image;
 use App\Models\Property;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Facades\Validator;
 class PropertyController extends Controller
 {
     //
@@ -23,6 +23,32 @@ class PropertyController extends Controller
     }
 
     public function store(Request $request){
+        $validator = Validator::make($request->all(), [
+            'designation' => 'required',
+            'address' => 'required',
+            'description' => 'required',
+            'type' => 'required',
+            'valorisation' => 'required',
+            'profitability' => 'required',
+            'obj_financement' => 'required',
+            'footage' => 'required',
+            'nbr_bedroom' => 'required',
+            'nbr_bathroom' => 'required',
+            'nbr_ethix' => 'required',
+            'reserve' => 'required',
+            'acquisition_price' => 'required',
+            'remuneration_ethix' => 'required',
+            'notary_fees' => 'required',
+            'money_reserve_acquisition' => 'required',
+            'rent_collected' => 'required',
+            'charge' => 'required',
+            'property_tax' => 'required',
+            'money_reserve_rendement' => 'required',
+            'photos.*' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        // Vérifier les erreurs de validation
+
         $property = new Property();
         $property->designation = $request->designation;
         $property->addresse = $request->address;

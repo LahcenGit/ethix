@@ -286,7 +286,7 @@
                         <div class="card-body">
                             <div class="basic-form custom_file_input">
                                     <div class="input-group mb-3">
-                                            <input type="file"  name="photos[]" accept="image/*" multiple required>
+                                            <input type="file"  name="photos[]" accept="image/*" multiple >
                                     </div>
                             </div>
                         </div>
