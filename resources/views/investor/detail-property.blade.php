@@ -71,10 +71,10 @@
                                         <p class="about-tab-contents-para mt-4"> {!! $property->description !!} </p>
                                     </div>
                                 </div>
-                               
+
                             </div>
 
-                     
+
                         </div>
 
                         <div class="hotel-details-widget widget bg-white radius-10 mt-4">
@@ -85,7 +85,7 @@
                                         <h3 class="hotel-view-contents-title"> Stratégie d’investissement : </h3>
                                     </div>
                                     <div style="padding: 20px; padding-top:0px!important;">
-                                      <p style="color: rgb(61, 74, 87);">il s’agit d’une stratégie de rendement locatif d’un appartement dans 
+                                      <p style="color: rgb(61, 74, 87);">il s’agit d’une stratégie de rendement locatif d’un appartement dans
                                         une ville dont le marché immobilier est en croissance constante.</p>
                                       <p style="color: rgb(61, 74, 87);">Les revenus seront versés mensuellement au moment du paiement du loyer et seront disponibles immédiatement dans votre portefeuille Ethix.
                                     </p>
@@ -94,13 +94,13 @@
                             </div>
                         </div>
 
-                        
+
 
                         <div class="card" style=" margin-bottom: 10px; margin-top:10px;background-color: #4daa7f;">
                             <div class="card-body">
-                           
+
                               <p class="card-text text-white">Tout investissement comporte des risques de perte en capital. Les performances présentées ne peuvent être garanties. Nous sommes à votre écoute pour répondre à toutes vos questions au <b>06 13 43 13 81</b>  ou par email à <b>contact@ethix-invest.com</b></p>
-                              
+
                             </div>
                         </div>
 
@@ -113,7 +113,7 @@
                                 <div class="single-reservation-item">
                                     <div class="single-reservation-details">
                                         <div class="single-reservation-details-item">
-                                            <span class="single-reservation-details-subtitle" > Valeur d'une Ethix</span>
+                                            <span class="single-reservation-details-subtitle" > Valeur d'Ethix</span>
                                             <h3 class="single-reservation-details-title" style="font-size: 25px; color:#4DAA7F"> {{$value_ethix->value}} €</h3>
                                         </div>
                                         <div class="single-reservation-details-item">
@@ -165,7 +165,7 @@
                                     </div>
 
                                 </div>
-                             
+
                             </div>
                         </div>
                        {{--<div class="hotel-details-widget widget bg-white radius-10">
@@ -286,7 +286,7 @@
                                                     <td>{{ number_format($property->charge, 0, ',', ' ') }} €</td>
                                                   </tr>
                                                   <tr>
-                                                    <td>Taxe foncièree</td>
+                                                    <td>Taxe foncière</td>
                                                     <td>{{ number_format($property->property_tax, 0, ',', ' ') }} €</td>
                                                   </tr>
                                                   <tr>
