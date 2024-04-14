@@ -5,7 +5,7 @@
         <p class="mb-3" style="color: #024670">Veuillez compléter les étapes ci-dessous pour activer votre compte :</p>
         @if($test_document == 0)
         <div class="alert alert-warning" role="alert">
-         <span style="font-size: 15px;"> Envoyez vos documents justificatifs, <a href="{{url('/add-file')}}" class="alert-link">cliquez-ici ! </a></span>
+         <span style="font-size: 15px;"> Envoyez vos documents justificatifs, <a href="{{url('/app/add-file')}}" class="alert-link">cliquez-ici ! </a></span>
         </div>
         @endif
         @if($test_info == 0)
@@ -34,8 +34,12 @@
                 <a href="#" class="add-money"> <i class="fa-solid fa-money-bill-transfer fa-2x"style="color:#4DAA7F;"> </i> <br> Virement </a>
             </div>
             <div class="col text-center mb-2 mt-2">
+                <a href="{{url('app/engagement')}}"> <i class="fa-solid fa-file fa-2x" style="color:#4DAA7F;"></i> <br> Engagements </a>
+            </div>
+            <div class="col text-center mb-2 mt-2">
                 <a href="{{url('app/profil')}}"> <i class="fa-solid fa-user fa-2x" style="color:#4DAA7F;"></i> <br> Profil </a>
             </div>
+
             <div class="col text-center mb-2 mt-2">
                 <a href="{{route('logout')}}"> <i class="fa-solid fa-right-from-bracket fa-2x" style="color:#818181;" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();" > </i> <br> Déconnexion
@@ -44,7 +48,7 @@
                     </form>
                 </a>
             </div>
-    
+
         </div>
     </div>
 

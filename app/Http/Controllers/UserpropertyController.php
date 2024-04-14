@@ -21,39 +21,35 @@ class UserpropertyController extends Controller
     }
 
     public function index(){
-       
+
         $investissements = Userproperty::with('property','user')->get();
-       
+
         return view('admin.investissements',compact('investissements'));
     }
 
     public function achatEthix($id){
         $user = Auth::user();
-        $ethix_val = Ethix::first();
-        $max_ethix = $user->solde/$ethix_val->value;
         $property = Property::find($id);
-
+        $ethix_val = $property->ethix_value;
+        $max_ethix = $user->solde/$ethix_val;
         $ethix_property = Userproperty::where('property_id',$property->id)->sum('nbr_ethix');
-
-        $ethix_total = intval($property->obj_financement / $ethix_val->value) -  $ethix_property ;
-
+        $ethix_total = intval($property->obj_financement / $ethix_val) -  $ethix_property ;
         $nbr_ethix = 0;
         $message = null;
         $test_document = Document::where('documenttable_id',$user->id)->count();
         $test_info = Userinformation::where('user_id',$user->id)->count();
-       
+
         return view('investor.achat-ethix',compact('user','max_ethix','property','message','nbr_ethix','test_document','test_info','ethix_total'));
     }
 
     public function storeEthix(Request $request){
         $user_auth = Auth::user();
         $user = User::find($user_auth->id);
-        $value_ethix = Ethix::first();
-        $max_ethix = $user->solde/$value_ethix->value;
         $property = Property::where('id',$request->property)->first();
-        $ethix_val = Ethix::first();
+        $ethix_val = $property->ethix_value;
+        $max_ethix = $user->solde/$ethix_val;
         $ethix_property = Userproperty::where('property_id',$property->id)->sum('nbr_ethix');
-        $ethix_total = intval($property->obj_financement / $ethix_val->value)  -  $ethix_property;
+        $ethix_total = intval($property->obj_financement / $ethix_val)  -  $ethix_property;
         $max_ethix_property = $property->max_ethix;
         $nbr_ethix = $request->nbr_ethix;
         $test_info = Userinformation::where('user_id',$user->id)->count();
@@ -72,8 +68,8 @@ class UserpropertyController extends Controller
             $message = 'le nombre doit être inférieur ou égale à '.$max;
             return view('investor.achat-ethix',compact('user','max_ethix','property','message','nbr_ethix','test_document','test_info','ethix_total'));
         }
-       
-        if($request->nbr_ethix > $max_ethix){
+
+        if($nbr_ethix > $max_ethix){
          $message = 'le nombre doit être inférieur ou égale à '.$max_ethix;
             return view('investor.achat-ethix',compact('user','max_ethix','property','message','nbr_ethix','test_document','$test_info','ethix_total'));
         }
@@ -86,10 +82,10 @@ class UserpropertyController extends Controller
             $userproperty->user_id = $user->id;
             $userproperty->property_id = $request->property;
             $userproperty->nbr_ethix = $request->nbr_ethix;
-            $userproperty->value_ethix = $value_ethix->value;
+            $userproperty->value_ethix = $ethix_val;
             $userproperty->save();
 
-            (int)$user->solde = (int)$user->solde-($nbr_ethix * (int)$value_ethix->value);
+            (int)$user->solde = (int)$user->solde-($nbr_ethix * (int)$ethix_val);
             $user->save();
             return redirect('app/investissements')->with('success','Achat effectué avec succès ('.$nbr_ethix.' ethix), Merci!');
         }
@@ -98,11 +94,11 @@ class UserpropertyController extends Controller
 
     public function engagementEthix($id){
         $user = Auth::user();
-        $ethix_val = Ethix::first();
-        $max_ethix = $user->solde/$ethix_val->value;
         $property = Property::find($id);
+        $ethix_val = $property->ethix_value;
+        $max_ethix = $user->solde/$ethix_val;
         $ethix_property = Userproperty::where('property_id',$property->id)->sum('nbr_ethix');
-        $ethix_total = intval($property->obj_financement / $ethix_val->value) -  $ethix_property ;
+        $ethix_total = intval($property->obj_financement / $ethix_val) -  $ethix_property ;
         $nbr_ethix = 0;
         $message = null;
         $test_document = Document::where('documenttable_id',$user->id)->count();
@@ -113,9 +109,9 @@ class UserpropertyController extends Controller
 
     public function investissements(){
         $investissements = Userproperty::with('property')->where('user_id',Auth::user()->id)
-        ->groupBy('property_id')
-        ->selectRaw('*, sum(nbr_ethix) as sum_ethix')
-        ->get();
+                                        ->groupBy('property_id')
+                                        ->selectRaw('*, sum(nbr_ethix) as sum_ethix')
+                                        ->get();
         $user = Auth::user();
         $test_document = Document::where('documenttable_id',$user->id)->count();
         $test_info = Userinformation::where('user_id',$user->id)->count();

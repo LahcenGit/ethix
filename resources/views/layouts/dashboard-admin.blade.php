@@ -433,5 +433,7 @@ $(".update-ethix-value").on('click',function() {
 @stack('modal-add-versment-scripts')
 @stack('form-store-versment-scripts')
 @stack('modal-edit-compte-scripts')
+@stack('obj-financement-script')
+@stack('modal-edit-status-engagement-scripts')
 </body>
 </html>

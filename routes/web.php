@@ -47,9 +47,7 @@ Route::get('/symlink', function () {
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/add-file', function () {
-    return view('add-files');
-});
+
 Route::get('/politique-confidentialite', function () {
     return view('politique-confidentialite');
 });
@@ -83,6 +81,8 @@ Route::resource('/dashboard-admin/virments',VirmentAdminController::class)->midd
 Route::resource('/dashboard-admin/engagements',EngagementAdminController::class)->middleware('can:admin');
 
 Route::get('/dashboard-admin/engagementprint/{id}',[App\Http\Controllers\EngagementAdminController::class,'EngagementPrint'])->middleware('can:admin');
+Route::get('/show-modal-edit-status-engagement/{id}',[App\Http\Controllers\EngagementAdminController::class,'showModalEditStatus'])->middleware('can:admin');
+Route::get('/update-status-engagement/{id}/{status}',[App\Http\Controllers\EngagementAdminController::class,'updateStatus'])->middleware('can:admin');
 
 Route::get('/dashboard-admin/edit-compte/{id_user}/{id_virment}', [App\Http\Controllers\VirmentAdminController::class, 'showModal']);
 Route::resource('/newsletter',NewsletterController::class);

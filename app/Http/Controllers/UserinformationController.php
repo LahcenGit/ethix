@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Country;
+use App\Models\Document;
 use App\Models\User;
 use App\Models\Userinformation;
 use Illuminate\Http\Request;
@@ -13,7 +14,10 @@ class UserinformationController extends Controller
     //
     public function index(){
         $countries = Country::all();
-        return view('investor.add-info',compact('countries'));
+        $user = Auth::user();
+        $test_document = Document::where('documenttable_id',$user->id)->count();
+        $test_info = Userinformation::where('user_id',$user->id)->count();
+        return view('investor.add-info',compact('countries','user','test_document','test_info'));
     }
 
     public function store(Request $request){

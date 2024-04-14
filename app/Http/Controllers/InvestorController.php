@@ -64,7 +64,7 @@ class InvestorController extends Controller
         $value_ethix = Ethix::first();
         $property = Property::find($id);
         $ethix_property = Userproperty::where('property_id',$property->id)->sum('nbr_ethix');
-        $ethix_total = intval($property->obj_financement / $ethix_val->value) -  $ethix_property ;
+        $ethix_total = intval($property->obj_financement / $property->ethix_value) -  $ethix_property ;
         return view('investor.detail-property',compact('property','user','test_document','test_info','value_ethix','ethix_total'));
     }
 
@@ -79,7 +79,7 @@ class InvestorController extends Controller
         $url = public_path('storage/documents/').$document->link;
         $ext = pathinfo($name, PATHINFO_EXTENSION);
         $image = file_get_contents($url);
-         
+
 
         if($ext == 'png' || $ext == 'PNG'){
 
@@ -90,7 +90,7 @@ class InvestorController extends Controller
         }
 
             else if($ext == 'jpg' || $ext == 'jpeg' || $ext == 'JPEG' ||$ext == 'JPG'){
-           
+
                 $response = new Response($image, 200);
             $response->header('Content-Type', 'image/jpeg');
             $response->header('Content-Disposition', 'attachment');
@@ -99,7 +99,7 @@ class InvestorController extends Controller
             }
 
             else if($ext == 'gif' || $ext == 'GIF'){
-        
+
                 $response = new Response($image, 200);
                 $response->header('Content-Type', 'image/gif');
                 $response->header('Content-Disposition', 'attachment');
@@ -114,7 +114,7 @@ class InvestorController extends Controller
 
          }
 
-                
+
         public function getInvestor($id){
             $user = Userinformation::with('user')->where('user_id',$id)->first();
             $documents = Document::where('documenttable_id',$id)->get();

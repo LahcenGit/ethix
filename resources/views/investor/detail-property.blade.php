@@ -37,7 +37,7 @@
 
                             <div class="hotel-view-contents">
                                 <div class="hotel-view-contents-header">
-                                <span class="hotel-view-contents-review"> {{number_format($property->valuation),2}} € </span>
+                                <span class="hotel-view-contents-review"> {{number_format($property->obj_financement + $property->reserve),2}} € </span>
                                     <h3 class="hotel-view-contents-title"> {{$property->designation}} </h3>
                                     <div class="hotel-view-contents-location mt-2">
                                         <span class="hotel-view-contents-location-icon"> <i class="las la-map-marker-alt"></i> </span>
@@ -85,10 +85,7 @@
                                         <h3 class="hotel-view-contents-title"> Stratégie d’investissement : </h3>
                                     </div>
                                     <div style="padding: 20px; padding-top:0px!important;">
-                                      <p style="color: rgb(61, 74, 87);">il s’agit d’une stratégie de rendement locatif d’un appartement dans
-                                        une ville dont le marché immobilier est en croissance constante.</p>
-                                      <p style="color: rgb(61, 74, 87);">Les revenus seront versés mensuellement au moment du paiement du loyer et seront disponibles immédiatement dans votre portefeuille Ethix.
-                                    </p>
+                                      <p style="color: rgb(61, 74, 87);">{!! $property->stratégie_investissement !!}</p>
                                     </div>
                                 </div>
                             </div>
@@ -114,11 +111,11 @@
                                     <div class="single-reservation-details">
                                         <div class="single-reservation-details-item">
                                             <span class="single-reservation-details-subtitle" > Valeur d'Ethix</span>
-                                            <h3 class="single-reservation-details-title" style="font-size: 25px; color:#4DAA7F"> {{$value_ethix->value}} €</h3>
+                                            <h3 class="single-reservation-details-title" style="font-size: 25px; color:#4DAA7F"> {{$property->ethix_value}} €</h3>
                                         </div>
                                         <div class="single-reservation-details-item">
-                                            <span class="single-reservation-details-subtitle"> Objectif de financement</span>
-                                            <h5 class="single-reservation-details-title" style="font-size: 25px; color:#4DAA7F"> {{number_format($property->obj_financement)}} €</h5>
+                                            <span class="single-reservation-details-subtitle">Valorisation</span>
+                                            <h5 class="single-reservation-details-title" style="font-size: 25px; color:#4DAA7F"> {{ number_format($property->total_valorisation, 0, ',', ' ') }} €</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -128,22 +125,12 @@
                                             <span class="single-reservation-details-subtitle"> Rentabilité cible</span>
                                             <h5 class="single-reservation-details-title" style="font-size: 25px;"> {{$property->profitability}}%</h5>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="single-reservation-item">
-                                    <div class="single-reservation-details">
-                                        <div class="single-reservation-details-item">
-                                            <span class="single-reservation-details-subtitle"> Valorisation du bien</span>
-                                            <h5 class="single-reservation-details-title" style="font-size: 25px;"> {{number_format($property->total_valorisation)}} €</h5>
-                                        </div>
                                         <div class="single-reservation-details-item">
                                             <span class="single-reservation-details-subtitle">Reste </span>
                                             <h5 class="single-reservation-details-title" style="font-size: 25px; color:#4DAA7F;" > {{$ethix_total}} <span style="font-size: 12px;">éthix</span> </h5>
                                         </div>
-
                                     </div>
                                 </div>
-
                                 <div class="single-reservation-item">
                                     <div class="single-reservation-details">
                                         <div class="single-reservation-details-item">
@@ -201,14 +188,24 @@
 
                         <div class="hotel-details-widget widget bg-white radius-10">
                             <div class="hotel-view">
-
                                 <div class="hotel-view-contents">
                                     <div class="hotel-view-contents-header">
                                         <h3 class="hotel-view-contents-title"> Diagnostic Technique </h3>
-
                                     </div>
                                     <div class="hotel-view-contents-middle">
-                                          <img src="{{asset('/dpe.jpg')}}" alt="">
+                                        <p class="hotel-view-contents-title text-center"><b> Note Globale du DPE </b></p>
+                                        @if($property->diagnostic == "A")
+                                          <img src="{{asset('/dpe/a.jpg')}}" alt="">
+                                        @elseif($property->diagnostic == "B")
+                                          <img src="{{asset('/dpe/b.jpg')}}" alt="">
+                                        @elseif($property->diagnostic == "C")
+                                          <img src="{{asset('/dpe/c.jpg')}}" alt="">
+                                        @elseif($property->diagnostic == "D")
+                                          <img src="{{asset('/dpe/d.jpg')}}" alt="">
+                                        @elseif($property->diagnostic == "E")
+                                          <img src="{{asset('/dpe/e.jpg')}}" alt="">
+                                        @endif
+                                        <p class="hotel-view-contents-title text-center"><b> 328 </b> kwhEP/m2.an</p>
                                     </div>
                                 </div>
                             </div>
@@ -228,19 +225,15 @@
                                             <table class="table analyse">
                                                 <tbody>
                                                   <tr>
-                                                    <td>Nombre d'ethix</td>
-                                                    <td >{{ $property->nbr_ethix }}</td>
+                                                    <td>Objectif de financement</td>
+                                                    <td>{{ number_format($property->obj_financement, 0, ',', ' ') }} €</td>
                                                   </tr>
                                                   <tr>
-                                                    <td>Valorisation du bien</td>
-                                                    <td>{{ number_format($property->valuation, 0, ',', ' ') }} €</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Reserve</td>
+                                                    <td>Réserve Travaux</td>
                                                     <td>{{ number_format($property->reserve, 0, ',', ' ') }} €</td>
                                                   </tr>
                                                   <tr class="analyse-result">
-                                                    <td>Valeur totale</td>
+                                                    <td style="height: 50px;">Valeur totale <br> <span style="font-size: 14px; font-weight:200">Nombre d'ethix :</span>  {{ $property->nbr_ethix }} </td>
                                                     <td>{{ number_format($property->total_valorisation, 0, ',', ' ') }}  €</td>
                                                   </tr>
                                                 </tbody>
@@ -263,7 +256,7 @@
                                                     <td>{{ number_format($property->notary_fees, 0, ',', ' ') }} €</td>
                                                   </tr>
                                                   <tr>
-                                                    <td>Réserve argent (travaux)</td>
+                                                    <td>Réserve Entretien (travaux)</td>
                                                     <td>{{ number_format($property->money_reserve_acquisition, 0, ',', ' ') }} €</td>
                                                   </tr>
                                                   <tr class="analyse-result">
@@ -278,7 +271,7 @@
                                             <table class="table analyse">
                                                 <tbody>
                                                   <tr>
-                                                    <td>Loyers collectés</td>
+                                                    <td>Loyers collectés /an</td>
                                                     <td >{{ number_format($property->rent_collected, 0, ',', ' ') }} €</td>
                                                   </tr>
                                                   <tr>
@@ -295,7 +288,7 @@
                                                   </tr>
                                                   <tr class="analyse-result">
                                                     <td>Revenus reversés </td>
-                                                    <td>5186 €/an 4,12(%)</td>
+                                                    <td>{{ $property->rent_collected - ($property->charge + $property->property_tax + $property->money_reserve_rendement) }} €/an {{ number_format((($property->rent_collected - ($property->charge + $property->property_tax + $property->money_reserve_rendement)) / ($property->obj_financement + $property->reserve)) * 100, 2) }}(%)</td>
                                                   </tr>
                                                 </tbody>
                                             </table>
